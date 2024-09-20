@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SRI RANGANATHASWAMY TEMPLE</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: georgia, 'times new roman';
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 50%;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: gold;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: gold;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .details-container {
+            background-color: ivory;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .navigation ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .navigation ul li a {
+            color: #0c0b0b;
+            text-decoration: none;
+        }
+        .navigation {
+            background-color: skyblue;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fef6f6;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #bdbbbb;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SRI RANGANATHASWAMY TEMPLE</h1>
+    </header>
+    <div class="navigation">
+        <ul>
+            <li><a href="home.php">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">AUDIO GUIDE</a>
+                <div class="dropdown-content">
+                    <a href="Kapaleeshwarar audio (1).mp3">TAMIL LANGUAGE</a>
+                    <a href="">ENGLISH LANGUAGE</a>
+                </div>
+             <li><a href="https://www.google.com/maps/@13.0334759,80.2705295,3a,75y,288.16h,101.78t/data=!3m6!1e1!3m4!1s27FcVWOCZdV9Td0uiIWSVw!2e0!7i13312!8i6656?entry=ttu">VIRTUAL TOUR</a></li>
+            <li><a href="darshanbooking.php">BOOK TICKETS</a></li>
+            <li><a href="poojabooking.php">POOJA BOOKING</a></li>
+            <li><a href="donation.php">DONATION</a></li>
+            <li><a href="srirangamcontact.php">CONTACT</a></li>
+      
+                
+                    
+
+                </div>
+        </ul>
+    
+        
+    </div>
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="srirangam1.jpg" alt="Temple 1" style="width: 100%; height: 500px">
+                </div>
+                <div class="carousel-item">
+                    <img src="srirangam2.webp" alt="Temple 2" style="width: 100%; height: 500px;">
+                </div>
+                <div class="carousel-item">
+                    <img src="srirangam3.webp" alt="Temple 3" style="width: 100%; height: 500px;">
+                </div>
+                <div class="carousel-item">
+                    <img src="srirangam4.jpg" alt="Temple 4" style="width: 100%; height: 500px;">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h3>HISTORY</h3>
+            <p>Sri Ranganathaswamy Temple is a renowned Hindu temple located in Srirangam, Trichy. It is dedicated to Lord Ranganatha, a form of Lord Vishnu. The temple is one of the largest functioning temple complexes in the world and is considered one of the most important pilgrimage sites for Vaishnavites. The temple's history dates back to the 1st century CE, and it has been expanded and renovated by various dynasties over the centuries. The architecture of the temple is a blend of Dravidian and Vijayanagara styles. The main deity, Lord Ranganatha, is depicted in a reclining posture on the serpent Adisesha. The temple attracts millions of devotees and tourists every year, who come to seek the blessings of Lord Ranganatha and admire the grandeur of the temple complex.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h4>OPENING HOURS</h4>
+            <p>5:00 AM - 9:00 PM</p>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h4>POOJA TIMINGS</h4>
+            <p>5:00 am to 6:00 am - Suprabhatham</p>
+            <p>6:00 am to 7:15 am - Vishwaroopa Darshan</p>
+            <p>7:15 am to 9:00 am - Pooja and Darshan</p>
+            <p>9:00 am to 12:00 pm - Darshan</p>
+            <p>12:00 pm to 6:00 pm - Darshan</p>
+            <p>6:00 pm to 7:00 pm - Pooja and Darshan</p>
+            <p>7:00 pm to 9:00 pm - Darshan</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h4>LOCATION</h4>
+            <p>Sri Ranganathaswamy Temple, Srirangam, Trichy, Tamil Nadu.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h4>FESTIVALS</h4>
+            <p>The temple celebrates various festivals throughout the year, including:</p>
+            <ul>
+                <li>Vaikunta Ekadashi</li>
+                <li>Rama Navami</li>
+                <li>Adi Perukku</li>
+                <li>Thirukarthigai</li>
+                <li>Brahmotsavam</li>
+                <li>Thai Poosam</li>
+                <li>Chittirai Festival</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h4>WAYS TO REACH</h4>
+            <p>By Air: The nearest airport to Trichy is Tiruchirappalli International Airport (TRZ). From the airport, you can hire a taxi or take a bus to reach Srirangam Temple, which is approximately 12 kilometers away.</p>
+
+<p>By Train: Trichy Junction is the main railway station in Trichy, and it is well-connected to major cities in India. From Trichy Junction, you can hire an auto-rickshaw, taxi, or take a local bus to reach Srirangam Temple. The temple is around 7 kilometers from Trichy Junction.</p>
+
+<p>By Bus: Trichy has a well-developed bus network that connects it to various cities and towns in Tamil Nadu and neighboring states. You can take a bus to Trichy Central Bus Stand (also known as Chatram Bus Stand). From there, you can hire an auto-rickshaw or a taxi to reach Srirangam Temple, which is approximately 6 kilometers away.</p>
+
+<p>By Car: If you are traveling by car, you can use national highways to reach Trichy. Srirangam Temple is located on the island of Srirangam, which is connected to Trichy by the Upper Anaicut Road and Lower Anaicut Road. You can follow the directions and signage to reach the temple.</p>
+            
+            
+        </div>
+    </div>
+
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

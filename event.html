@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Tamil Nadu Events and Festivals</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #FF5722;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .banner {
+            background-image: url("jallikatu.webp");
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .banner p {
+            font-size: 12px;
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .event-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            transform: translateX(0);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            cursor: pointer;
+        }
+
+        .event-card.left-to-right {
+            transform: translateX(-100%);
+            animation: slideLeftToRight 1s forwards;
+        }
+
+        .event-card.right-to-left {
+            transform: translateX(100%);
+            animation: slideRightToLeft 1s forwards;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-card h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .event-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .event-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .event-card-description {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .event-card:hover .event-card-description {
+            opacity: 1;
+        }
+
+        .event-card-description p {
+            font-size: 14px;
+            color: black;
+        }
+
+        @keyframes slideLeftToRight {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRightToLeft {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        footer {
+    background-color: black; /* Change the background color to your preference */
+    color: #fff; /* Change the text color to your preference */
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Style the content within the footer */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Style the footer information (address, email, phone) */
+.footer-info {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+.footer-info a {
+    color: gold;
+}
+
+/* Style the footer links (copyright, terms, cookie policy, contact) */
+.footer-links {
+    flex: 1;
+    text-align: bottom;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+/* Style links within the footer */
+.footer-links a {
+    color: #fff; /* Change link color to your preference */
+    text-decoration: none;
+    margin: 0 10px;
+    text-align: center;
+}
+
+/* Change link color on hover */
+.footer-links a:hover {
+    color: #f5a623; /* Change link color on hover to your preference */
+}
+.newsletter-container {
+            max-width:100%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            
+            
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: #FF5722; /* Change border color on focus */
+        }
+
+        .subscribe-button {
+            background-color: #FF5722;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .subscribe-button:hover {
+            background-color: #E64A19;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-button" href="index.html" style="position: fixed; top: 20px; left: 20px; font-size: 24px; color: black; text-decoration: none;">&larr;</a>
+    <header>
+        <h1>Famous Events and Festivals in Tamil Nadu</h1>
+    </header>
+
+
+    <div class="banner">
+        
+        
+      </div>
+      
+    
+    <div class="container">
+        <div class="event-card left-to-right">
+            <img src="pongal.cms" alt="Event 1">
+            <h2>Pongal Festival</h2>
+            <div class="event-card-description">
+                <p>Pongal is one of the most significant festivals in Tamil Nadu, celebrated in mid-January. It is a harvest festival that marks the beginning of the Tamil month of Thai. During Pongal, people cook a special dish called 'Pongal' using freshly harvested rice, jaggery, and other ingredients. The festival involves various rituals, including decorating cattle, offering prayers, and drawing colorful kolam (rangoli) designs.</p>
+            </div>
+        </div>
+        <div class="event-card right-to-left">
+            <img src="chithirai.jpg" alt="Event 2">
+            <h2>Madurai Chithirai Festival</h2>
+            <div class="event-card-description">
+                <p>This festival, held in Madurai in April/May, reenacts the marriage of Lord Alagar (Vishnu) and Goddess Meenakshi. The highlight is the procession of Lord Alagar on a golden horse to Madurai from his abode in Azhagar Kovil.</p>
+            </div>
+        </div>
+        <div class="event-card left-to-right">
+            <img src="thirukalyanam.jpg" alt="Event 3">
+            <h2>Madurai Meenakshi Temple Festival</h2>
+            <div class="event-card-description">
+                <p>The Meenakshi Temple in Madurai hosts an annual 12-day festival in April/May to celebrate the divine wedding of Lord Sundareswarar (Shiva) and Goddess Meenakshi. The temple is beautifully decorated, and the event features processions, cultural performances, and a grand chariot procession.</p>
+            </div>
+        </div>
+        <div class="event-card right-to-left">
+            <img src="aadi.jpg" alt="Event 4">
+            <h2>Aadi Perukku</h2>
+            <div class="event-card-description">
+                <p>This is a unique festival celebrated in July/August to pay homage to the water resources in Tamil Nadu. People take a dip in rivers and worship the deities to express gratitude for water's life-sustaining qualities.</p>
+            </div>
+        </div>
+        <div class="event-card right-to-left">
+            <img src="deepam.jpg" alt="Event 5">
+            <h2>Karthigai Deepam</h2>
+            <div class="event-card-description">
+                <p>This festival, celebrated in November/December, is known as the "Festival of Lights." People light rows of oil lamps and place them in and around their homes to honor Lord Shiva.</p>
+            </div>
+        </div>
+        <div class="event-card right-to-left">
+            <img src="mahamaham.webp" alt="Event 6">
+            <h2>Mahamaham Festival</h2>
+            <div class="event-card-description">
+                <p>Held once every 12 years in the temple town of Kumbakonam, this event attracts millions of pilgrims who take a dip in the Mahamaham tank to wash away their sins. It is believed that the tank is connected to the holy rivers of India.</p>
+            </div>
+        </div>
+        <div class="event-card right-to-left">
+            <img src="thaipusam.jpg" alt="Event 6">
+            <h2>Thai Poosam</h2>
+            <div class="event-card-description">
+                <p>Thai Poosam is a Tamil Hindu festival celebrated in January/February to honor Lord Murugan. Devotees carry a kavadi (decorated arch) and perform various rituals, including piercing their bodies with small spears or hooks as an act of devotion.</p>
+            </div>
+        </div>
+        <div class="event-card right-to-left">
+            <img src="navaratri.jpg" alt="Event 6">
+            <h2>Navaratri</h2>
+            <div class="event-card-description">
+                <p> Navaratri is a nine-night festival celebrated in September or October to honor Goddess Durga. People set up golu (display of dolls), perform traditional dances like Dandiya and Garba, and engage in various cultural activities.</p>
+            </div>
+        </div>
+    </div>
+    <div class="newsletter-container">
+        <h2 class="newsletter-title">Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Address: Department Of Tourism, Wallajah Road, Chennai-2</p>
+                <p>Email: tourism@tnstate.com</p>
+                <p>Toll Free no: 1800-456-84923</p>
+                <p>All rights reserved &copy; Tamil Nadu Tourism 2023</p>
+                <p>
+                    <a href="#">Copyright</a> | <a href="#">Terms of Use</a> | <a href="#">Cookie Policy</a> | <a href="#">Contact Us</a>
+                </p>
+            
+            <div class="footer-links">
+                <a href="https://www.facebook.com/YourFacebookPage" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/YourInstagramPage" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/YourYouTubeChannel" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    <script>
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                document.querySelectorAll(".event-card").forEach((card) => {
+                    card.classList.add("left-to-right");
+                    card.classList.remove("right-to-left");
+                });
+            } else {
+                // Scrolling up
+                document.querySelectorAll(".event-card").forEach((card) => {
+                    card.classList.add("right-to-left");
+                    card.classList.remove("left-to-right");
+                });
+            }
+
+            lastScrollTop = currentScroll;
+        });
+        // Handle clicking the back button
+        const backBtn = document.querySelector(".back-button");
+        backBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

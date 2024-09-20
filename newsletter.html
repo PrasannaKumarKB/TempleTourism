@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: --bs-font-sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .newsletter-container {
+            position: relative;
+            background-color: #fff;
+            cursor: pointer;
+            margin: 10px;
+            overflow: hidden;
+            width: 300px;
+            height: 400px;
+        }
+
+        img {
+        max-width: 100%;
+        height: 400px;
+        border-radius: 8px;
+        transition: transform ease-in-out 0.5s;
+    }
+
+    .newsletter-container:hover img {
+        transform: scale(1.10);
+    }
+
+    .newsletter-container:hover .overlay {
+        transform: translateY(-50%);
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: left;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    h3 {
+        color: white;
+        margin-bottom: 30px;
+        margin-left: 10px;
+        transform: translateY(0); /* Initial position */
+        transition: transform 0.3s ease-in-out;
+    }
+        .banner {
+        background-image: url("newsletterbanner.webp");
+        background-size: cover;
+        height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+      }
+      h1{
+        text-align: left;
+        color: white;
+        font-size:xxx-large;
+        margin-left: 60px;
+      }
+      .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+  footer {
+      background-color: black; /* Change the background color to your preference */
+      color: #fff; /* Change the text color to your preference */
+      padding: 20px 0;
+      text-align: center;
+  }
+  
+  /* Style the footer information (address, email, phone) */
+  .footer-info {
+      flex: 1;
+      text-align: center;
+      padding: 0 20px;
+  }
+  .footer-info a {
+      color: gold;
+  }
+  
+  /* Style the footer links (copyright, terms, cookie policy, contact) */
+  .footer-links {
+      flex: 1;
+      text-align: bottom;
+      padding: 0 20px;
+      margin-top: 30px;
+  }
+  
+  /* Style links within the footer */
+  .footer-links a {
+      color: #fff; /* Change link color to your preference */
+      text-decoration: none;
+      margin: 0 10px;
+      text-align: center;
+  }
+  
+  /* Change link color on hover */
+  .footer-links a:hover {
+      color: #f5a623; /* Change link color on hover to your preference */
+  }
+    </style>
+    <title>Tamil Nadu Government Newsletter</title>
+</head>
+<body>
+    <a class="back-button" href="index.html" style="position: absolute; top: 20px; left: 20px; font-size: 48px; color:white; text-decoration: none;">&larr;</a>
+    <div class="banner">
+        <div class="overlay">
+            <h1>Newsletter</h1>
+        </div>
+    </div>
+    <main>
+        <div class="newsletter-container" onclick="openNewsletter('december-2022-approved-newsletter.pdf')">
+            <div class="img">
+                <img src="newsletter1.webp" alt="December 2022 Newsletter">
+            </div>
+            <div class="overlay">
+                <h3>January 2023</h3>
+            </div>
+        </div>
+
+        <div class="newsletter-container" onclick="openNewsletter('february.pdf')">
+            <div class="img">
+                <img src="newsletter2.webp" alt="February Newsletter">
+            </div>
+            <div class="overlay">
+                <h3>February 2023</h3>
+            </div>
+        </div>
+
+        <div class="newsletter-container" onclick="openNewsletter('march.pdf')">
+            <div class="img">
+                <img src="newsletter3.webp" alt="March 2023 Newsletter">
+            </div>
+            <div class="overlay">
+                <h3>March 2023</h3>
+            </div>
+        </div>
+        <div class="newsletter-container" onclick="openNewsletter('april.pdf')">
+            <div class="img">
+                <img src="newsletter4.webp" alt="March 2023 Newsletter">
+            </div>
+            <div class="overlay">
+                <h3> April 2023</h3>
+            </div>
+        </div>
+        <div class="newsletter-container" onclick="openNewsletter('may.pdf')">
+            <div class="img">
+                <img src="newsletter5.webp" alt="March 2023 Newsletter">
+            </div>
+            <div class="overlay">
+                <h3>May 2023</h3>
+            </div>
+        </div>
+        <div class="newsletter-container" onclick="openNewsletter('june.pdf')">
+            <div class="img">
+                <img src="ootygallery.jpg" alt="March 2023 Newsletter">
+            </div>
+            <div class="overlay">
+                <h3>June 2023</h3>
+            </div>
+        </div>
+        <div class="newsletter-container" onclick="openNewsletter('july.pdf')">
+            <div class="img">
+                <img src="logo.jpeg" alt="March 2023 Newsletter">
+            </div>
+            <div class="overlay">
+                <h3>July 2023</h3>
+            </div>
+        </div>           
+        <div class="newsletter-container" onclick="openNewsletter('august.pdf')">
+            <div class="img">
+                <img src="image3.webp" alt="March 2023 Newsletter">
+            </div>
+            <div class="overlay">
+                <h3>August 2023</h3>
+            </div>
+            </div>
+                <div class="newsletter-container" onclick="openNewsletter('september.pdf')">
+                    <div class="img">
+                        <img src="background.jpg" alt="March 2023 Newsletter">
+                    </div>
+                    <div class="overlay">
+                        <h3>September 2023</h3>
+                    </div>
+                </div> 
+                <div class="newsletter-container" onclick="openNewsletter('october.pdf')">
+                    <div class="img">
+                        <img src="megamalai.png" alt="March 2023 Newsletter">
+                    </div>
+                    <div class="overlay">
+                        <h3>October 2023</h3>
+                    </div>
+                </div>
+
+        <!-- Repeat the pattern for other months -->
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Address: Department Of Tourism, Wallajah Road, Chennai-2</p>
+                <p>Email: tourism@tnstate.com</p>
+                <p>Toll Free no: 1800-456-84923</p>
+                <p>All rights reserved &copy; Tamil Nadu Tourism 2023</p>
+                <p>
+                    <a href="#">Copyright</a> | <a href="#">Terms of Use</a> | <a href="#">Cookie Policy</a> | <a href="#">Contact Us</a>
+                </p>
+            
+            <div class="footer-links">
+                <a href="https://www.facebook.com/YourFacebookPage" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/YourInstagramPage" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/YourYouTubeChannel" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openNewsletter(newsletter) {
+            window.open('newsletters/' + newsletter, '_blank');
+        }
+        // Handle clicking the back button
+        const backBtn = document.querySelector(".back-button");
+        backBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

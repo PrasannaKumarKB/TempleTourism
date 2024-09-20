@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="your-styles.css">
+    <title>Culture and Heritage of Tamil Nadu</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #FF5722;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transform: translateX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .content.left-to-right {
+            transform: translateX(-100%);
+            animation: slideLeftToRight 1s forwards;
+        }
+
+        .content.right-to-left {
+            transform: translateX(100%);
+            animation: slideRightToLeft 1s forwards;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .content img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-info {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .footer-links {
+            flex: 1;
+            text-align: bottom;
+            padding: 0 20px;
+            margin-top: 30px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .footer-links a:hover {
+            color: #f5a623;
+        }
+
+        @keyframes slideLeftToRight {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRightToLeft {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .newsletter-container {
+            max-width:100%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            
+            
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: #FF5722; /* Change border color on focus */
+        }
+
+        .subscribe-button {
+            background-color: #FF5722;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .subscribe-button:hover {
+            background-color: #E64A19;
+        }
+        .banner {
+            background-image: url("heritage.webp");
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-button" href="index.html" style="position: fixed; top: 20px; left: 20px; font-size: 24px; color: black; text-decoration: none;">&larr;</a>
+    <header>
+        <h1>Culture and Heritage of Tamil Nadu</h1>
+    </header>
+    <div class="banner"></div>
+    <div class="container">
+
+    
+    <div class="content left-to-right">
+
+        <h2>Classical Music and Dance</h2>
+        <p>Tamil Nadu is renowned for its classical music and dance forms. Carnatic music, with its intricate melodies and rhythms, has deep-rooted traditions here. Bharatanatyam, a classical dance form, originated in Tamil Nadu and is known for its graceful movements and expressive storytelling.</p>
+
+        <img src="bharatanatyam.webp" alt="Bharatanatyam Dance">
+    </div>
+    <div class="content left-to-right">
+
+        <h2>Temples and Architecture</h2>
+        <p>The state is dotted with magnificent temples that showcase remarkable Dravidian architecture. The Brihadeeswarar Temple in Thanjavur, Meenakshi Amman Temple in Madurai, and Shore Temple in Mahabalipuram are some of the architectural marvels that reflect the heritage of Tamil Nadu.</p>
+
+        <img src="brihadeeswarar.webp" alt="Brihadeeswarar Temple">
+    </div>
+    <div class="content left-to-right">
+
+        <h2>Festivals</h2>
+        <p>Tamil Nadu celebrates a myriad of festivals throughout the year. Pongal, Diwali, and Navaratri are some of the major festivals that highlight the state's culture. These festivals feature traditional rituals, music, dance, and mouthwatering cuisine.</p>
+
+        <img src="thirukalyanam.jpg" alt="Pongal Festival">
+    </div>
+    <div class="content left-to-right">
+
+        <h2>Traditional Arts and Crafts</h2>
+        <p>Explore the traditional arts and crafts of Tamil Nadu, including Tanjore painting, Chola bronze sculptures, and Kanchipuram silk sarees. These art forms have been passed down through generations and are highly valued.</p>
+
+        <img src="dolls.webp" alt="Tanjore Painting">
+    </div>
+    <div class="content left-to-right">
+
+        <h2>Culinary Delights</h2>
+        <p>Tamil Nadu offers a diverse range of culinary delights. From the spicy Chettinad cuisine to the delectable dosas and idlis, the food of Tamil Nadu is a treat for your taste buds.</p>
+
+        <img src="cuisine.jpeg" alt="South Indian Cuisine">
+    </div>
+    </div>
+    </div>
+
+    <div class="newsletter-container">
+        <h2 class="newsletter-title">Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+    </div>
+    
+
+    <footer>
+        
+            <div class="footer-info">
+                <p>Address: Department Of Tourism, Wallajah Road, Chennai-2</p>
+                <p>Email: tourism@tnstate.com</p>
+                <p>Toll Free no: 1800-456-84923</p>
+                <p>All rights reserved &copy; Tamil Nadu Tourism 2023</p>
+                <p>
+                    <a href="#">Copyright</a> | <a href="#">Terms of Use</a> | <a href="#">Cookie Policy</a> | <a href="#">Contact Us</a>
+                </p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/YourFacebookPage" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/YourInstagramPage" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/YourYouTubeChannel" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                const contentElements = document.querySelectorAll(".content");
+                contentElements.forEach((content) => {
+                    content.classList.add("left-to-right");
+                    content.classList.remove("right-to-left");
+                });
+            } else {
+                // Scrolling up
+                const contentElements = document.querySelectorAll(".content");
+                contentElements.forEach((content) => {
+                    content.classList.add("right-to-left");
+                    content.classList.remove("left-to-right");
+                });
+            }
+
+            lastScrollTop = currentScroll;
+        });
+
+        // Handle clicking the back button
+        const backBtn = document.querySelector(".back-button");
+        backBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

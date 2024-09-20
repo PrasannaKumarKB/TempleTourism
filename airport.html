@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airports in Tamil Nadu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .banner {
+            background-image: url("airportbanner.webp");
+            background-size: cover;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            
+        }
+
+        .overlay {
+            position: absolute;
+            top: 50px;
+            text-align: center;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-family: --bs-font-sans-serif;
+            font-size: 50px;
+        }
+
+        
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 -10px; 
+        }
+
+        .airport {
+            background-color: transparent;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: calc(50% - 20px); 
+            margin-bottom: 20px;
+            box-sizing: border-box; 
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .airport img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .airport img {
+            max-width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform ease-in-out 0.3s;
+        }
+
+        .airport h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .airport p {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        footer {
+            background-color: black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-info {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .footer-links {
+            flex: 1;
+            text-align: bottom;
+            padding: 0 20px;
+            margin-top: 30px;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .footer-links a:hover {
+            color: #f5a623;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-button" href="index.html" style="position: absolute; top: 20px; left: 20px; font-size: 48px; color:black;text-decoration: none;">&larr;</a>
+    <div class="banner">
+        <div class="overlay">
+            AIRPORTS
+        </div>
+    </div>
+    <main>
+
+        <div class="content">
+            <section class="airport">
+                <img src="chennaiapt.jpg" alt="Chennai International Airport">
+                <h2>Chennai International Airport</h2>
+                <p>
+                    Chennai International Airport, also known as Meenambakkam Airport, is the primary airport serving Chennai, the capital of Tamil Nadu. It is one of the busiest airports in South India.The airport is served by the airport metro station of the Chennai Metro and the Tirusulam railway station of the Chennai Suburban Railway system. 
+                </p>
+            </section>
+            <section class="airport">
+                <img src="cbeairport.avif" alt="Coimbatore International Airport">
+                <h2>Coimbatore International Airport</h2>
+                <p>
+                    A prominent airport in Tamil Nadu, Coimbatore International Airport is well connected to other cities and towns such as Chennai, Munnar, Bengaluru, and Ooty. Tiruppur, Palakkad, Pollachi, and Mettupalayam are all easily accessible.
+                </p>
+            </section>
+        
+            <section class="airport">
+                <img src="maduraiairport.jpg" alt="Coimbatore International Airport">
+                <h2>Madurai International Airport</h2>
+                <p>
+                    Madurai International Airport is an international airport serving Madurai and its adjoining districts in Tamil Nadu, India. It is the 36th busiest airport in India, both in terms of passengers handled and aircraft movement. The airport is located near State Highway 37, about 12 km south of the city centre.
+                </p>
+            </section>
+            <section class="airport">
+                <img src="tiruchyairport.gif" alt="Coimbatore International Airport">
+                <h2>Tiruchirapalli International Airport</h2>
+                <p>
+                    Tiruchirappalli International Airport is an international airport serving Tiruchirappalli in the Indian state of Tamil Nadu. The airport, spread over an area of 702.02 acres, is located on National Highway 336, about 5 km south of the city centre.
+                </p>
+            </section>
+        </div>
+        
+    </main>
+    <footer>
+        
+        <div class="footer-info">
+            <p>Address: Department Of Tourism, Wallajah Road, Chennai-2</p>
+            <p>Email: tourism@tnstate.com</p>
+            <p>Toll Free no: 1800-456-84923</p>
+            <p>All rights reserved &copy; Tamil Nadu Tourism 2023</p>
+            <p>
+                <a href="#">Copyright</a> | <a href="#">Terms of Use</a> | <a href="#">Cookie Policy</a> | <a href="#">Contact Us</a>
+            </p>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.facebook.com/YourFacebookPage" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/YourInstagramPage" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/YourYouTubeChannel" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</footer>
+    <script>
+        const backBtn = document.querySelector(".back-button");
+        backBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.history.back();
+        });</script>
+</body>
+</html>

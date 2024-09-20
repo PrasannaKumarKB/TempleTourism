@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kapaleeshwarar Temple</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: playfair Display;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: playfair Display;
+  letter-spacing: 3px;
+  color: black; /* Green color */
+}
+.w3-bar-item {
+  font-weight: bold;
+  color: #4CAF50; /* Green color */
+  text-align: center;
+  display: inline-block;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.w3-bar-item:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+.slide-panel {
+  height: 100%;
+  width: 600px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f9f9f9;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+.slide-panel.open {
+  transform: translateX(0);
+}
+.slide-panel .closebtn {
+  font-size: 36px;
+  color: black;
+  cursor: pointer;
+  float: right;
+}
+
+.slide-panel a {
+  display: block;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.slide-panel a:hover {
+  background-color: #f1f1f1;
+}
+
+.openbtn {
+  border: none;
+  background: none;
+  font-weight: bold;
+  color: #4CAF50; /* Green color */
+  padding: 14px 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.openbtn:hover {
+  background-color: #f1f1f1;
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px; /* Center the text vertically */
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.floating-btn:hover {
+  background-color: #45a049; /* Darker green */
+  transform: scale(1.1);
+}
+
+.floating-btn.virtual-tour {
+  bottom: 90px; /* Adjusted to avoid overlap with the other button */
+}
+
+section {
+  padding: 64px 0;
+  background-color: #fff;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  max-width: 1100px; /* Adjusted value */
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+
+
+section h1, section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section p, section ul {
+  margin: 20px 0;
+}
+
+section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+section ul li {
+  margin-bottom: 10px;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-right {
+  float: right;
+  margin-left: 20px;
+  width: 50%;
+  height: auto;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer {
+    background-color: black; 
+    color: #fff; 
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+.footer-info {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+.footer-info a {
+    color: gold;
+}
+
+
+.footer-links {
+    flex: 1;
+    text-align: bottom;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+
+.footer-links a {
+    color: #fff; 
+    text-decoration: none;
+    margin: 0 10px;
+    text-align: center;
+}
+
+
+.footer-links a:hover {
+    color: #f5a623; 
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="chennai.html" class="w3-bar-item w3-button">←</a>
+    <a href="#home" class="w3-bar-item w3-button">Kapaleeshwarar Temple</a>
+    <div class="w3-right w3-hide-small">
+      <a href="#history" class="w3-bar-item w3-button">History</a>
+      <a href="#ways-to-reach" class="w3-bar-item w3-button">Ways to Reach</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      
+      <a href="poojabooking.php" class="w3-bar-item w3-button">Pooja Booking</a>
+      <a href="darshanbooking.php" class="w3-bar-item w3-button">Darshan Booking</a>
+      <a href="donation.php" class="w3-bar-item w3-button">Donation</a>
+    </div>
+  </div>
+</div>
+
+<div id="myNav" class="slide-panel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2>Audio Guide</h2>
+  <a href="Kapaleeshwarar audio (1).mp3">Tamil Language</a>
+  <a href="Kapaleeshwarar English.mp3">English Language</a>
+</div>
+
+<!-- Floating Button for Audio Guide -->
+<button class="floating-btn" onclick="openNav()">🎧</button>
+
+<!-- Floating Button for Virtual Tour -->
+<button class="floating-btn virtual-tour" onclick="window.location.href='https://www.google.com/maps/@13.0337604,80.2694848,3a,75y,88.42h,99.39t/data=!3m7!1e1!3m5!1s14bf6R7DQymsbk5dDOXjCQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3D14bf6R7DQymsbk5dDOXjCQ%26cb_client%3Dmaps_sv.share%26w%3D900%26h%3D600%26yaw%3D88.41609932222165%26pitch%3D-9.388002459606682%26thumbfov%3D90!7i13312!8i6656?coh=205410&entry=ttu'">👁️</button>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="kapaleeshwarar4-transformed.webp" alt="Kapaleeshwarar Temple" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Kapaleeshwarar Temple</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="w3-row-padding">
+      <div class="w3-col m6 w3-padding-large w3-hide-small">
+        <img src="kapaleeshwarar.jpg" class="img-responsive" alt="Kapaleeshwarar Temple">
+      </div>
+      <div class="w3-col m6 w3-padding-large">
+        <h1>About Kapaleeshwarar Temple</h1>
+        <h5>Historical Temple</h5>
+        <p>Kapaleeshwarar Temple, located in the vibrant neighborhood of Mylapore in Chennai, is one of the most revered and ancient temples in South India. Dedicated to Lord Shiva, this architectural marvel is a fine example of Dravidian style, adorned with intricate carvings, towering gopurams (gateway towers), and a rich history that dates back to the 7th century CE.</p>
+      </div>
+    </div>
+  </section>
+  
+  <hr>
+  
+  <!-- History Section -->
+  <section id="history">
+    <div class="w3-row-padding">
+      <div class="w3-col l6 w3-padding-large">
+        <h1>History</h1>
+        <p>The temple's origins can be traced back to the Pallava dynasty, with significant contributions from the Vijayanagara Empire in later centuries. The name 'Kapaleeshwarar' is derived from the words 'Kapalam' (head) and 'Ishwara' (Lord Shiva), linked to a legend where Lord Shiva, in the form of Kapaleeshwarar, performed penance to atone for a sin.</p>
+        <p>The temple complex houses numerous shrines, each with its unique history and significance. The major deities worshipped here are Kapaleeshwarar (Lord Shiva) and Karpagambal (Goddess Parvati), drawing devotees from all over the world.</p>
+      </div>
+      <div class="w3-col l6 w3-padding-large w3-hide-small">
+        <img src="kapaleeshwarar2.jpg" class="img-responsive" alt="Kapaleeshwarar Temple History">
+      </div>
+    </div>
+  </section>
+  
+  <hr>
+
+  <!-- Ways to Reach Section -->
+  <section id="ways-to-reach">
+    <div class="w3-row-padding">
+      <div class="w3-col l6 w3-padding-large">
+        <h1>Ways to Reach</h1>
+        <p>Kapaleeshwarar Temple is conveniently accessible by various modes of transportation, ensuring a smooth journey for both local and international visitors:</p>
+        <ul>
+          <li><strong>By Air:</strong> Chennai International Airport is the nearest airport, located about 18 kilometers from the temple. From the airport, you can hire a taxi or use public transport to reach the temple.</li>
+          <li><strong>By Train:</strong> Chennai Central Railway Station is the major railhead, situated approximately 7 kilometers from the temple. From the station, you can take a taxi, auto-rickshaw, or use local bus services to reach the temple.</li>
+          <li><strong>By Bus:</strong> Chennai Mofussil Bus Terminus (CMBT) is the primary bus station, located around 12 kilometers from the temple. Regular bus services operate from CMBT to various parts of the city, including Mylapore.</li>
+          <li><strong>By Metro:</strong> The nearest metro station to the temple is Thirumayilai Metro Station, which is just 1 kilometer away. You can either walk or take an auto-rickshaw from the metro station to the temple.</li>
+        </ul>
+      </div>
+      <div class="w3-col l6 w3-padding-large w3-hide-small">
+        <img src="mas.jpg" class="img-responsive" alt="Ways to Reach Kapaleeshwarar Temple">
+      </div>
+    </div>
+  </section>
+  
+  <hr>
+
+  <!-- Festivals Section -->
+  <section id="festivals">
+    <div class="w3-row-padding">
+      <div class="w3-col l6 w3-padding-large">
+        <h1>Festivals</h1>
+        <p>Kapaleeshwarar Temple is renowned for its vibrant festivals, which are celebrated with great fervor and devotion. Some of the major festivals include:</p>
+        <ul>
+          <li><strong>Panguni Peruvizha:</strong> Celebrated in the Tamil month of Panguni (March-April), this festival is marked by grand processions, cultural events, and various religious rituals.</li>
+          <li><strong>Arubathimoovar Festival:</strong> Dedicated to the 63 Nayanmars (saints) of Lord Shiva, this festival involves a magnificent procession of the saints' idols through the streets of Mylapore.</li>
+          <li><strong>Navaratri:</strong> This nine-day festival dedicated to Goddess Durga is celebrated with special poojas, cultural programs, and beautifully decorated temples.</li>
+          <li><strong>Karthigai Deepam:</strong> Known as the festival of lights, Karthigai Deepam is celebrated by lighting traditional oil lamps around the temple premises, creating a mesmerizing sight.</li>
+        </ul>
+      </div>
+      <div class="w3-col l6 w3-padding-large w3-hide-small">
+        <img src="kapaleeshwararfestival.jpg" class="img-responsive" alt="Kapaleeshwarar Temple Festivals">
+      </div>
+    </div>
+  </section>
+  
+  <hr>
+
+  <!-- Pooja Timings Section -->
+  <section id="pooja-timings">
+    <div class="w3-row-padding">
+      <div class="w3-col l6 w3-padding-large">
+        <h1>Pooja Timings</h1>
+        <p>The daily pooja timings at Kapaleeshwarar Temple are as follows:</p>
+        <ul>
+          <li><strong>Morning:</strong> 5:30 AM - 12:00 PM</li>
+          <li><strong>Evening:</strong> 4:00 PM - 9:00 PM</li>
+        </ul>
+        <p>Special poojas and rituals are conducted on auspicious days and festivals, attracting a large number of devotees.</p>
+      </div>
+      <div class="w3-col l6 w3-padding-large w3-hide-small">
+        <img src="pooja.jpg" class="img-responsive" alt="Kapaleeshwarar Temple Pooja Timings">
+      </div>
+    </div>
+  </section>
+  
+  <hr>
+
+  <!-- Contact Section -->
+<section id="contact">
+  <div class="w3-row-padding">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+      <!-- Placeholder for any additional content or image -->
+    </div>
+    <!-- Contact Section -->
+<section id="contact">
+  <div class="w3-row-padding">
+    <div class="w3-col m6 w3-padding-large">
+      <!-- Contact Form -->
+      <h1>Contact Us</h1>
+      <p>If you have any queries or need further information, please feel free to contact us:</p>
+      <form action="/submit_query.php" method="POST" class="contact-form">
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="w3-input w3-border" placeholder="Your Name" required>
+          </div>
+          <div class="w3-half">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="w3-input w3-border" placeholder="Your Email" required>
+          </div>
+        </div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" class="w3-input w3-border" placeholder="Your Message" style="height:200px;" required></textarea>
+        <button type="submit" class="w3-button w3-green w3-margin-top">Submit</button>
+      </form>
+    </div>
+    <div class="w3-col m6 w3-padding-large">
+      <!-- Additional Content or Placeholder -->
+      <p class="w3-text-grey"><i class="fa fa-map-marker fa-fw w3-margin-right"></i> 12, North Mada Street, Mylapore, Chennai, Tamil Nadu - 600004</p>
+      <p class="w3-text-grey"><i class="fa fa-phone fa-fw w3-margin-right"></i> +91-44-2464 1670</p>
+      <p class="w3-text-grey"><i class="fa fa-envelope fa-fw w3-margin-right"></i> kapaleeshwarar@temple.org</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-content">
+      <div class="footer-info">
+          <p>Address: Department Of Tourism, Wallajah Road, Chennai-2</p>
+          <p>Email: tourism@tnstate.com</p>
+          <p>Toll Free no: 1800-456-84923</p>
+          <p>All rights reserved &copy; Tamil Nadu Tourism 2023</p>
+          <p>
+              <a href="#">Copyright</a> | <a href="#">Terms of Use</a> | <a href="#">Cookie Policy</a> | <a href="#">Contact Us</a>
+          </p>
+      
+      <div class="footer-links">
+          <a href="https://www.facebook.com/YourFacebookPage" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/YourInstagramPage" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/YourYouTubeChannel" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- End page content -->
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").classList.add("open");
+}
+
+function closeNav() {
+  document.getElementById("myNav").classList.remove("open");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thiruvidaimaruthur Temple</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: georgia, 'times new roman';
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 50%;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: gold;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: gold;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .details-container {
+            background-color: ivory;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+
+        
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .navigation ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .navigation ul li a {
+            color: #0c0b0b;
+            text-decoration: none;
+        }
+        .navigation {
+            background-color: skyblue;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fef6f6;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #bdbbbb;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ARULMIGU MAHALINGESHWARAR TEMPLE, THIRUVIDAIMARUTHUR</h1>
+    </header>
+    <div class="navigation">
+        <ul>
+            <li><a href="home.php">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">AUDIO GUIDE</a>
+                <div class="dropdown-content">
+                    <a href="Kapaleeshwarar audio (1).mp3">TAMIL LANGUAGE</a>
+                    <a href="">ENGLISH LANGUAGE</a>
+                </div>
+             <li><a href="https://www.google.com/maps/@10.9951778,79.4526023,3a,75y,253.08h,90t/data=!3m8!1e1!3m6!1sAF1QipPfCEFSMAMEn6zSP5MLxLjMsW9zarQae_T6_df9!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPfCEFSMAMEn6zSP5MLxLjMsW9zarQae_T6_df9%3Dw203-h100-k-no-pi0-ya265.78104-ro-0-fo100!7i8192!8i4096?entry=ttu">VIRTUAL TOUR</a></li>
+            <li><a href="darshanbooking.php">BOOK TICKETS</a></li>
+            <li><a href="poojabooking.php">POOJA BOOKING</a></li>
+            <li><a href="donation.php">DONATION</a></li>
+            <li><a href="thiruvidaimaruthurcontact.php">CONTACT</a></li>
+      
+                
+                    
+
+                </div>
+        </ul>
+    
+        
+    </div>
+    <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="thiruvidaimaruthur1.jpg" alt="Temple 1" style="width: 100%; height: 500px">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="thiruvidaimaruthur2.jpg" alt="Temple 2" style="width: 100%; height: 500px;">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="thiruvidaimaruthur3.jpg" alt="Temple 3" style="width: 100%; height: 500px;">
+        
+            </div>
+            <div class="carousel-item">
+                <img src="thiruvidaimaruthur4.jpeg" alt="Temple 4" style="width: 100%; height: 500px;">
+                
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h3>HISTORY</h3>
+            <p>Mahalingeswaraswamy Temple, Thiruvidaimarudur is a Hindu temple dedicated to the deity Shiva, located in Tiruvidaimaruthur, a village in the South Indian state of Tamil Nadu. It is significant to the Hindu sect of Saivism as one of the seven major Shiva temples. Shiva is worshiped as Mahalingeswaraswamy, and is represented by the lingam, with his idol referred to as Jyothirmayalingam. His consort Mookambika is depicted as Devi Bruhatsundarakuchaambika or Bruhatsundarakuchaambigai amman. The lingam of the temple is believed to be the focal point for the seven consorts of Shiva. The presiding deity is revered in the 7th century Tamil Saiva canonical work, the Tevaram, written by Tamil poet saints known as the nayanars and classified as Paadal Petra Sthalam.[1] The 9th century Saiva saint poet Manikkavacakar has sung praise about the temple in his works. Pattinattar, one of the revered saints visited this shrine many times .
+
+                There are 149 inscriptions associated with the temple indicating contributions from Pandyas, Cholas, Thanjavur Nayaks and Thanjavur Maratha kingdom. The oldest parts of the present masonry structure were built during the Chola dynasty in the 9th century, while later expansions, including the towering gopuram gatehouses, are attributed to later periods, up to the Thanjavur Nayaks during the 16th century.</p>
+        </div>
+    </div>
+    <div class="container">
+            <div class="details-container">
+                <h4>OPENING HOURS</h4>
+                <p>6:00 AM - 12:00 PM</p>
+                <p>4.00 PM - 9.30 PM</p>
+            </div>
+            </div>
+    </div>
+    <div class="container">            
+        <div class="details-container">
+            <h4>POOJA TIMINGS</h4>
+            <p>Ushathkalam Pooja - 6:00 AM</p>
+            <p>	Kalasanthi Pooja - 8:00 AM</p>
+            <p>	Uchikalam Pooja - 12.00 AM</p>
+            <p>Sayarakshai Pooja - 6:00 PM</p>
+            <p>	Irandamkalam Pooja - 8:00 PM</p>
+            <p>	Ardha Jamam Pooja - 9:00 PM</p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>LOCATION</h4>
+                <p>SH 64, Thiruvidaimaruthur, Thanjavur-612104,Tamilnadu.</p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>FESTIVALS</h4>
+                <p>Theerthavari</p>
+                <p>Navarathiri</p>
+                <p>Panguni Brahmotsavam</p>
+                <p>Thirukalyanam</p>
+                <p>Ambal Tapasu</p>
+                
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>WAYS TO REACH</h4>
+                <p>By Air: The nearest airport to Thiruvidaimaruthur is Tiruchirappalli International Airport (TRZ), located approximately 88 kilometers away. From the airport, you can hire a taxi or take a bus to reach Thiruvidaimaruthur. The temple is situated about 20 kilometers from Thanjavur city.</p>
+
+<p>By Train: The nearest railway station to Thiruvidaimaruthur is Kumbakonam Railway Station, which is well-connected to major cities in India. From Kumbakonam Railway Station, you can hire a taxi, auto-rickshaw, or take a local bus to reach Thiruvidaimaruthur. The temple is located approximately 13 kilometers from Kumbakonam.</p>
+
+<p>By Road: Thiruvidaimaruthur is well-connected by road and can be reached by buses or private vehicles. You can take a bus from Thanjavur, Kumbakonam, or nearby cities to reach Thiruvidaimaruthur. If you are traveling by car, you can follow the Thanjavur-Kumbakonam Highway (NH36) and then take the Thiruvidaimaruthur Road to reach the temple.</p>
+
+<p>Once you reach Thiruvidaimaruthur, the temple is easily accessible and well-known in the area. You can ask the locals for directions to Thiruvidaimaruthur Temple, and they will guide you accordingly.</p>
+                
+            </div>
+            </div>
+
+    
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

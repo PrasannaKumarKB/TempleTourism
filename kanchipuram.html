@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temple Tourism Website</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    #container {
+      max-width: 100%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+
+    }
+
+    .city-description {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .city-description img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .temple-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      width: 100%;
+    }
+
+    .temple {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .temple img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease-in-out;
+      
+    }
+
+    .temple:hover img {
+        transform: scale(1.1);
+    }
+
+    
+    .banner {
+            background-image: url("chennai.jpg");
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+
+    .readmore {
+        color: gold; 
+        text-decoration: none; 
+        cursor: pointer; 
+        transition: background-color 0.3s ease; 
+    }
+    .readmore:hover {
+        background-color:none; 
+    }
+    p{
+      justify-content: center;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>K A N C H I P U R A M</h1>
+  </header>
+    <div class="banner">
+    
+    </div>
+      
+  <div id="container">
+    <div class="city-description">
+      <p>Kanchipuram also known as Conjeevaram, is a city in the Indian state of Tamil Nadu in the Tondaimandalam region, 72 km (45 mi) from Chennai – the capital of Tamil Nadu. Known as the City of Thousand Temples, Kanchipuram is known for its temple architectures, 1000-pillared halls, huge temple towers and silk saris. Kanchipuram serves as one of the most important tourist destinations in India. Kanchipuram has become a centre of attraction for foreign tourists as well. The city covers an area of 36.14 km2 (13.95 sq mi) and an estimated population of more than 300,000 in 2021.[2] It is the administrative headquarters of Kanchipuram District. Kanchipuram is well-connected by road and rail.</p>
+    </div>
+
+    <div class="temple-grid">
+      <div class="temple">
+        <h3>ARULMIGU KAILASANATHAR TEMPLE</h3>
+        <img src="kailasanathar.jpg" alt="Temple 1">
+        <p>The Kailasanathar temple, also referred to as the Kailasanatha temple, is a Pallava-era historic Hindu temple in Kanchipuram, Tamil Nadu, India. Dedicated to Shiva, it is one of the oldest surviving monuments in Kanchipuram.</p>
+        <a href="kailasanathar2.html" class="readmore">Read More -></a>
+
+      </div>
+
+      <div class="temple">
+        <h3>ARULMIGU EKAMBARESWARAR TEMPLE</h3>
+        <img src="ekambareswarar.jpg" alt="Temple 2">
+        <p>Ekambareswarar Temple is a Hindu temple dedicated to the deity Shiva, located in the town of Kanchipuram in Tamil Nadu, India. It is significant to the Hindu sect of Saivism as one of the temples associated with the five elements, the Pancha Bhoota Stalas, and specifically the element of earth, or Prithvi.</p>
+        <a href="ekambareswarar2.html" class="readmore">Read More -></a>
+
+      </div>
+
+      <div class="temple">
+        <h3>ARULMIGU KAMATCHI AMMAN TEMPLE</h3>
+        <img src="kamatchiamman.jpg" alt="Temple 3">
+        <p>The Kamatchi Amman Temple is an ancient Hindu Temple dedicated to the goddess Kamakshi, one of the highest aspects of Adi Shakti in Shaktism. It is located in the historic city of Kanchipuram, near Chennai, India. Its construction is credited to the Pallava kings, whose capital was in the same city.</p>
+        <a href="kamatchiamman.html" class="readmore">Read More -></a>
+      </div>
+      <div class="temple">
+        <h3>ARULMIGU VARADHARAJA PERUMAL TEMPLE</h3>
+        <img src="varadharaja.jpg" alt="Temple 3">
+        <p>Varadharaja Perumal Temple, also called Hastagiri and Attiyuran, is a Hindu temple dedicated to Vishnu located in the city of Kanchipuram, Tamil Nadu, India. It is one of the Divya Desams, the 108 temples of Vishnu believed to have been visited by the 12 poet saints, or the Alvars.<p>
+        <a href="varadharaja.html" class="readmore">Read More -></a>
+      </div>
+      <div class="temple">
+        <h3>ARULMIGU ULAGALANDHA PERUMAL TEMPLE</h3>
+        <img src="ulagalanthaperumal.jpg" alt="Temple 3">
+        <p>Ulagalandha Perumal Temple is a temple dedicated to Vishnu located in Kanchipuram, Tamil Nadu, India. Constructed in the Dravidian style of architecture, the temple is glorified in the Naalayira Divya Prabandham, the early medieval Tamil canon of the Alvar saints from the 6th through 9th centuries CE. </p>
+        <a href="ulagalanthaperumal.html" class="readmore">Read More -></a>
+      </div>
+      <div class="temple">
+        <h3>ARULMIGU KUMARAKOTTAM TEMPLE</h3>
+        <img src="kumarakottam.jpg" alt="Temple 3">
+        <p>The Kumara kottam Temple is a Hindu temple in Kānchipuram, Tamil Nādu, India. It is dedicated to Lord Murugan, the Hindu war god and the son of the gods Shiva and his mother Pārvathi. The temple is also known as the Subramaniya Swāmi temple. The ancient temple was rebuilt in its present form in 1915 CE.</p>
+        <a href="kumarakottam.html" class="readmore">Read More -></a>
+      </div>
+      <div class="temple">
+        <h3>ARULMIGU KACHABESWARAR TEMPLE</h3>
+        <img src="kachabeshwarar.jpg" alt="Temple 3">
+        <p>Karchapeswarar Temple is a Hindu temple located in the town of Kanchipuram in Tamil Nadu, India. </p>
+        <a href="kachabeshwarar.html" class="readmore">Read More -></a>
+      </div>
+      <div class="temple">
+        <h3>ARULMIGU VIJAYARAGHAVA PERUMAL TEMPLE</h3>
+        <img src="vijayaraghavaperumal.jpg" alt="Temple 3">
+        <p>Vijayaraghava Perumal temple is a Vishnu temple in Thiruputkuli, a village in Kanchipuram district in Tamil Nadu, India. It is situated about 7 miles west of Kanchipuram and half a kilometre from Baluchetti Chattiram, which lies on the Chennai - Vellore highway.</p>
+        <a href="vijayaraghavaperumal.html" class="readmore">Read More -></a>
+      </div>
+      <div class="temple">
+        <h3>ARULMIGU VAIKUNTA PERUMAL TEMPLE</h3>
+        <img src="vaikuntaperumal.jpg" alt="Temple 3">
+        <p>Thiru Parameswara Vinnagaram or Vaikunta Perumal Temple is a temple dedicated to Vishnu, located in Kanchipuram in the South Indian state of Tamil Nadu.</p>
+        <a href="vaikuntaperumal.html" class="readmore">Read More -></a>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</body>
+</html>

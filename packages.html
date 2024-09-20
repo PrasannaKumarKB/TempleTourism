@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Temple Tours</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .banner {
+            background-image: url("packagebanner.jpg");
+            background-size: cover;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            
+        }
+
+        .overlay {
+            position: absolute;
+            left: 50px;
+            text-align: left;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-family: --bs-font-sans-serif;
+            font-size: 50px;
+            color: white;
+        }
+
+        
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 2em auto;
+            max-width: 1200px;
+        }
+
+        .tour-package {
+            font-family: bs-font-sans-serif;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin: 0 1em 1em 0;
+            width: 48%;
+            box-sizing: border-box;
+        }
+
+        .tour-package:hover {
+            transform: scale(1.05);
+        }
+
+        .package-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .package-details {
+            padding: 1em;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        form {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            color: #2c3e50;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            box-sizing: border-box;
+        }
+        .price-content{
+            background-color: gold;
+            border-radius: 5px;
+            left: 0;
+            bottom: 0;
+            color: black;
+            width: 80px;
+            height: 35px;
+            text-align: center;
+        }
+        .price-content p{
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-button" href="home.html" style="position: absolute; top: 20px; left: 20px; font-size: 48px; color:white;text-decoration: none;">&larr;</a>
+    <div class="banner">
+        <div class="overlay">
+            TOUR PACKAGES
+        </div>
+    </div>
+    <form id="filterForm">
+        <label for="startDate">Select Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required>
+
+        <label for="endDate">Select End Date:</label>
+        <input type="date" id="endDate" name="endDate" required>
+
+        <label for="filter">Filter by:</label>
+        <select id="filter" name="filter">
+            <option value="price">Price</option>
+            <option value="rating">Rating</option>
+        </select>
+
+        <button type="button" onclick="applyFilters()">Apply Filters</button>
+    </form>
+    <section id="tourPackagesSection">
+        <!-- Tour packages will be dynamically added here based on user input -->
+    </section>
+    <section>
+        
+        <div class="tour-package">
+            <img class="package-image" src="mahabalipuram.jpeg" alt="Temple 1">
+            <div class="package-details">
+                <h2>CHENNAI AND MAHABALIPURAM PACKAGE</h2>
+                <h3>4 Days</h3>
+                <p>Visit the ancient temples of Chennai and experience the rich cultural heritage of Mahabalipuram.</p>
+                <div class="price-content">
+                    <p>₹ 4000</p>
+                </div>
+             </div>
+        </div>
+
+        <div class="tour-package">
+            <img class="package-image" src="brihadeeswara.jpg" alt="Temple 2">
+            <div class="package-details">
+                <h2>THANJAVUR PACKAGE</h2>
+                <h3>3 Days</h3>
+                <p>Explore the divine temples of Thanjavur and immerse yourself in the spirituality of Tamil Nadu.</p>
+                <div class="price-content">
+                    <p>₹ 4000</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tour-package">
+            <img class="package-image" src="meenakshiamman.jpg" alt="Temple 1">
+            <div class="package-details">
+                <h2>MADURAI PACKAGE</h2>
+                <h3>3 Days</h3>
+                <p>Visit the ancient temples of Madurai and experience the rich cultural heritage.</p>
+                <div class="price-content">
+                    <p>₹ 3000</p>
+                </div>
+             </div>
+        </div>
+
+        <div class="tour-package">
+            <img class="package-image" src="brihadeeswara.jpg" alt="Temple 2">
+            <div class="package-details">
+                <h2>KUMBAKONAM PACKAGE</h2>
+                <h3>5 Days</h3>
+                <p>Explore the divine temples of Kumbakonam and immerse yourself in the spirituality of Tamil Nadu.</p>
+                <div class="price-content">
+                    <p>₹ 4000</p>
+                </div>
+            </div>
+        </div>
+        <div class="tour-package">
+            <img class="package-image" src="trichybanner.jpg" alt="Temple 1">
+            <div class="package-details">
+                <h2>TIRUCHIRAPALLI PACKAGE</h2>
+                <h3>3 Days</h3>
+                <p>Visit the ancient temples of Tiruchirapalli and experience the rich cultural heritage.</p>
+                <div class="price-content">
+                    <p>₹ 2500</p>
+                </div>
+             </div>
+        </div>
+
+        <div class="tour-package">
+            <img class="package-image" src="marudhamalai2.jpg" alt="Temple 2">
+            <div class="package-details">
+                <h2>COIMBATORE PACKAGE</h2>
+                <h3>3 Days</h3>
+                <p>Explore the divine temples of Coimbatore and immerse yourself in the spirituality of Tamil Nadu.</p>
+                <div class="price-content">
+                    <p>₹ 3000</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    
+    <script>
+        const tourPackages = [
+            { name: 'Package 1', date: '2023-12-01', price: 500 },
+            { name: 'Package 2', date: '2023-12-10', price: 800 },
+            // Add more package details as needed
+        ];
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            applyFilters();
+        });
+    
+        document.getElementById('startDate').addEventListener('input', applyFilters);
+        document.getElementById('endDate').addEventListener('input', applyFilters);
+        document.getElementById('filter').addEventListener('change', applyFilters);
+    
+        function applyFilters() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const filterBy = document.getElementById('filter').value;
+    
+            const filteredPackages = tourPackages.filter(package => {
+                return (
+                    package.date >= startDate &&
+                    package.date <= endDate
+                );
+            });
+    
+            if (filterBy === 'price') {
+                filteredPackages.sort((a, b) => a.price - b.price);
+            } else if (filterBy === 'rating') {
+                // Implement rating-based sorting if needed
+            }
+    
+            displayPackages(filteredPackages);
+        }
+    
+        function displayPackages(packages) {
+            const section = document.getElementById('tourPackagesSection');
+            section.innerHTML = '';
+    
+            packages.forEach(package => {
+                const packageDiv = document.createElement('div');
+                packageDiv.className = 'tour-package';
+    
+                const packageDetails = `
+                    <img class="package-image" src="temple1.jpg" alt="${package.name}">
+                    <div class="package-details">
+                        <h2>${package.name}</h2>
+                        <p>Date: ${package.date}</p>
+                        <p>Price: $${package.price}</p>
+                    </div>
+                `;
+    
+                packageDiv.innerHTML = packageDetails;
+                section.appendChild(packageDiv);
+            });
+        }
+    </script>
+</body>
+</html>

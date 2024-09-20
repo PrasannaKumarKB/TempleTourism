@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Thanjavur City - An Overview</title>
+  <style>
+    /* CSS styling for the page */
+    body {
+      font-family: georgia, TimesNewRoman;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .article-img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 20px;
+      margin-left:10%;
+    }
+    .accommodation {
+      margin-bottom: 40px;
+    }
+    
+    .accommodation-img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Thanjavur City - An Overview</h1>
+  </header>
+
+  <article>
+    <img class="article-img" src="thanjavur.jpg" alt="Thanjavur City">
+    <p>
+      Thanjavur, also known as Tanjore, is a city located in the Indian state of Tamil Nadu. It is renowned for its rich cultural heritage, historical significance, and architectural marvels.
+    </p>
+    <p>
+      The city is famous for its ancient temples, with the Brihadeeswarar Temple being the most iconic. This UNESCO World Heritage Site is dedicated to Lord Shiva and features remarkable Dravidian architecture and intricate stone carvings. The temple is a magnificent symbol of the Chola dynasty's architectural prowess.
+    </p>
+    <img class="article-img" src="thanjavurpalace.jpg" alt="Thanjavur Palace">
+    <p>
+      Thanjavur is also home to the grand Thanjavur Palace, constructed by the Nayak rulers and later renovated by the Maratha kings. The palace complex houses the Royal Palace Museum, showcasing a wide range of artifacts and exhibits that depict the history and culture of the region.
+    </p>
+    <img class="article-img" src="thanjavurart.jpg" alt="Thanjavur Art">
+    <p>
+      The city is renowned for its unique art forms, including the famous Thanjavur paintings. These traditional South Indian paintings are known for their vibrant colors, gold foils, and detailed workmanship. Visitors can explore art galleries and workshops to witness the creation of these exquisite artworks.
+    </p>
+    <img class="article-img" src="thanjavurmusic.jpg" alt="Thanjavur Music">
+    <p>
+      Thanjavur is a significant hub for classical Carnatic music, known for its legendary musicians and music schools. The annual Thyagaraja Aradhana festival, held in January, attracts musicians and music enthusiasts from around the world to pay homage to Saint Thyagaraja, a renowned composer.
+    </p>
+    <img class="article-img" src="thanjavursilk.jpg" alt="Thanjavur Silk">
+    <p>
+      The city is famous for its handwoven silk sarees, known as Thanjavur Silk or Tanjore Silk. These sarees are characterized by their intricate designs, rich colors, and exquisite craftsmanship. Visitors can explore local markets and silk showrooms to witness the weaving process and purchase these beautiful textiles.
+    </p>
+    <p>
+      Thanjavur is a cultural treasure trove that offers a glimpse into the glorious past of the region. Its historical landmarks, artistic traditions, and vibrant cultural festivals make it a captivating destination for travelers seeking a blend of heritage and art.
+    </p>
+    <div class="accommodation">
+      <h2>Accommodation Facilities</h2>
+      <img class="accommodation-img" src="hoteltamillnadutjr.jpg" alt="Hotel 1">
+      <h3>Hotel Tamilnadu</h3>
+      <p>
+      The central location of the heritage property of Hotel Tamilnadu Thanjavur lets you unveil the historical legacy of the Big Temple and Thanjavur Palace located nearby. Outstanding amenities and delightful service amaze the visitors with a refreshing stay at this hotel.
+      </p>
+      
+      <!-- Add more accommodation facilities as needed -->
+    </div>
+    
+    <p>
+      Thanjavur provides a range of accommodation options to cater to the needs of different travelers. Whether you're looking for luxury hotels, budget-friendly guesthouses, or heritage resorts, you'll find plenty of choices to make your stay in Thanjavur enjoyable.
+    </p>
+  </article>
+  
+  <footer>
+    <p>&copy; 2023 Thanjavur City Tourism. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trichy District - An Overview</title>
+  <style>
+    /* CSS styling for the page */
+    body {
+      font-family: georgia, TimesNewRoman;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .article-img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 20px;
+      margin-left:10%;
+    }
+    
+    .accommodation {
+      margin-bottom: 40px;
+    }
+    
+    .accommodation-img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Trichy District - An Overview</h1>
+  </header>
+
+  <article>
+    <img class="article-img" src="trichybanner.jpg" alt="Trichy District">
+    <p>
+      Trichy, also known as Tiruchirappalli, is a vibrant district located in the Indian state of Tamil Nadu. It is famous for its historical significance, architectural marvels, and cultural heritage.
+    </p>
+    <p>
+      The district is home to several iconic landmarks, including the famous Rockfort Temple. Built on a massive rock, the temple complex offers breathtaking views of the city and houses ancient cave temples dedicated to Lord Shiva. It is a popular pilgrimage site and attracts devotees from all over the country.
+    </p>
+    <img class="article-img" src="thiru.jpg" alt="Thiruvanaikaval Temple">
+    <p>
+      Thiruvanaikaval Temple, located on an island in the Cauvery River, is another prominent religious site in Trichy. It is one of the Pancha Bhoota Stalas (five elements temples) dedicated to Lord Shiva and represents the element of water. The temple's architecture and serene ambiance make it a must-visit for spiritual seekers and architecture enthusiasts.
+    </p>
+    <img class="article-img" src="kallanai.jpg" alt="Kallanai Dam">
+    <p>
+      Kallanai Dam, also known as Grand Anicut, is an ancient dam built across the Cauvery River. It is one of the oldest water-diversion structures in the world and has been providing irrigation water to the region for centuries. The dam is a marvel of engineering and attracts tourists interested in history and irrigation systems.
+    </p>
+    <img class="article-img" src="srirangam1.jpg" alt="Sri Ranganathaswamy Temple">
+    <p>
+      Sri Ranganathaswamy Temple, located on Srirangam Island, is a renowned Hindu temple dedicated to Lord Vishnu. It is one of the largest functioning temple complexes in the world and showcases exquisite Dravidian architecture. The temple's annual festival, Vaikunta Ekadasi, is a major event that draws devotees and tourists alike.
+    </p>
+    <div class="accommodation">
+      <h2>Accommodation Facilities</h2>
+      <img class="accommodation-img" src="hoteltamillnadutry.jpg" alt="Hotel 1">
+      <h3>Hotel Tamilnadu</h3>
+      <p>
+        Experience luxury and comfort at Hotel Tamilnadu, located in the heart of the city. The hotel offers top-notch amenities and services to make your stay memorable. With its convenient location, you'll have easy access to various attractions in Trichy.
+      </p>
+    </div>
+   
+    
+    <p>
+      Trichy district offers a wide range of accommodation options, including luxury hotels, budget-friendly guesthouses, and homestays. Whether you're visiting for business or leisure, you'll find suitable options to make your stay in Trichy enjoyable.
+    </p>
+  </article>
+  
+  <footer>
+    <p>&copy; 2023 Trichy District Tourism. All rights reserved.</p>
+  </footer>
+</body>
+</html>

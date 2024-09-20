@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Famous Tourist Attractions in Trichy</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: georgia, TimesNewRoman;
+      background-image: url("gallerybackground.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .gallery-item {
+      width: 300px;
+      margin: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    .gallery-item-content {
+      padding: 20px;
+    }
+    
+    .gallery-item-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    .gallery-item-description {
+      font-size: 16px;
+      color: black;
+      text-align: center;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .header {
+      background-image: url("header.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>FAMOUS TOURIST ATTRACTIONS IN TRICHY</h1>
+  </div>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="uchipillayar2.jpg" alt="Rockfort Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Rockfort Temple</h3>
+        <p class="gallery-item-description">Rockfort Temple is a famous temple complex located in Trichy. It is situated on a massive rock and consists of two main temples, the Ucchi Pillayar Temple and the Thayumanaswamy Temple. Climbing the rock offers panoramic views of the city.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="srirangam.webp" alt="Sri Ranganathaswamy Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Sri Ranganathaswamy Temple</h3>
+        <p class="gallery-item-description">Sri Ranganathaswamy Temple is a renowned Hindu temple dedicated to Lord Vishnu. It is located on Srirangam Island and is one of the largest functioning temple complexes in the world. The temple's architecture and religious significance attract devotees from far and wide.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="jambukeshwarar1.jpg" alt="Thiruvanaikaval Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Thiruvanaikaval Temple</h3>
+        <p class="gallery-item-description">Thiruvanaikaval Temple, also known as Jambukeswarar Temple, is a popular Shiva temple located on an island in the Cauvery River. It is one of the Pancha Bhoota Stalas (five elements temples) representing the element of water.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="kallanai.jpg" alt="Kallanai Dam">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Kallanai Dam</h3>
+        <p class="gallery-item-description">Kallanai Dam, also known as Grand Anicut, is one of the oldest water-diversion structures in the world. It is located on the Cauvery River and provides irrigation water for the fertile delta region. The dam's historical and engineering significance attracts visitors.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="butterflypark.jpg" alt="Butterfly Park">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Butterfly Park</h3>
+        <p class="gallery-item-description">Butterfly Park in Trichy is a beautiful nature reserve that houses various species of butterflies. It provides a serene environment with lush greenery and colorful butterflies fluttering around. The park is an ideal place for nature enthusiasts and photographers.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="puliancholai.jpg" alt="Puliyancholai Falls">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Puliyancholai Falls</h3>
+        <p class="gallery-item-description">Puliyancholai Falls is a scenic waterfall located in the Puliyancholai village near Trichy. Surrounded by dense forests, it offers a refreshing experience and serves as a popular picnic spot. The waterfall is known for its tranquil ambiance and natural beauty.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="vayalur.jpg" alt="Vayalur Murugan Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Vayalur Murugan Temple</h3>
+        <p class="gallery-item-description">Vayalur Murugan Temple is a famous temple dedicated to Lord Murugan, located near Trichy. It is believed to be one of the ancient temples associated with the Skanda Purana. The temple's serene atmosphere and religious significance attract devotees.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="church.jpg" alt="St. Joseph's Church">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">St. Joseph's Church</h3>
+        <p class="gallery-item-description">St. Joseph's Church is a prominent Christian place of worship in Trichy. The church's architecture and peaceful ambiance make it a popular destination for prayer and reflection. It holds religious services and attracts both locals and visitors.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

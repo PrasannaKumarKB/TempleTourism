@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kumbakonam - An Overview</title>
+  <style>
+    /* CSS styling for the page */
+    body {
+      font-family: georgia, TimesNewRoman;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .article-img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 20px;
+      margin-left:10%;
+    }
+    .accommodation {
+      margin-bottom: 40px;
+    }
+    
+    .accommodation-img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kumbakonam - An Overview</h1>
+  </header>
+
+  <article>
+    <img class="article-img" src="airavateswara1.webp" alt="Kumbakonam City">
+    <p>
+      Kumbakonam, located in the Thanjavur district of Tamil Nadu, is a vibrant city renowned for its rich cultural heritage and architectural marvels. It is often referred to as the "Temple Town" due to its numerous temples dedicated to various Hindu deities.
+    </p>
+    <p>
+      The city is famous for its magnificent Chola temples, showcasing the architectural brilliance of the Chola dynasty. The Brihadeeswarar Temple in nearby Thanjavur, a UNESCO World Heritage site, is a must-visit attraction. The Airavatesvara Temple and the Sarangapani Temple in Kumbakonam are also renowned for their architectural splendor.
+    </p>
+    <img class="article-img" src="mahamaham1.jpg" alt="Mahamaham Tank">
+    <p>
+      Kumbakonam is home to the sacred Mahamaham Tank, where the Mahamaham festival is celebrated once every 12 years. This festival attracts a large number of devotees who gather to take a holy dip in the tank, believing it to cleanse them of their sins. The town comes alive with vibrant processions, rituals, and cultural performances during this auspicious occasion.
+    </p>
+    <img class="article-img" src="coffee.jpg" alt="Kumbakonam Coffee">
+    <p>
+      Kumbakonam is also renowned for its unique and flavorful filter coffee. The aroma of freshly brewed coffee wafts through the streets, and traditional coffee houses known as "kumbakonam degree coffee" serve this aromatic beverage in a traditional manner. A sip of Kumbakonam coffee is a delightful experience for coffee enthusiasts.
+    </p>
+    <img class="article-img" src="kumbeshwarar.jpg" alt="Adi Kumbeshwara Temple">
+    <p>
+      The Adi Kumbeshwara Temple, dedicated to Lord Shiva, is a significant religious site in Kumbakonam. It is believed to be the place where Lord Shiva revealed the secret of the Mahamaham festival to the divine cow Kamadhenu. The temple's architecture and spiritual ambiance attract devotees from far and wide.
+    </p>
+   
+  </article>
+  
+  <footer>
+    <p>&copy; 2023 Kumbakonam City Tourism. All rights reserved.</p>
+  </footer>
+</body>
+</html>

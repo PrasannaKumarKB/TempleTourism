@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sarabeswarar Temple</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: georgia, 'times new roman';
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 50%;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: gold;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: gold;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .details-container {
+            background-color: ivory;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+
+        
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .navigation ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .navigation ul li a {
+            color: #0c0b0b;
+            text-decoration: none;
+        }
+        .navigation {
+            background-color: skyblue;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fef6f6;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #bdbbbb;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SARABESWARAR TEMPLE</h1>
+    </header>
+    <div class="navigation">
+        <ul>
+            <li><a href="home.php">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">AUDIO GUIDE</a>
+                <div class="dropdown-content">
+                    <a href="Kapaleeshwarar audio (1).mp3">TAMIL LANGUAGE</a>
+                    <a href="">ENGLISH LANGUAGE</a>
+                </div>
+             <li><a href="https://www.google.com/maps/@10.9901972,79.4335429,3a,75y,255.01h,90t/data=!3m8!1e1!3m6!1sAF1QipOU8YAMLrTqN3p0FkFiZ-Oug9nfu15LuRtP4SYp!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOU8YAMLrTqN3p0FkFiZ-Oug9nfu15LuRtP4SYp%3Dw203-h100-k-no-pi0-ya294.74442-ro-0-fo100!7i8704!8i4352?entry=ttu">VIRTUAL TOUR</a></li>
+            <li><a href="darshanbooking.php">BOOK TICKETS</a></li>
+            <li><a href="poojabooking.php">POOJA BOOKING</a></li>
+            <li><a href="donation.php">DONATION</a></li>
+            <li><a href="sarabeshwararcontact.php">CONTACT</a></li>
+      
+                
+                    
+
+                </div>
+        </ul>
+    
+        
+    </div>
+    <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="sarabeshwarar1.jpg" alt="Temple 1" style="width: 100%; height: 500px">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="sarabeshwarar2.jpg" alt="Temple 2" style="width: 100%; height: 500px;">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="sarabeshwarar3.jpg" alt="Temple 3" style="width: 100%; height: 500px;">
+        
+            </div>
+            <div class="carousel-item">
+                <img src="sarabeshwarar4.jpg" alt="Temple 4" style="width: 100%; height: 500px;">
+                
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h3>HISTORY</h3>
+            <p>The Kampaheswarar Temple or kampa-hara-ishvarar ( kampa-hareswarar ) is a Hindu temple dedicated to the god Shiva. It is situated in Thirubuvanam, a village in Thanjavur district in the South Indian State of Tamil Nadu, on the Mayiladuthurai-Kumbakonam road. Shiva is worshiped as "Kampahareswarar" as he removed the quaking (Skt. Kampa) of a king who was being haunted by a Brahmarakshasa. It was built by Kulothunga Chola III and is considered the last of the four masterpieces built during the Medieval Chola era. NOW THIRUBUVANAM has a major dominance of Saurashtra people who governed by the head called MR.RAJENDIRAN leader of Saurashtra people.The temple has a shrine for Sharabha, a depiction of Shiva, a part-lion and part-bird beast in Hindu mythology, who, according to Sanskrit literature, is eight-legged and more powerful than a lion or an elephant, possessing the ability to clear a valley in one jump. The temple is considered in the line of Brihadisvara Temple at Thanjavur, Gangaikonda Cholapuram temple and Airavatesvara temple, with the trio forming the Great Living Chola Temples.</p>
+        </div>
+    </div>
+    <div class="container">
+            <div class="details-container">
+                <h4>OPENING HOURS</h4>
+                <p>8:00 AM - 12:00 PM</p>
+                <p>4.00 PM - 8:00 PM</P>
+            </div>
+            </div>
+    </div>
+    <div class="container">            
+        <div class="details-container">
+            <h4>POOJA TIMINGS</h4>
+                <p>Ushathkalam Pooja - 05:30 AM</p>
+                <p>	Kalasanthi Pooja - 08:00 AM</p>
+                <p>	Uchikalam Pooja - 10.00 AM</p>
+                <p>Sayarakshai Pooja - 5:00 PM</p>
+                <p>	Irandamkalam Pooja - 7:00 PM</p>
+                <p>	Ardha Jamam Pooja - 8:00 PM</p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>LOCATION</h4>
+                <p>No. 55, State Highway 64, Thirubuvanam, Tamil Nadu 612103</p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>FESTIVALS</h4>
+                <p>Panguni Bramahotsavam</p>
+                <p>Saraba Utsavam</p>
+                
+                
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>WAYS TO REACH</h4>
+                <p>By Air: The nearest airport to Kumbakonam is Tiruchirappalli International Airport (TRZ), located approximately 91 kilometers away. From the airport, you can hire a taxi or take a pre-booked cab to reach Sarabeshwarar Temple in Kumbakonam. The journey from the airport to Kumbakonam takes around 2-3 hours, depending on the traffic conditions.</p>
+
+<p>By Train: Kumbakonam has its own railway station, which is well-connected to major cities in Tamil Nadu and other parts of India. You can check for direct trains to Kumbakonam from your location. From the railway station, you can hire an auto-rickshaw or a taxi to reach Sarabeshwarar Temple, which is located in the heart of Kumbakonam.</p>
+
+<p>By Road: Kumbakonam is well-connected by road and has good connectivity with nearby cities and towns. You can reach Kumbakonam by private car, taxi, or bus. The town is situated on the Chennai-Tanjore highway (NH-32) and is easily accessible. You can also consider taking a bus operated by the Tamil Nadu State Transport Corporation (TNSTC) or private bus operators. Several bus services connect Kumbakonam with major cities in Tamil Nadu and neighboring states.</p>
+
+<p>Once you reach Kumbakonam, Sarabeshwarar Temple is located in the heart of the town, near the Mahamaham tank. It is easily accessible by auto-rickshaws, taxis, or even by walking from the main bus stand or railway station.</p>
+                
+                
+            </div>
+            </div>
+
+    
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

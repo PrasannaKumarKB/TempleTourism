@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thirunageshwaram Temple</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: georgia, 'times new roman';
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 50%;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: gold;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: gold;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .details-container {
+            background-color: ivory;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+
+        
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .navigation ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .navigation ul li a {
+            color: #0c0b0b;
+            text-decoration: none;
+        }
+        .navigation {
+            background-color: skyblue;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fef6f6;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #bdbbbb;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>THIRUNAGESWARAM TEMPLE</h1>
+    </header>
+    <div class="navigation">
+        <ul>
+            <li><a href="home.php">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">AUDIO GUIDE</a>
+                <div class="dropdown-content">
+                    <a href="Kapaleeshwarar audio (1).mp3">TAMIL LANGUAGE</a>
+                    <a href="">ENGLISH LANGUAGE</a>
+                </div>
+             <li><a href="https://www.google.com/maps/@13.0334759,80.2705295,3a,75y,288.16h,101.78t/data=!3m6!1e1!3m4!1s27FcVWOCZdV9Td0uiIWSVw!2e0!7i13312!8i6656?entry=ttu">VIRTUAL TOUR</a></li>
+            <li><a href="darshanbooking.php">BOOK TICKETS</a></li>
+            <li><a href="poojabooking.php">POOJA BOOKING</a></li>
+            <li><a href="donation.php">DONATION</a></li>
+            <li><a href="thirunageshwaramcontact.php">CONTACT</a></li>
+      
+                
+                    
+
+                </div>
+        </ul>
+    
+        
+    </div>
+    <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="thirunageshwaram1.jpg" alt="Temple 1" style="width: 100%; height: 500px">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="thirunageshwaram2.jpg" alt="Temple 2" style="width: 100%; height: 500px;">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="thirunageshwaram3.jpg" alt="Temple 3" style="width: 100%; height: 500px;">
+        
+            </div>
+            <div class="carousel-item">
+                <img src="thirunageshwaram4.jpg" alt="Temple 4" style="width: 100%; height: 500px;">
+                
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h3>HISTORY</h3>
+            <p>Tirunageswaram Naganathar Temple also known as Rahu Stalam is a Hindu temple dedicated to the deity Shiva, located in Tirunageswaram, a village in the outskirts of Kumbakonam, a town in Tamil Nadu, India. It is significant to the Hindu sect of Saivism as one of the temples associated with the nine planet elements, the Navagraha Stalas, and specifically Rahu. Shiva is worshiped as Naganathar, and is represented by the lingam. His consort Parvati is depicted as Piraisoodi Amman. The presiding deity is revered in the 7th century Tamil Saiva canonical work, the Tevaram, written by Tamil saint poets known as the nayanars and classified as Paadal Petra Sthalam.It houses four gateway towers known as gopurams. The temple has numerous shrines, with those of Naganathar, Rahu and Piraisoodi Amman being the most prominent. The temple complex houses many halls; the most notable is the ornamental entrance hall built during the Nayak period.The temple has six daily rituals at various times from 5:30 a.m. to 10 p.m., and twelve yearly festivals on its calendar.</p>
+        </div>
+    </div>
+    <div class="container">
+            <div class="details-container">
+                <h4>OPENING HOURS</h4>
+                <p>6:00 AM - 1:00 PM</p>
+                <p>4.00 PM - 9:00 PM</P>
+            </div>
+            </div>
+    </div>
+    <div class="container">            
+        <div class="details-container">
+            <h4>POOJA TIMINGS</h4>
+                <p>Ushathkalam Pooja - 6:30 AM</p>
+                <p>	Kalasanthi Pooja - 9:00 AM</p>
+                <p>	Uchikalam Pooja - 1.00 PM</p>
+                <p>Sayarakshai Pooja - 5:00 PM</p>
+                <p>	Irandamkalam Pooja - 7:00 PM</p>
+                <p>	Ardha Jamam Pooja - 9:00 PM</p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>LOCATION</h4>
+                <p> Thirunageswaram, Thanjavur, Tamil Nadu 612204</p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>FESTIVALS</h4>
+                <p>Bramahotsavam</p>	
+                <p>Kandashasti Uthsavam</p>
+                <p>Shivarathiri Mahothsavam</p>	
+                <p>Navarathri</p>	
+                <p>Sekkizhar Vaikasi</p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>WAYS TO REACH</h4>
+                <p>By Air: The nearest airport to Kumbakonam is Tiruchirappalli International Airport (TRZ), located approximately 91 kilometers away. From the airport, you can hire a taxi or take a pre-booked cab to reach Thirunageshwaram Temple in Kumbakonam. The journey from the airport to Kumbakonam takes around 2-3 hours, depending on the traffic conditions.</p>
+
+<p>By Train: Kumbakonam has its own railway station, which is well-connected to major cities in Tamil Nadu and other parts of India. You can check for direct trains to Kumbakonam from your location. From the railway station, you can hire an auto-rickshaw or a taxi to reach Thirunageshwaram Temple, which is located around 8 kilometers away from Kumbakonam.</p>
+
+<p>By Road: Kumbakonam is well-connected by road and has good connectivity with nearby cities and towns. You can reach Kumbakonam by private car, taxi, or bus. The town is situated on the Chennai-Tanjore highway (NH-32) and is easily accessible. You can also consider taking a bus operated by the Tamil Nadu State Transport Corporation (TNSTC) or private bus operators. Several bus services connect Kumbakonam with major cities in Tamil Nadu and neighboring states.</p>
+
+<p>Once you reach Kumbakonam, you can hire a taxi or an auto-rickshaw to reach Thirunageshwaram Temple, which is located approximately 8 kilometers west of Kumbakonam. It is advisable to check the exact route and fares with the local transport providers or seek guidance from the locals.</p>
+
+
+                
+            </div>
+            </div>
+
+    
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

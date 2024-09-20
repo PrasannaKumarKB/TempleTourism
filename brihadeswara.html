@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanjai Big Temple</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: georgia, 'times new roman';
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 50%;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: gold;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: gold;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .details-container {
+            background-color: ivory;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+
+        
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .navigation ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .navigation ul li a {
+            color: #0c0b0b;
+            text-decoration: none;
+        }
+        .navigation {
+            background-color: skyblue;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fef6f6;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #bdbbbb;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>BRIHADEESWARAR TEMPLE</h1>
+    </header>
+    <div class="navigation">
+        <ul>
+            <li><a href="home.php">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">AUDIO GUIDE</a>
+                <div class="dropdown-content">
+                    <a href="Kapaleeshwarar audio (1).mp3">TAMIL LANGUAGE</a>
+                    <a href="">ENGLISH LANGUAGE</a>
+                </div>
+             <li><a href="https://www.google.com/maps/@10.7829023,79.1319533,2a,75y,256.76h,92.55t/data=!3m6!1e1!3m4!1sArUY9YHp5VbJ1E_1V3X9uQ!2e0!7i13312!8i6656?entry=ttu">VIRTUAL TOUR</a></li>
+            <li><a href="darshanbooking.php">BOOK TICKETS</a></li>
+            <li><a href="poojabooking.php">POOJA BOOKING</a></li>
+            <li><a href="donation.php">DONATION</a></li>
+            <li><a href="brihadeeswaracontact.php">CONTACT</a></li>
+      
+                
+                    
+
+                </div>
+        </ul>
+    
+        
+    </div>
+    <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="periyakovil1.webp" alt="Temple 1" style="width: 100%; height: 500px">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="periyakovil2.jpg" alt="Temple 2" style="width: 100%; height: 500px;">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="periyakovil3.jpg" alt="Temple 3" style="width: 100%; height: 500px;">
+        
+            </div>
+            <div class="carousel-item">
+                <img src="periyakovil4.jpg" alt="Temple 4" style="width: 100%; height: 500px;">
+                
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h3>HISTORY</h3>
+            <p>Brihadishvara Temple, called Rajarajesvaram (lit. 'Lord of Rajaraja') by its builder, and known locally as Thanjai Periya Kovil (lit. 'Thanjavur Big Temple') and Peruvudaiyar Kovil, is a Shaivite Hindu temple built in a Chola architectural style located on the south bank of the Cauvery river in Thanjavur, Tamil Nadu, India. It is one of the largest Hindu temples and an exemplar of Tamil architecture. It is also called Dakshina Meru (Meru of the South). Built by Chola emperor Rajaraja I between 1003 and 1010 CE, the temple is a part of the UNESCO World Heritage Site known as the "Great Living Chola Temples", along with the Chola-era Gangaikonda Cholapuram temple and Airavatesvara temple, which are about 70 kilometres (43 mi) and 40 kilometres (25 mi) to its northeast respectively.The original monuments of this 11th-century temple were built around a moat. It included gopura, the main temple, its massive tower, inscriptions, frescoes, and sculptures predominantly related to Shaivism, but also of Vaishnavism and Shaktism. The temple was damaged in its history and some artwork is now missing. Additional mandapam and monuments were added in the centuries that followed. The temple now stands amidst fortified walls that were added after the 16th century.Built using granite, the vimana tower above the shrine is one of the tallest in South India.[6] The temple has a massive colonnaded prakara (corridor) and one of the largest Shiva lingas in India. It is also famed for the quality of its sculpture, as well as being the location that commissioned the brass Nataraja, Shiva as the lord of dance, in the 11th century. The complex includes shrines for Nandi, Parvati, Murugan, Vinayagar, Sabhapati, Dakshinamurti, Chandikeshwar, Varahi, Thiyagarajar of Thiruvarur, Siddhar Karuvoorar and others.The temple is one of the most visited tourist attractions in Tamil Nadu.</p>
+        </div>
+    </div>
+    <div class="container">
+            <div class="details-container">
+                <h4>OPENING HOURS</h4>
+                <p>6:00 AM - 12:30 PM</p>
+                <p>4.00 PM - 8:30 PM</P>
+            </div>
+            </div>
+    </div>
+    <div class="container">            
+        <div class="details-container">
+                <h4>POOJA TIMINGS</h4>
+                <p>Palabhishekam - 8.30 AM</p>
+                <p>Uchikalam Pooja - 12.00 PM</p>
+                <p>Sayarakshai - 6.00 PM</p>
+                <p>Ardha Jama Pooja - 8.00 PM</p>
+            
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>LOCATION</h4>
+                <p> Membalam Rd, Balaganapathy Nagar, Thanjavur-613007, Tamilnadu. </p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>FESTIVALS</h4>
+                <p>Maha Sivarathri</p>
+                <p>Aipasi Pournami Vizha</p>
+                <p>Margazhi Thiruvathirai</p>
+                
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>WAYS TO REACH</h4>
+                <p>By Air: The nearest airport to Thanjavur is Tiruchirappalli International Airport (TRZ), located approximately 60 kilometers away. From the airport, you can hire a taxi or take a bus to reach Thanjavur.</p>
+
+<p>By Train: Thanjavur has its own railway station called Thanjavur Junction. It is well-connected to major cities in India. From the railway station, you can hire a taxi, auto-rickshaw, or take a local bus to reach the Brihadeeswarar Temple.</p>
+
+<p>By Road: Thanjavur is well-connected by road and has good bus connectivity. You can take a bus from nearby cities like Chennai, Trichy, or Madurai to reach Thanjavur. Additionally, you can also hire a taxi or drive by car to the temple.</p>
+
+<p>Once you reach Thanjavur, the Brihadeeswarar Temple is located in the heart of the city, near the Thanjavur Palace. It is easily accessible and well-marked, so you can ask the locals for directions if needed.</p>
+
+
+
+
+
+
+
+            </div>
+            </div>
+
+    
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

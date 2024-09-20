@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: cursive;
+        }
+
+        .banner {
+            background-image: url("gallerybanner.webp");
+            background-size: cover;
+            height: 700px;
+            display: flex;
+            text-align: left;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: left;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery:hover .overlay {
+        transform: translateY(-50%);
+    }
+
+
+        h1 {
+            text-align: left;
+            color: white;
+            font-size: xxx-large;
+            margin-left: 60px;
+        }
+
+        h3 {
+        color: white;
+        margin-bottom: 30px;
+        margin-left: 10px;
+        transform: translateY(0); /* Initial position */
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* Maintain a 4:3 aspect ratio for the images */
+            overflow: hidden;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.10);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .arrow-left,
+        .arrow-right {
+            position: absolute;
+            top: 50%;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .arrow-left {
+            left: 20px;
+        }
+
+        .arrow-right {
+            right: 20px;
+        }
+
+        .expanded:hover .arrow-left,
+        .expanded:hover .arrow-right {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .arrow {
+            opacity: 1;
+        }
+
+        .expanded {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .expanded img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .fade {
+            animation: fade 3s infinite;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="overlay">
+            <h1>Gallery</h1>
+        </div>
+    </div>
+
+    <h1 style="color: black; font-size: xx-large; margin-top: 10%;">HILLS</h1>
+    <div class="gallery">
+        <div class="gallery-item" onclick="expandImage('ooty', 0)">
+            <img src="ootygallery.jpg" alt="Image 1">
+            <div class="overlay">
+                <h3>OOTACAMUND</h3>
+            </div>
+            <div class="arrow">&#9658;</div>
+        </div>
+        <div class="gallery-item" onclick="expandImage('kodaikanal', 0)">
+            <img src="kodaikanalgallery.avif" alt="Image 2">
+            <div class="overlay">
+                <h3>KODAIKANAL</h3>
+            </div>
+            <div class="arrow">&#9658;</div>
+        </div>
+        <div class="gallery-item" onclick="expandImage('yercaud', 0)">
+            <img src="yercaudgallery.webp" alt="Image 3">
+            <div class="overlay">
+                <h3>YERCAUD</h3>
+            </div>
+            <div class="arrow">&#9658;</div>
+        </div>
+    </div>
+
+    <div class="expanded" id="expandedContainer" onclick="closeExpandedImage()">
+        <div class="arrow arrow-left" onclick="navigateImages('prev', 'ooty')">&#9664;</div>
+        <span class="close-btn">&#10006;</span>
+        <div class="arrow arrow-right" onclick="navigateImages('next', 'ooty')">&#9654;</div>
+        <div class="slideshow-container" id="slideshowContainer"></div>
+    </div>
+
+    <script>
+        var currentImageIndex;
+
+        function expandImage(destination, initialIndex) {
+            currentImageIndex = initialIndex;
+            showImage(destination);
+            document.getElementById('expandedContainer').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showImage(destination) {
+            var images = getImagesForDestination(destination);
+            var slideshowContainer = document.getElementById('slideshowContainer');
+            slideshowContainer.innerHTML = '';
+
+            var img = document.createElement('img');
+            img.src = images[currentImageIndex];
+            img.className = 'fade';
+            slideshowContainer.appendChild(img);
+        }
+
+        function navigateImages(direction, destination) {
+            var images = getImagesForDestination(destination);
+            if (direction === 'next') {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            } else if (direction === 'prev') {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            }
+            showImage(destination);
+        }
+
+        function getImagesForDestination(destination) {
+            switch (destination) {
+                case 'ooty':
+                    return ['ootygallery.jpg', 'railwaybanner.webp', 'ootygallery3.jpg', 'ootygallery4.jpg'];
+                case 'kodaikanal':
+                    return ['kodaikanalgallery.avif', 'kodaikanalgallery2.avif', 'kodaikanalgallery3.avif', 'kodaikanalgallery4.avif'];
+                case 'yercaud':
+                    return ['yercaudgallery.webp', 'yercaudgallery2.webp', 'yercaudgallery3.webp', 'yercaudgallery4.webp'];
+                default:
+                    return [];
+            }
+        }
+
+        function closeExpandedImage() {
+            document.getElementById('expandedContainer').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable scrolling after closing
+        }
+    </script>
+    
+    
+</body>
+
+</html>

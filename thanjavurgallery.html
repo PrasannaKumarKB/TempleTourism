@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Famous Tourist Places in and around Thanjavur</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: georgia, TimesNewRoman;
+      background-image:url("background.jpg");
+      background-repeat:no-repeat;
+      background-size:cover;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .gallery-item {
+      width: 300px;
+      margin: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    .gallery-item-content {
+      padding: 20px;
+    }
+    
+    .gallery-item-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align:center;
+    }
+    
+    .gallery-item-description {
+      font-size: 16px;
+      color: black;
+      text-align:center;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+    .header {
+      background-image: url("header.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 20px;
+      text-align: center;
+      
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+    <h1>FAMOUS TOURIST PLACES IN AND AROUND THANJAVUR</h1>
+  </div>
+ <div class="gallery">
+    <div class="gallery-item">
+      <img src="periyakovil1.webp" alt="Brihadeeswarar Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Brihadeeswarar Temple</h3>
+        <p class="gallery-item-description">A UNESCO World Heritage Site and one of the largest temples in India, dedicated to Lord Shiva. It is renowned for its architectural grandeur and intricate stone carvings.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="thanjavurpalace.jpg" alt="Thanjavur Palace">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Thanjavur Palace</h3>
+        <p class="gallery-item-description">A historic palace complex built by the Nayak and Maratha rulers, featuring museums that display a vast collection of artifacts, including royal weaponry, costumes, and artworks.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="swamimalai1.jpg" alt="Swamimalai Murugan Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Swamimalai Murugan Temple</h3>
+        <p class="gallery-item-description">A prominent temple dedicated to Lord Murugan, known for its unique architecture and significance as one of the six abodes of Lord Murugan.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="poompuhar.jpg" alt="Poompuhar Beach">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Poompuhar Beach</h3>
+        <p class="gallery-item-description">A serene beach located on the Bay of Bengal, known for its golden sands, picturesque sunsets, and ancient port ruins that showcase the rich maritime history of the region.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="airavatesvara1.jpg" alt="Airavatesvara Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Airavatesvara Temple</h3>
+        <p class="gallery-item-description">A stunning temple dedicated to Lord Shiva, renowned for its intricate stone carvings and exquisite architecture. It is also a UNESCO World Heritage Site.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="thiruvaiyar1.jpg" alt="Thiruvaiyaru">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Thiruvaiyaru</h3>
+        <p class="gallery-item-description">A town known for its association with Saint Thyagaraja, one of the greatest composers of Carnatic music. The annual Thyagaraja Aradhana music festival held here attracts renowned musicians and music enthusiasts.</p>
+      </div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="thanjavurmuseum.jpg" alt="Thanjavur Art Gallery and Saraswathi Mahal Library">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Thanjavur Art Gallery and Saraswathi Mahal Library</h3>
+        <p class="gallery-item-description">A treasure trove of art and knowledge, the art gallery houses exquisite paintings, sculptures, and bronze artifacts, while the library boasts a vast collection of ancient manuscripts and books.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="gangaikondacholapuram.jpg" alt="Gangaikonda Cholapuram">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Gangaikonda Cholapuram</h3>
+        <p class="gallery-item-description">A UNESCO World Heritage Site and an ancient temple town established by the Chola dynasty, known for the Brihadisvara Temple, which exhibits architectural brilliance.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="karikala.jpg" alt="Karikalan Chola Statue">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Karikalan Chola Statue</h3>
+        <p class="gallery-item-description">A statue dedicated to Karikalan, one of the legendary Chola kings, located on the banks of the Kaveri River. It commemorates the contributions of the Chola dynasty to the region.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

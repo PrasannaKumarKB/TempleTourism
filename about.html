@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Tamil Nadu Temple Tourism</title>
+  <style>
+    body {
+      font-family: cursive;
+      background-image: url("picture.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      perspective: 1px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      color: #fff;
+    }
+
+    
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95));
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333333;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+      color: #ff6600;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 300px; 
+      height: auto;
+      border-radius: 8px;
+      transition: 2s ease-in-out ;
+    }
+
+    .highlight {
+      color: #ff6600;
+      font-weight: bold;
+    }
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .scroll-to-top:hover {
+      background-color: #0056b3;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .scroll-to-top span {
+      display: block;
+      animation: bounce 1s infinite;
+    }
+
+    
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+  <a class="back-button" href="home.html" style="position: fixed; top: 20px; left: 20px; font-size: 24px; color: black; text-decoration: none;">&larr;</a>
+
+
+  <div class="container" data-aos="fade-up" data-aos-duration="2000">
+    <h1>About Tamil Nadu Temple Tourism</h1>
+    <img id="image1" src="" alt="Image 1">
+    <p>Tamil Nadu, located in the southern part of India, is a state known for its rich cultural heritage, ancient traditions, and breathtaking temples. With its unique Dravidian architecture, Tamil Nadu is home to some of the most revered and magnificent temples in the world.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-duration="2000">
+    <h2 class="highlight">Tamil Nadu</h2>
+    <img id="image2" src="" alt="Image 2">
+    <p>Tamil Nadu, often referred to as the "Land of Tamils," is renowned for its vibrant culture, art, music, and dance. It is a melting pot of traditions and festivities that captivate visitors from around the globe.</p>
+    <p>The state is blessed with diverse landscapes, ranging from lush green hills of the Western Ghats to picturesque coastal regions along the Bay of Bengal. It is also home to several wildlife sanctuaries and national parks, preserving the region's natural beauty and biodiversity.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-duration="2000">
+    <h2 class="highlight">Tamil Language</h2>
+    <img id="image3" src="" alt="Image 3">
+    <p>Tamil, one of the oldest living languages in the world, holds a special place in the hearts of Tamilians. Known for its rich literary tradition, Tamil boasts a vast collection of ancient texts, including the Sangam literature, which dates back over 2,000 years.</p>
+    <p>Tamil is not just a language but a way of life for millions of people. It has a unique script and a rich vocabulary that encompasses various fields, including literature, science, philosophy, and arts. Tamil music, poetry, and cinema have garnered international recognition and acclaim.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-duration="2000">
+    <img id="image4" src="" alt="Image 4">
+    <p>At Tamil Nadu Temple Tourism, we strive to provide visitors with an immersive experience that highlights the spiritual and historical significance of these temples. From the towering gopurams (ornate temple towers) to the intricate stone carvings depicting mythological stories, each temple is a testament to the devotion and craftsmanship of ancient Tamil artisans.</p>
+    <p>Whether you're a history enthusiast, a devotee, or simply a curious traveler, our website offers a wealth of information about the temples, festivals, and cultural practices of Tamil Nadu. Join us on this divine journey as we explore the sacred wonders that Tamil Nadu has to offer.</p>
+    <p class="highlight">வணக்கம்! (Welcome!)</p>
+  </div>
+
+  <div class="scroll-to-top" onclick="scrollToTop()">
+    <span>&uarr;</span>
+  </div>
+
+  <script>
+    anime({
+      targets: '.container',
+      opacity: 1,
+      translateY: [0, 0],
+      easing: 'easeInOutQuad',
+      duration: 800,
+      delay: anime.stagger(200)
+    });
+  
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  
+    function handleScroll() {
+      var scrollButton = document.querySelector('.scroll-to-top');
+      if (window.scrollY > 300) {
+        scrollButton.style.display = 'block';
+      } else {
+        scrollButton.style.display = 'none';
+      }
+    }
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    var firstContainerImages = [
+      'about.webp',
+      'airavateswara1.webp',
+      'aboutimage.jpg',
+      'alagar kovil.webp'
+    ];
+  
+    var secondContainerImages = [
+      'ooty.webp',
+      'newsletter4.webp',
+      'marinabeach.avif'
+    ];
+  
+    var thirdContainerImages = [
+      'kalvettu1.jpg',
+      'kalvettu2.jpg',
+      'kalvettu3.jpg'
+    ];
+
+    var fourthContainerImages = [
+      'marudhamalai1.jpg',
+      'packagebanner.jpg',
+      'ramanathaswamy2.webp',
+      'srirangam.webp'
+    ]
+  
+    var currentImagessIndex = 0; 
+  
+    function changeFirstContainerImage() {
+      var imgElement = document.getElementById('image1');
+      imgElement.src = firstContainerImages[currentImagessIndex];
+  
+      currentImagessIndex = (currentImagessIndex + 1) % firstContainerImages.length;
+    }
+  
+    setInterval(changeFirstContainerImage, 5000);
+  
+    var currentImagesIndex = 0;
+  
+    function changeSecondContainerImage() {
+      var imgElement = document.getElementById('image2');
+      imgElement.src = secondContainerImages[currentImagesIndex];
+  
+      currentImagesIndex = (currentImagesIndex + 1) % secondContainerImages.length;
+    }
+  
+    setInterval(changeSecondContainerImage, 5000);
+  
+    var currentImageIndex = 0;
+  
+    function changeThirdContainerImage() {
+      var imgElement = document.getElementById('image3');
+      imgElement.src = thirdContainerImages[currentImageIndex];
+  
+      currentImageIndex = (currentImageIndex + 1) % thirdContainerImages.length;
+    }
+  
+    setInterval(changeThirdContainerImage, 5000);
+    var currenttImageIndex = 0; 
+  
+    function changeFourthContainerImage() {
+      var imgElement = document.getElementById('image4');
+      imgElement.src = fourthContainerImages[currenttImageIndex];
+  
+      currenttImageIndex = (currenttImageIndex + 1) % fourthContainerImages.length;
+    }
+  
+    setInterval(changeFourthContainerImage, 5000);
+  
+    changeFirstContainerImage();
+    changeSecondContainerImage();
+    changeThirdContainerImage();
+    changeFourthContainerImage();
+    
+  </script>
+  
+</body>
+</html>

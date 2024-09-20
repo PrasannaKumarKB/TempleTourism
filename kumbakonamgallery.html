@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popular Tourist Places in Kumbakonam</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: georgia, TimesNewRoman;
+      background-image:url("gallerybackground.webp");
+      background-repeat:no-repeat;
+      background-size:cover;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .gallery-item {
+      width: 300px;
+      margin: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    .gallery-item-content {
+      padding: 20px;
+    }
+    
+    .gallery-item-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align:center;
+    }
+    
+    .gallery-item-description {
+      font-size: 16px;
+      color: black;
+      text-align:center;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+    .header {
+      background-image: url("header.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 20px;
+      text-align: center;
+      
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+    <h1>POPULAR TOURIST PLACES IN KUMBAKONAM</h1>
+  </div>
+ <div class="gallery">
+    <div class="gallery-item">
+      <img src="adikumbeshwarar1.jpg" alt="Adi Kumbeswarar Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Adi Kumbeswarar Temple</h3>
+        <p class="gallery-item-description">Adi Kumbeswarar Temple is one of the most prominent Shiva temples in Kumbakonam. It is known for its magnificent architecture and intricate carvings. The temple is dedicated to Lord Shiva and is a major pilgrimage site.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="nageshwaram.jpg" alt="Nageswaran Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Nageswaran Temple</h3>
+        <p class="gallery-item-description">Nageswaran Temple, also known as Koothanur Maha Nandeeswarar Temple, is a renowned Hindu temple dedicated to Lord Shiva. It is famous for its exquisite architecture and the presence of a large Nandi (bull) statue made of monolithic stone.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="sarangapani1.jpg" alt="Sarangapani Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Sarangapani Temple</h3>
+        <p class="gallery-item-description">Sarangapani Temple is a Hindu temple dedicated to Lord Vishnu located in Kumbakonam. It is one of the Divya Desams, the 108 temples dedicated to Lord Vishnu mentioned in the works of the Tamil Azhvars (saints).</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="mahamaham.jpg" alt="Mahamaham Tank">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Mahamaham Tank</h3>
+        <p class="gallery-item-description">Mahamaham Tank is a sacred bathing tank located in the heart of Kumbakonam. It is believed that taking a holy dip in this tank during the Mahamaham festival, which occurs once every 12 years, washes away sins and brings blessings.</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="sarabeshwarar1.jpg" alt="Kumbeswarar Temple">
+      <div class="gallery-item-content">
+        <h3 class="gallery-item-title">Kumbeswarar Temple</h3>
+        <p class="gallery-item-description">Sarabeswarar Temple is a Hindu temple dedicated to Lord Shiva located in the center of Kumbakonam. It is one of the oldest temples in the town and is known for its unique architecture and religious significance.</p>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thiruvaiyar Temple</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: georgia, 'times new roman';
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 50%;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: gold;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: gold;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .details-container {
+            background-color: ivory;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+
+        
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .navigation ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .navigation ul li a {
+            color: #0c0b0b;
+            text-decoration: none;
+        }
+        .navigation {
+            background-color: skyblue;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fef6f6;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #bdbbbb;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ARULMIGU AIYARAPPAR TEMPLE, THIRUVAIYARU</h1>
+    </header>
+    <div class="navigation">
+        <ul>
+            <li><a href="home.php">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">AUDIO GUIDE</a>
+                <div class="dropdown-content">
+                    <a href="Kapaleeshwarar audio (1).mp3">TAMIL LANGUAGE</a>
+                    <a href="">ENGLISH LANGUAGE</a>
+                </div>
+             <li><a href="https://www.google.com/maps/@10.8806949,79.1044741,3a,90y,94.17h,130.85t/data=!3m6!1e1!3m4!1sAQf1EE-msh9ar9pSdgeRXA!2e0!7i13312!8i6656?entry=ttu">VIRTUAL TOUR</a></li>
+            <li><a href="darshanbooking.php">BOOK TICKETS</a></li>
+            <li><a href="poojabooking.php">POOJA BOOKING</a></li>
+            <li><a href="donation.php">DONATION</a></li>
+            <li><a href="thiruvaiyarcontact.php">CONTACT</a></li>
+      
+                
+                    
+
+                </div>
+        </ul>
+    
+        
+    </div>
+    <div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="thiruvaiyar1.jpg" alt="Temple 1" style="width: 100%; height: 500px">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="thiruvaiyar2.jpg" alt="Temple 2" style="width: 100%; height: 500px;">
+                
+            </div>
+            <div class="carousel-item">
+                <img src="thiruvaiyar3.jpg" alt="Temple 3" style="width: 100%; height: 500px;">
+        
+            </div>
+            <div class="carousel-item">
+                <img src="thiruvaiyar04.jpg" alt="Temple 4" style="width: 100%; height: 500px;">
+                
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+    <div class="container">
+        <div class="details-container">
+            <h3>HISTORY</h3>
+            <p>Aiyarappar is a Hindu temple dedicated to Shiva located in the village of Tiruvaiyaru, Tamil Nadu, India.[1] The Five Rivers are Vadavaru, Vennaaru, Vettaaru, Kudamuruttiyaaru and Kaaviriyaaru. Shiva is worshiped as Aiyarappar, and is represented by the lingam and his consort Parvati is depicted as AramValarthaNaayagi. The presiding deity is revered in the 7th century Tamil Saiva canonical work, the Tevaram, written by Tamil poet saints known as the nayanars and classified as Paadal Petra Sthalam.
+
+                This temple is known as Dakshina Kailasham (Kailash of the South). This is the place where Nandi (the divine bull of lord Shiva) was born and became the mount for Shiva. The divine wedding of Nandi and Suyasayambikai was held at Thirumazhapadi Vaidyanathaswamy temple in Ariyalur district of Tamil Nadu. This is celebrated as Saptha Stanam festival which includes seven Shiva temples of the region.
+                
+                There are many inscriptions associated with the temple indicating contributions from Cholas, Pandyas, Thanjavur Nayaks and Thanjavur Maratha kingdom. The oldest parts of the present masonry structure were built during the Chola dynasty in the 9th century, while later expansions, including the towering gopuram gatehouses, are attributed to later periods, up to the Thanjavur Nayaks during the 16th century.</p>
+        </div>
+    </div>
+    <div class="container">
+            <div class="details-container">
+                <h4>OPENING HOURS</h4>
+                <p>6:00 AM - 12:00 PM</p>
+                <p>5.00 PM - 8.00 PM</p>
+            </div>
+            </div>
+    </div>
+    <div class="container">            
+        <div class="details-container">
+            <h4>POOJA TIMINGS</h4>
+            <p>Ushathkalam Pooja - 06:30 AM</p>
+            <p>	Kalasanthi Pooja - 08:00 AM</p>
+            <p>	Uchikalam Pooja - 12.00 AM</p>
+            <p>Sayarakshai Pooja - 5:00 PM</p>
+            <p>	Irandamkalam Pooja - 7:00 PM</p>
+            <p>	Ardha Jamam Pooja - 8:00 PM</p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>LOCATION</h4>
+                <p>SH 22, Thiruvaiyaru, Thanjavur-613204 Tamilnadu.</p>
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>FESTIVALS</h4>
+                <p>Theppa Thiruvizha</p>
+                <p>Navarathiri</p>
+                <p>Panguni Brahmotsavam</p>
+                <p>Thiruvaiyar Vizha</p>
+                
+            </div>
+            </div>
+            <div class="container">
+            <div class="details-container">
+                <h4>WAYS TO REACH</h4>
+                <p>By Air: The nearest airport to Thiruvaiyaru is Tiruchirappalli International Airport (TRZ), located approximately 66 kilometers away. From the airport, you can hire a taxi or take a bus to reach Thiruvaiyaru.</p>
+
+<p>By Train: The nearest railway station to Thiruvaiyaru is Thanjavur Junction, which is well-connected to major cities in India. From the railway station, you can hire a taxi, auto-rickshaw, or take a local bus to reach Thiruvaiyaru. The temple is located about 13 kilometers from Thanjavur Junction.</p>
+
+<p>By Road: Thiruvaiyaru is well-connected by road and can be reached by buses or private vehicles. You can take a bus from Thanjavur or nearby cities to reach Thiruvaiyaru. If you are traveling by car, you can take the Thanjavur-Pudukkottai Highway (NH36) and follow the signs to Thiruvaiyaru.</p>
+
+<p>Once you reach Thiruvaiyaru, the temple is easily accessible and well-known in the area. You can ask the locals for directions to the Thiruvaiyaru Temple, and they will guide you accordingly.</p>
+                
+            </div>
+            </div>
+
+    
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

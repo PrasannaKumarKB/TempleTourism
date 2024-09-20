@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #2a3d66;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .container-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            width: calc(33.33% - 40px);
+        }
+
+        .container:first-child {
+            width: 100%;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .container a {
+            display: block;
+            text-decoration: none;
+            color: #2a3d66;
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .container a:hover {
+            background-color: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .banner-container {
+            background-color: indianred;
+            text-align: center;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            max-height: 20%;
+        }
+        .banner {
+            width: 60%;
+            height: 60%;
+            object-fit: cover;
+            border: 5px solid #2a3d66; /* Add a frame-like border around the video */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to City Name</h1>
+    </header>
+
+    <div class="banner-container">
+        <video id="video-background" autoplay loop muted class="banner">
+          <source src="chennaivideo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    <div class="container-wrapper">
+        <div class="container">
+            <img src="top_container_image.jpg" alt="Top Container">
+            <h2>Featured Attraction</h2>
+            <p>Discover our city's top attraction.</p>
+            <a href="top_attraction.html">Learn more</a>
+        </div>
+
+        <div class="container">
+            <img src="attractions.jpg" alt="Local Attractions">
+            <h2>Local Attractions</h2>
+            <p>Discover the best attractions in our city.</p>
+            <a href="attractions.html">Learn more</a>
+        </div>
+
+        <div class="container">
+            <img src="events.jpg" alt="Events">
+            <h2>Events</h2>
+            <p>Stay up-to-date with the latest events in the city.</p>
+            <a href="events.html">View events</a>
+        </div>
+
+        <div class="container">
+            <img src="dining.jpg" alt="Dining">
+            <h2>Dining</h2>
+            <p>Explore the local dining scene and restaurants.</p>
+            <a href="dining.html">Find restaurants</a>
+        </div>
+
+        <div class="container">
+            <img src="accommodations.jpg" alt="Accommodations">
+            <h2>Accommodations</h2>
+            <p>Find the perfect place to stay during your visit.</p>
+            <a href="accommodations.html">Browse accommodations</a>
+        </div>
+
+        <!-- Add more containers for other topics -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tamil Nadu Temple Tourism</title>
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+  background-color: beige;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden; 
+  color: darkgrey;
+  font-size: large;
+}
+    main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  margin-left: 40px;
+}
+
+.newsletters-container {
+  position: relative;
+  background-color: beige;
+  cursor: pointer;
+  overflow: hidden;
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  box-sizing: border-box; 
+  height: 300px; 
+}
+
+.newsletters-container img {
+  max-width: 100%;
+  height: 400px;
+  background-size: 100% 100%;
+  object-fit: cover; 
+  transition: transform ease-in-out 0.5s;
+}
+
+.newsletters-container img:hover{
+  transform: scale(1.10);
+}
+
+
+
+
+.newsletters-container .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: left;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.newsletters-container:hover .overlay {
+  transform: translateY(-50%);
+}
+
+.newsletters-container h3 {
+  color: white;
+  margin: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.read-more-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: gold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.read-more-btn:hover {
+  background-color: #0056b3;
+}
+
+.arrow {
+  margin-left: 8px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid gold;
+}
+
+
+  .explore-more-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      color: gold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 10px; 
+    }
+    .header {
+      background-image: url("a.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .header h1 {
+      font-family: cursive;
+      font-size: 400%;
+      color: black;
+      display: inline-block;
+      padding: 10px 20px; 
+      border-radius: 5px;
+    }  
+    .navigation {
+  background-color: beige;
+  box-shadow: black;
+
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px;
+  position: relative;
+}
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.navigation ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.navigation ul li a:hover {
+  color: black;
+  text-decoration: underline;
+}  
+
+    
+        
+    </style>
+
+</head>
+<body>
+  <div class="header">
+    <h1>Tamil Nadu Temple Tourism</h1>
+    </div>
+
+  <div class="navigation">
+    <span class="hamburger" onclick="openMenu()">&#9776;</span>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+  <a href="#" class="dropbtn">Destinations &#9662;</a>
+  <div class="dropdown-content">
+    <a href="chennai.html">Chennai</a>
+    <a href="coimbatore.html">Coimbatore</a>
+    <a href="madurai.html">Madurai</a>
+    <a href="kumbakonam.html">Kumbakonam</a>
+    <a href="trichy.html">Tiruchirapalli</a>
+    <a href="thanjavur.html">Thanjavur</a>
+  </div>
+</li>
+
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="tamilnaducontact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="sliding-menu">
+    <span class="close-button" onclick="closeMenu()">&times;</span>
+    <div class="menu">
+      <a href="airport.html">Airports</a>
+      <a href="railway.html">Railways</a>
+      <a href="packages.html">Packages</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="tamilnaducontact.html">Contact</a>
+    </div>
+  </div>
+  </div>
+  
+  
+  <div id="banner" class="banner">
+  
+</div>
+
+  <div class="marquee">
+      <p>This is a scrolling text message. This is a scrolling text message. This is a scrolling text message.</p>
+    </div>
+
+    <div class="headings">
+      <h1>Tamil Nadu - The Land of Temples</h1>
+      <p>
+        Tamil Nadu boasts a myriad of temple destinations that attract devotees and tourists alike. From the iconic Meenakshi Temple in Madurai to the ancient Brihadeeswarar Temple in Thanjavur, there's a temple for every seeker of divine bliss.
+      </p>
+    </div>
+    <main>
+      
+    <div class="newsletters-container">
+      <div class="img">
+        <img src="periyakovil1.webp" alt="December 2022 Newsletter">
+      </div>
+      <div class="overlay">
+        <h3>Brihadeeswarar Temple</h3>
+      </div>
+    </div>
+    
+
+    <div class="newsletters-container">
+      <div class="img">
+        <img src="meenakshiamman2.jpg" alt="December 2022 Newsletter">
+      
+      <div class="overlay">
+        <h3>Meenakshi Amman Temple</h3>
+      </div>
+      </div>
+    </div>
+
+    <div class="newsletters-container">
+      <div class="img">
+        <img src="srirangam1.jpg" alt="December 2022 Newsletter">
+      </div>
+      <div class="overlay">
+        <h3>Sri Ranganatha Swamy Temple</h3>
+      </div>
+    </div>
+
+    <div class="newsletters-container">
+      <div class="heading">
+      <p>Embark on a soul-stirring journey through time and spirituality at the iconic Brihadeeswarar Temple in Thanjavur. </p>
+      </div>
+      
+
+    </div>
+
+    <div class="newsletters-container">
+      <div class="heading">
+      <p>Step into the realm of divine magnificence at the Meenakshi Amman Temple in Madurai – a celestial haven where spirituality meets architectural splendor.  </p>
+      </div>
+      
+  </div>
+    <div class="newsletters-container">
+      <div class="heading">
+      <p>Srirangam Temple located in Trichy, epitomizes divine grandeur with its monumental gopurams and sacred precincts. Immerse yourself in the spiritual aura of this colossal temple.</p>
+    </div>
+    
+  <a href="explore-more-page1.html" class="explore-more-btn">
+    Explore More 
+  </a>
+
+    </div>
+    
+    
+    
+    </main>
+    
+    
+
+  <div class="container">
+    <div class="card">
+
+      <div class="info-box">
+        <h2>Popular Temple Destinations</h2>
+        <p>Embark on a celestial journey across Tamil Nadu's renowned temple cities like Chennai, Madurai, Coimbatore, Tiruchirapalli, Thanjavur, Kumbakonam.</p>
+        <a href="citycontainer.html">Discover More </a>
+      </div>
+      
+      
+    </div>
+  </div>
+  <div class="headings">
+    <h1>Heritage UNESCO Sites</h1>
+    <p>
+      Tamil Nadu's UNESCO-listed heritage sites stand as timeless marvels, from the majestic Brihadeeswarar Temple's grandeur in Thanjavur to the exquisite rock-cut sculptures of Mahabalipuram's Shore Temple, inviting you on a journey through rich cultural legacies and architectural brilliance. Explore the living history of Tamil Nadu through these iconic landmarks.
+    </p>
+  </div>
+</div>
+  <main>
+  <div class="newsletters-container">
+    <div class="img">
+      <img src="periyakovil1.webp" alt="December 2022 Newsletter">
+    </div>
+    <div class="overlay">
+      <h3>Brihadeeswarar Temple</h3>
+    </div>
+  </div>
+  
+
+  <div class="newsletters-container">
+    <div class="img">
+      <img src="about.webp" alt="December 2022 Newsletter">
+      
+    
+    <div class="overlay">
+      <h3>Mahabalipuram</h3>
+    </div>
+    </div>
+  </div>
+
+  <div class="newsletters-container">
+    <div class="img">
+      <img src="airavatesvara.webp" alt="December 2022 Newsletter">
+    </div>
+    <div class="overlay">
+      <h3>Airavateswarar Temple</h3>
+    </div>
+  </div>
+
+  <div class="newsletters-container">
+    <div class="heading">
+    <p>Embark on a soul-stirring journey through time and spirituality at the iconic Brihadeeswarar Temple in Thanjavur. </p>
+    </div>
+   
+
+  </div>
+
+  <div class="newsletters-container">
+    <div class="heading">
+    <p>Embark on a captivating journey to explore Mahabalipuram's Shore Temple, a UNESCO World Heritage Site. Marvel at its timeless beauty.</p>
+    </div>
+    
+</div>
+  <div class="newsletters-container">
+    <div class="heading">
+    <p>Embark on a journey through time and spirituality at the UNESCO-listed Airavatesvara Temple in Dharasuram.  </p>
+  </div>
+  <a href="explore-more-page1.html" class="explore-more-btn">
+    Explore More 
+  </a>
+
+  </div>
+ 
+  </main>
+  <div class="container">
+    <div class="card2">
+      <div class="info-box">
+        <h2>Celebration of Temple Festivals</h2>
+        <p> Immerse yourself in the vibrant festivities of Tamil Nadu temple festivals. These celebrations bring together music, dance, rituals, and devotion in a harmonious spectacle.</p>
+        <a href="event.html">Discover More </a>
+      </div>
+    </div>
+  </div>
+  <div class="headings">
+    <h1>Places to Visit</h1>
+    <p>
+      Discover Tamil Nadu's multifaceted beauty, from the heights of Nilgiri Hills to the golden shores of Marina Beach. Marvel at the architectural splendors of temples, unwind amidst lush hillscapes, and relax on sun-kissed beaches.
+    </p>
+  </div>
+  <main>
+  <div class="newsletters-container">
+    <div class="img">
+      <img src="ooty.webp" alt="December 2022 Newsletter">
+    </div>
+    <div class="overlay">
+      <h3>Ootacamund</h3>
+    </div>
+  </div>
+  
+
+  <div class="newsletters-container">
+    <div class="img">
+      <img src="marina.avif" alt="December 2022 Newsletter">
+    
+    <div class="overlay">
+      <h3>Marina Beach</h3>
+    </div>
+    </div>
+  </div>
+
+  <div class="newsletters-container">
+    <div class="img">
+      <img src="courtallam.jpg" alt="December 2022 Newsletter">
+    </div>
+    <div class="overlay">
+      <h3>Courtallam Waterfalls</h3>
+    </div>
+  </div>
+
+  <div class="newsletters-container">
+    <div class="heading">
+    <p>Escape to the serene haven of Ooty, a captivating hill station in Tamil Nadu. Nestled in the Nilgiri Hills, Ooty entices with its lush tea gardens, charming colonial architecture, and cool climate.</p>
+    </div>
+
+  </div>
+
+  <div class="newsletters-container">
+    <div class="heading">
+    <p>Discover the vibrant energy of Marina Beach, the longest urban beach in India, located in Chennai, Tamil Nadu. Embrace the rhythmic waves, golden shores, and lively atmosphere.  </p>
+    </div>
+    
+</div>
+  <div class="newsletters-container">
+    <div class="heading">
+    <p>Embark on a refreshing journey to explore Tamil Nadu's enchanting waterfalls, where nature unveils its cascading beauty. From the majestic Courtallam to the serene Hogenakkal. </p>
+  </div>
+
+  <a href="gallery.html" class="explore-more-btn">
+    Explore More 
+  </a>
+  
+  
+</main>
+
+  <div class="container">
+    <div class="card3">
+      <div class="info-box">
+        <h2>Culture and Heritage of Tamil Nadu</h2>
+        <p>Explore the rich tapestry of Tamil Nadu's culture and heritage, where ancient traditions seamlessly blend with modern influences. Immerse yourself in vibrant festivals, intricate temple architecture.</p>
+        <a href="culture.html">Discover More 	</a>
+      </div>
+    </div>
+  </div>
+  <div class="headings">
+    <h1>Start Planning</h1>
+    <p>
+      Embark on the journey of planning your visit to Tamil Nadu, where ancient temples, scenic landscapes, and vibrant culture await.
+    </p>
+  </div>
+  <main>
+  <div class="newsletters-container">
+    <div class="img">
+      <img src="varkala.jpg"December 2022 Newsletter">
+    </div>
+    <div class="overlay">
+      <h3>Visa Guide</h3>
+    </div>
+  </div>
+  
+
+  <div class="newsletters-container">
+    <div class="img">
+      <img src="kodaikanalgallery.avif" alt="December 2022 Newsletter">
+    
+    <div class="overlay">
+      <h3>Tamil Nadu at a Glance</h3>
+    </div>
+    </div>
+  </div>
+
+  <div class="newsletters-container">
+    <div class="img">
+      <img src="travel.avif" alt="December 2022 Newsletter">
+    </div>
+    <div class="overlay">
+      <h3>Travel Guide</h3>
+    </div>
+  </div>
+  
+
+ 
+  </main>
+
+  
+<div class="newsletter-container">
+<h2 class="newsletter-title">Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Address: Department Of Tourism, Wallajah Road, Chennai-2</p>
+                <p>Email: tourism@tnstate.com</p>
+                <p>Toll Free no: 1800-456-84923</p>
+                <p>All rights reserved &copy; Tamil Nadu Tourism 2023</p>
+                <p>
+                    <a href="#">Copyright</a> | <a href="#">Terms of Use</a> | <a href="#">Cookie Policy</a> | <a href="#">Contact Us</a>
+                </p>
+            
+            <div class="footer-links">
+                <a href="https://www.facebook.com/YourFacebookPage" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/YourInstagramPage" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/YourYouTubeChannel" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+
+
+  
+  var templeFacts = [
+      "Did you know that the Brihadeeswarar Temple in Thanjavur is one of the largest temples in India?",
+      "The Meenakshi Temple in Madurai is known for its stunning architecture and intricate carvings.",
+      "Tamil Nadu is home to several UNESCO-listed temple sites, including Mahabalipuram and Brihadeswara Temple.",
+      "The Airavatesvara Temple in Kumbakonam is dedicated to Lord Shiva and is a masterpiece of Dravidian architecture.",
+      
+    ];
+
+    function updateMarquee() {
+      
+      var marqueeElement = document.querySelector('.marquee p');
+
+      
+      var randomFact = templeFacts[Math.floor(Math.random() * templeFacts.length)];
+
+     
+      marqueeElement.textContent = randomFact;
+    }
+
+    updateMarquee();
+    setInterval(updateMarquee, 30000);
+</script>
+<script>
+function openMenu() {
+  document.querySelector('.sliding-menu').style.left = '0';
+}
+
+function closeMenu() {
+  document.querySelector('.sliding-menu').style.left = '-250px';
+}
+</script>
+
+<script>
+  var bannerImages = [
+  'homebackground.webp',
+  'meenakshiamman2.jpg',
+  'heritage.webp',
+  'gallerybackground.webp',
+  'image3.webp',
+  'image4.webp',
+  ];
+
+  var currentBannerIndex = 0;
+
+  function changeBannerImage() {
+    var banner = document.getElementById('banner');
+    currentBannerIndex = (currentBannerIndex + 1) % bannerImages.length;
+    banner.style.backgroundImage = 'url(' + bannerImages[currentBannerIndex] + ')';
+  }
+
+  changeBannerImage();
+  setInterval(changeBannerImage, 5000);
+</script>
+
+<div class="scroll-to-top" onclick="scrollToTop()">
+  <span>&uarr;</span>
+</div>
+<script>
+  function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+
+window.addEventListener('scroll', function () {
+  var scrollButton = document.querySelector('.scroll-to-top');
+  if (window.scrollY > 300) {
+    scrollButton.style.display = 'block';
+  } else {
+    scrollButton.style.display = 'none';
+  }
+});
+
+
+
+</script>
+
+</body>
+
+
+</html>
