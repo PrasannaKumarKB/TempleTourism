@@ -1,241 +1,272 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  // Process form submission here
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $phone = $_POST['phone'];
-  $service = $_POST['service'];
-  $specificService = $_POST['specific-service'];
-  $date = $_POST['date'];
-  $message = $_POST['message'];
+// Database connection
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'temple';
 
-  // Perform further validation and processing as needed
+$conn = new mysqli($hostname, $username, $password, $database);
 
-  // Example: Saving form data to a database
-  $hostname = 'localhost'; // Hostname for the database server
-  $username = 'root';      // Username for the database
-  $password = '';      // Password for the database (leave empty if no password is set)
-  $database = 'temple';  // Name of the database
-
-  $conn = new mysqli($hostname, $username, $password, $database);
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-
-  $stmt = $conn->prepare("INSERT INTO pooja (name, email, phone, service, specific_service, date, message) VALUES (?, ?, ?, ?, ?, ?, ?)");
-  $stmt->bind_param("sssssss", $name, $email, $phone, $service, $specificService, $date, $message);
-  $stmt->execute();
-  $bookingId = $stmt->insert_id;
-
-  if ($bookingId > 0) {
-    echo "Booking successful! Your booking ID is: " . $bookingId;
-    header("Location: paymentoptions.php");
-    exit();
-  } else {
-    echo "Error occurred while processing the booking.";
-  }
-
-  $stmt->close();
-  $conn->close();
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
 }
+
+// Check for temple_id in URL or POST data
+if (isset($_GET['temple_id']) || isset($_POST['temple_id'])) {
+    $templeId = isset($_POST['temple_id']) ? (int)$_POST['temple_id'] : (int)$_GET['temple_id'];
+
+    // Fetch temple name and type from the database
+    $query = "SELECT temple_name, temple_type FROM temples WHERE temple_id = ?";
+    $stmt = $conn->prepare($query);
+    
+    if ($stmt) {
+        $stmt->bind_param("i", $templeId);
+        $stmt->execute();
+        $stmt->bind_result($templeName, $templeType);
+        $stmt->fetch();
+        $stmt->close();
+
+        if (!$templeName) {
+            echo "Invalid temple ID.";
+            exit();
+        }
+    } else {
+        echo "Failed to prepare SELECT query.";
+        exit();
+    }
+
+    // Define pooja types based on temple type
+    // Define pooja types based on temple type
+$poojaTypes = [];
+switch (strtolower($templeType)) {
+    case 'shiva':
+        $poojaTypes = ['Rudrabhishekam', 'Maha Mrityunjaya Homam', 'Pradosham Pooja'];
+        break;
+    case 'vishnu':
+        $poojaTypes = ['Sahasranama Archana', 'Vishnu Sahasranamam', 'Thiruppavai Chanting'];
+        break;
+    case 'durga':
+        $poojaTypes = ['Chandi Homam', 'Kumari Pooja', 'Navratri Special Pooja'];
+        break;
+    case 'murugan':
+        $poojaTypes = ['Kavadi Pooja', 'Shasti Pooja', 'Paal Abhishekam'];
+        break;
+    case 'vinayagar':
+        $poojaTypes = ['Ganapathi Homam', 'Sankatahara Chaturthi Pooja', 'Modak Offering'];
+        break;
+    case 'pandi':
+        $poojaTypes = ['Muneeswarar Abhishekam', 'Special Pongal Pooja', 'Pandi Guru Pooja'];
+        break;
+    case 'narashimhar':
+        $poojaTypes = ['Narasimha Homam', 'Lakshmi Narasimha Archana', 'Prahlada Stuti Chanting'];
+        break;
+    default:
+        $poojaTypes = ['Special Pooja', 'General Archana'];
+}
+
+
+    // Process the booking form submission
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $poojaType = $_POST['pooja_type'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+        $devoteeName = $_POST['devotee_name'];
+        $mobile = $_POST['mobile'];
+        $rate = (int)$_POST['rate'];
+
+        // Insert booking details into the database
+        $stmt = $conn->prepare("INSERT INTO pooja_bookings (temple_id, temple_name, pooja_type, date, time, devotee_name, mobile, rate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        if ($stmt) {
+            $stmt->bind_param("issssssi", $templeId, $templeName, $poojaType, $date, $time, $devoteeName, $mobile, $rate);
+            $stmt->execute();
+            $bookingId = $stmt->insert_id;
+            $stmt->close();
+
+            // Redirect to the confirmation page with booking details if successful
+            if ($bookingId > 0) {
+                $queryParams = http_build_query([
+                    'booking_id' => $bookingId,
+                    'temple_id' => $templeId,
+                    'temple_name' => $templeName
+                ]);
+                header("Location: poojaupi.php?$queryParams");
+                exit();
+            } else {
+                echo "Error occurred while processing the booking.";
+            }
+        } else {
+            echo "Error occurred while preparing booking statement.";
+            exit();
+        }
+    }
+} else {
+    echo "Error: Temple ID not provided.";
+    exit();
+}
+
+$conn->close();
 ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pooja - Booking</title>
-  <style>
-    /* CSS styling for the page */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Booking</title>
+    <style>
+    /* Universal Reset */
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /* Body Styling */
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f2f2f2;
-      background-image: url("poojabackground.avif");
-      background-size: cover;
-      background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: url("periyakovil3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 20px;
     }
-    
-    h1 {
-      color: #333;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    
-    .booking-container {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 30px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    .booking-form label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    
-    .booking-form input,
-    .booking-form select,
-    .booking-form textarea,
-    .booking-form button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    
-    .booking-form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    
-    .booking-form button {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    .booking-form button:hover {
-      background-color: #555;
-    }
-    
-    .footer {
-      text-align: center;
-      margin-top: 20px;
-    }
-  </style>
-  <script>
-    function updateSpecificServiceOptions() {
-      var service = document.getElementById('service').value;
-      var specificServiceContainer = document.getElementById('specific-service-container');
-      specificServiceContainer.innerHTML = '';
 
-      var exchangeRate = 75; // Conversion rate: 1 USD = 75 INR
+    /* Form Container */
+    .form-container {
+        width: 100%;
+        max-width: 600px;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
 
-      if (service === 'pooja') {
-        var poojaOptions = [
-          { value: 'ganesha_pooja', label: 'Ganesha Pooja', amountUSD: 8 },
-          { value: 'lingam_pooja', label: 'Lingam Pooja', amountUSD: 8 },
-          { value: 'navagraha_pooja', label: 'Navagraha Pooja', amountUSD: 8 }
-          // Add more pooja options as needed
-        ];
+    .form-container h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
 
-        var selectPoojaLabel = document.createElement('label');
-        selectPoojaLabel.textContent = 'Select Pooja:';
+    /* Form Styling */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
 
-        var selectPooja = document.createElement('select');
-        selectPooja.name = 'specific-service';
-        selectPooja.required = true;
+    form label {
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 5px;
+        color: #555;
+    }
 
-        for (var i = 0; i < poojaOptions.length; i++) {
-          var option = document.createElement('option');
-          option.value = poojaOptions[i].value;
-          var amountINR = poojaOptions[i].amountUSD * exchangeRate;
-          option.textContent = poojaOptions[i].label + ' (₹' + amountINR + ')';
-          selectPooja.appendChild(option);
+    form input,
+    form select {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #f9f9f9;
+        font-size: 1rem;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+
+    form input:focus,
+    form select:focus {
+        outline: none;
+        border-color: #fcb69f;
+        box-shadow: 0px 4px 15px rgba(252, 182, 159, 0.5);
+    }
+
+    form button {
+        padding: 12px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0px 5px 15px rgba(255, 120, 145, 0.5);
+    }
+
+    form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 8px 20px rgba(255, 120, 145, 0.6);
+    }
+
+    /* Dynamic Fields Container */
+    .dynamic-fields {
+        display: grid;
+        gap: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .form-container {
+            padding: 20px;
         }
 
-        specificServiceContainer.appendChild(selectPoojaLabel);
-        specificServiceContainer.appendChild(selectPooja);
-      } else if (service === 'abhishekam') {
-        var abhishekamOptions = [
-          { value: 'rudra_abhishekam', label: 'Rudra Abhishekam', amountUSD: 15 },
-          { value: 'chandan_abhishekam', label: 'Chandan Abhishekam', amountUSD: 15 },
-          { value: 'milk_abhishekam', label: 'Milk Abhishekam', amountUSD: 15 },
-          { value: 'ghee_abhishekam', label: 'Ghee Abhishekam', amountUSD: 15 },
-          { value: 'honey_abhishekam', label: 'Honey Abhishekam', amountUSD: 15 }
-          // Add more abhishekam options as needed
-        ];
-
-        var selectAbhishekamLabel = document.createElement('label');
-        selectAbhishekamLabel.textContent = 'Select Abhishekam:';
-
-        var selectAbhishekam = document.createElement('select');
-        selectAbhishekam.name = 'specific-service';
-        selectAbhishekam.required = true;
-
-        for (var i = 0; i < abhishekamOptions.length; i++) {
-          var option = document.createElement('option');
-          option.value = abhishekamOptions[i].value;
-          var amountINR = abhishekamOptions[i].amountUSD * exchangeRate;
-          option.textContent = abhishekamOptions[i].label + ' (₹' + amountINR + ')';
-          selectAbhishekam.appendChild(option);
+        form button {
+            font-size: 0.9rem;
         }
-
-        specificServiceContainer.appendChild(selectAbhishekamLabel);
-        specificServiceContainer.appendChild(selectAbhishekam);
-      } else if (service === 'homam') {
-        var homamOptions = [
-          { value: 'maha_mrityunjaya_homam', label: 'Maha Mrityunjaya Homam', amountUSD: 26 },
-          { value: 'sudarshana_homam', label: 'Sudarshana Homam', amountUSD: 26 },
-          { value: 'navagraha_homam', label: 'Navagraha Homam', amountUSD: 26 }
-          // Add more homam options as needed
-        ];
-
-        var selectHomamLabel = document.createElement('label');
-        selectHomamLabel.textContent = 'Select Homam:';
-
-        var selectHomam = document.createElement('select');
-        selectHomam.name = 'specific-service';
-        selectHomam.required = true;
-
-        for (var i = 0; i < homamOptions.length; i++) {
-          var option = document.createElement('option');
-          option.value = homamOptions[i].value;
-          var amountINR = homamOptions[i].amountUSD * exchangeRate;
-          option.textContent = homamOptions[i].label + ' (₹' + amountINR + ')';
-          selectHomam.appendChild(option);
-        }
-
-        specificServiceContainer.appendChild(selectHomamLabel);
-        specificServiceContainer.appendChild(selectHomam);
-      }
     }
-  </script>
+
+    </style>
 </head>
 <body>
-  <h1>Pooja - Booking</h1>
+    <div class="form-container">
+        <h2>Pooja Booking</h2>
+        <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+            <input type="hidden" name="temple_id" value="<?php echo $templeId; ?>">
 
-  <div class="booking-container">
-    <form class="booking-form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+            <label for="pooja_type">Pooja Type</label>
+            <select id="pooja_type" name="pooja_type" required>
+                <option value="" disabled selected>Select Pooja</option>
+                <?php foreach ($poojaTypes as $pooja): ?>
+                    <option value="<?php echo $pooja; ?>"><?php echo $pooja; ?></option>
+                <?php endforeach; ?>
+            </select>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
 
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" required>
+            <label for="time">Time</label>
+            <select id="time" name="time" required>
+                <option value="" disabled selected>Select Time</option>
+                <option value="06:00">6:00 AM</option>
+                <option value="08:00">8:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="16:00">4:00 PM</option>
+            </select>
 
-      <label for="service">Select Service:</label>
-      <select id="service" name="service" required onchange="updateSpecificServiceOptions()">
-        <option value="">Choose a service</option>
-        <option value="pooja">Pooja</option>
-        <option value="abhishekam">Abhishekam</option>
-        <option value="homam">Homam</option>
-      </select>
+            <label for="devotee_name">Devotee Name</label>
+            <input type="text" id="devotee_name" name="devotee_name" placeholder="Enter your name" required>
 
-      <div id="specific-service-container">
-        <!-- Specific service options will be dynamically added here -->
-      </div>
+            <label for="mobile">Mobile Number</label>
+            <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" required>
 
-      <label for="date">Select Date:</label>
-      <input type="date" id="date" name="date" required>
+            <label for="rate">Rate</label>
+            <select id="rate" name="rate" required>
+                <option value="" disabled selected>Select Rate</option>
+                <option value="500">₹500</option>
+                <option value="1000">₹1000</option>
+                <option value="1500">₹1500</option>
+            </select>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" placeholder="Enter any additional information or special requests"></textarea>
-
-      <button type="submit">Book Now</button>
-    </form>
-  </div>
-
-  <footer class="footer">
-    <p>&copy; 2023 Tamilnadu Temple Tourism. All rights reserved.</p>
-  </footer>
+            <button type="submit">Book Pooja</button>
+        </form>
+    </div>
 </body>
 </html>

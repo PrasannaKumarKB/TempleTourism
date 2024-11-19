@@ -1,213 +1,372 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Pandi Muneeswarar Temple</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <style>
-        body {
-            background-image: url("background.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            font-family: Georgia, 'times new roman';
-        }
+<title>Pandi Muneeswarar Temple</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 3px;
+  color: black;
+}
+.w3-bar-item {
+  font-weight: bold;
+  color: #4CAF50;
+  text-align: center;
+  display: inline-block;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.w3-bar-item:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+.slide-panel {
+  height: 100%;
+  width: 600px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f9f9f9;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+.slide-panel.open {
+  transform: translateX(0);
+}
+.slide-panel .closebtn {
+  font-size: 36px;
+  color: black;
+  cursor: pointer;
+  float: right;
+}
 
-        .carousel-item img {
-            width: 100%;
-            height: 50%;
-        }
+.slide-panel a {
+  display: block;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
 
-        h2 {
-            text-align: center;
-            background-color: gold;
-        }
+.slide-panel a:hover {
+  background-color: #f1f1f1;
+}
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: gold;
-        }
+.openbtn {
+  border: none;
+  background: none;
+  font-weight: bold;
+  color: #4CAF50;
+  padding: 14px 16px;
+  text-align: center;
+  cursor: pointer;
+}
 
-        .container {
-            margin-top: 30px;
-        }
+.openbtn:hover {
+  background-color: #f1f1f1;
+}
 
-        .details-container {
-            background-color: ivory;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-        
-            
-        }
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
 
-        h1 {
-            text-align: center;
-        }
-        .navigation ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+.floating-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
 
-        .navigation ul li {
-            display: inline-block;
-            margin: 0 10px;
-        }
+.floating-btn.virtual-tour {
+  bottom: 90px;
+}
 
-        .navigation ul li a {
-            color: #0c0b0b;
-            text-decoration: none;
-        }
-        .navigation {
-            background-color: skyblue;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }.dropdown {
-            position: relative;
-            display: inline-block;
-        }
+section {
+  padding: 64px 0;
+  background-color: #fff;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  max-width: 1100px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fef6f6;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
+section h1, section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+section p, section ul {
+  margin: 20px 0;
+}
 
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
 
-        .dropdown-content a:hover {
-            background-color: #bdbbbb;
-        }
-    </style>
+section ul li {
+  margin-bottom: 10px;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-right {
+  float: right;
+  margin-left: 20px;
+  width: 50%;
+  height: auto;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer {
+    background-color: black; 
+    color: #fff; 
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-info {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+.footer-info a {
+    color: gold;
+}
+
+.footer-links {
+    flex: 1;
+    text-align: bottom;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+.footer-links a {
+    color: #fff; 
+    text-decoration: none;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.footer-links a:hover {
+    color: #f5a623; 
+}
+</style>
 </head>
-
 <body>
-    <header>
-        <h1>PANDI MUNEESWARAN KOVIL</h1>
-    </header>
-    <div class="navigation">
-        <ul>
-            <li><a href="home.php">HOME</a></li>
-            <li class="dropdown">
-                <a href="#">AUDIO GUIDE</a>
-                <div class="dropdown-content">
-                    <a href="pandi tamil.mp3">TAMIL LANGUAGE</a>
-                    <a href="pandi muneeswarar.mp3">ENGLISH LANGUAGE</a>
-                </div>
-             <li><a href="https://www.google.com/maps/place/Arulmigu+Sri+Pandi+Muneeswaran+Temple/@9.9344218,78.1685522,21z/data=!4m14!1m7!3m6!1s0x3b00c447d030e47b:0x7233e83dd304d663!2sArulmigu+Sri+Pandi+Muneeswaran+Temple!8m2!3d9.9344035!4d78.1686052!16s%2Fg%2F1tscmf8f!3m5!1s0x3b00c447d030e47b:0x7233e83dd304d663!8m2!3d9.9344035!4d78.1686052!16s%2Fg%2F1tscmf8f?entry=ttu">VIRTUAL TOUR</a></li>
-            <li><a href="darshanbooking.php">BOOK TICKETS</a></li>
-            <li><a href="poojabooking.php">POOJA BOOKING</a></li>
-            <li><a href="donation.php">DONATION</a></li>
-            <li><a href="pandikovilcontact.php">CONTACT</a></li>
-      
-                
-                    
 
-                </div>
-        </ul>
-    
-        
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="madurai.html" class="w3-bar-item w3-button">←</a>
+    <a href="#home" class="w3-bar-item w3-button">Pandi Muneeswarar Temple</a>
+    <div class="w3-right w3-hide-small">
+      <a href="#history" class="w3-bar-item w3-button">History</a>
+      <a href="#ways-to-reach" class="w3-bar-item w3-button">Ways to Reach</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      
+      <a href="poojabooking.php?temple_id=25" class="w3-bar-item w3-button">Pooja Booking</a>
+      <a href="darshanbooking.php?temple_id=25" class="w3-bar-item w3-button">Darshan Booking</a>
+      <a href="donation.php?temple_id=25" class="w3-bar-item w3-button">Donation</a>
     </div>
-    <div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="pandikovil1.avif" alt="Temple 1" style="width: 100%; height: 500px">
-                
-            </div>
-            <div class="carousel-item">
-                <img src="pandikovil2.jpg" alt="Temple 2" style="width: 100%; height: 500px;">
-                
-           
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    </div>
-    <div class="container">
-        <div class="details-container">
-            <h3>HISTORY</h3>
-            <p>Pandi Temple is an ancient temple located in Melamadai city of Madurai , Tamil Nadu . Pandi Muneeswarar is worshiped as the source of this temple . Pandi Muneeswarar, one of the Pandyan kings , is believed to have resided here.</p>
+  </div>
+</div>
+
+<div id="myNav" class="slide-panel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2>Audio Guide</h2>
+  <a href="pandi_muneeswarar_tamil.mp3">Tamil Language</a>
+  <a href="pandi_muneeswarar_english.mp3">English Language</a>
+</div>
+
+<!-- Floating Button for Audio Guide -->
+<button class="floating-btn" onclick="openNav()">🎧</button>
+
+<!-- Floating Button for Virtual Tour -->
+<button class="floating-btn virtual-tour" onclick="window.location.href='https://www.google.com/maps/place/Pandi+Muneeswarar+Temple/@9.9265,78.1203,17z/data=!3m1!4b1!4m6!3m5!1s0x3b05f5a3c0a68cd9:0x460d6db611f8c27e!8m2!3d9.9265!4d78.1225!16s%2Fg%2F11b6w9g6c1'">👁️</button>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="pandi_muneeswarar_temple.jpg" alt="Pandi Muneeswarar Temple" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Pandi Muneeswarar Temple</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+   <!-- History Section -->
+<section id="history">
+    <div class="w3-row-padding">
+        <div class="w3-col l6 w3-padding-large">
+            <h1>History</h1>
+            <p>Pandi Muneeswarar Temple, located in Madurai, is a significant temple dedicated to Lord Muneeswarar, a manifestation of Lord Shiva. The temple has a rich history that reflects the cultural and spiritual heritage of the region. It is believed to have been established several centuries ago, with its architecture showcasing traditional Dravidian style.</p>
+            <p>The temple is renowned for its powerful deity, Muneeswarar, who is revered as the protector of the devotees. Many believe that worshipping at this temple can help alleviate personal and family problems, bringing peace and prosperity to their lives.</p>
+        </div>
+        <div class="w3-col l6 w3-padding-large w3-hide-small">
+            <img src="pandi_muneeswarar_history.jpg" class="img-responsive" alt="Pandi Muneeswarar Temple History">
         </div>
     </div>
-    <div class="container">
-            <div class="details-container">
-                <h4>OPENING HOURS</h4>
-                <p>6:00 AM - 8:00 PM</p>
+</section>
 
-            </div>
-            </div>
+<!-- Ways to Reach Section -->
+<section id="ways-to-reach">
+    <div class="w3-row-padding">
+        <div class="w3-col l6 w3-padding-large">
+            <h1>Ways to Reach</h1>
+            <p>Pandi Muneeswarar Temple is easily accessible by various modes of transportation:</p>
+            <ul>
+                <li><strong>By Air:</strong> The nearest airport is Madurai International Airport, located about 20 kilometers from the temple. Taxis and auto-rickshaws are available for hire from the airport.</li>
+                <li><strong>By Train:</strong> Madurai Junction is the closest railway station, situated approximately 10 kilometers from the temple. From the station, you can take a taxi or auto-rickshaw to reach the temple.</li>
+                <li><strong>By Bus:</strong> Local buses frequently run from various parts of Madurai to the temple area, making it convenient for visitors.</li>
+            </ul>
+        </div>
+        <div class="w3-col l6 w3-padding-large w3-hide-small">
+            <img src="madurai_transport.jpg" class="img-responsive" alt="Ways to Reach Pandi Muneeswarar Temple">
+        </div>
     </div>
-    <div class="container">            
-        <div class="details-container">
-                <h4>POOJA TIMINGS</h4>
-                <p>Kaalai Pooja - 6.00 AM</p>
-                <p>Uchi Kaala Pooja - 12.00 PM</p>
-                <p>Sayarakshai - 5.00 PM</p>
-                <p>Artha Jama Pooja - 7.30 PM</p>
-            </div>
-            </div>
-            <div class="container">
-            <div class="details-container">
-                <h4>LOCATION</h4>
-                <p>SH 33, Karuppayurani, Madurai-625020, Tamilnadu.</p>
-            </div>
-            </div>
-            <div class="container">
-            <div class="details-container">
-                <h4>FESTIVALS</h4>
-                <p>Maavilakku Pooja</p>
-                <p>Keda Vettu Vizha</p>
-                <p>Pongal Vizha</p>
-                
-            </div>
-            </div>
-            <div class="container">
-            <div class="details-container">
-                <h4>WAYS TO REACH</h4>
-                <p>By Air: The nearest airport to Madurai is the Madurai International Airport (IXM). From the airport, you can hire a taxi or use public transportation to reach the temple. The temple is located approximately 17 kilometers away from the airport, and the journey takes around 30-40 minutes by road.</p>
+</section>
 
-<p>By Train: Madurai Junction is the main railway station in Madurai, well-connected to various cities in India. You can take a train to Madurai and then hire a taxi, auto-rickshaw, or use public transport to reach the temple. The Pandi Kovil Temple is situated about 4 kilometers away from the railway station, and it takes around 15-20 minutes to reach by road.</p>
-
-<p>By Bus: Madurai has a well-developed bus transportation system, with both state-run and private buses connecting different cities and towns. You can take a bus to Madurai and get down at the Periyar Bus Stand or the Mattuthavani Integrated Bus Terminus. From there, you can hire a taxi, auto-rickshaw, or use local buses to reach the Pandi Kovil Temple. The temple is located about 7 kilometers away from the bus stands, and the journey may take around 20-30 minutes by road.</p>
-
-<p>By Car: If you prefer to drive, you can reach Madurai by road via national highways. The city is well-connected to major cities and towns in South India. You can use navigation apps or maps to find the best route to the Pandi Kovil Temple.</p>
-
-<p>Once you are in Madurai, you can ask locals or use GPS navigation to guide you to the temple. The Pandi Kovil Temple is a significant religious site in Madurai, so it is relatively well-known, and people can guide you to its location.</p>
-            </div>
-            </div>
-
-    
+<!-- Festivals Section -->
+<section id="festivals">
+    <div class="w3-row-padding">
+        <div class="w3-col l6 w3-padding-large">
+            <h1>Festivals</h1>
+            <p>Pandi Muneeswarar Temple celebrates various festivals that attract many devotees:</p>
+            <ul>
+                <li><strong>Muneeswarar Pongal:</strong> This festival is celebrated with great enthusiasm, featuring special poojas, offerings, and traditional festivities to honor Lord Muneeswarar.</li>
+                <li><strong>Navaratri:</strong> The nine nights of Navaratri are observed with special poojas and cultural events, where devotees celebrate the divine feminine energy.</li>
+                <li><strong>Mahashivaratri:</strong> A significant festival dedicated to Lord Shiva, celebrated with night vigils, prayers, and offerings, where devotees seek blessings for strength and wisdom.</li>
+            </ul>
+        </div>
+        <div class="w3-col l6 w3-padding-large w3-hide-small">
+            <img src="pandi_muneeswarar_festivals.jpg" class="img-responsive" alt="Pandi Muneeswarar Temple Festivals">
+        </div>
     </div>
+</section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Pooja Timings Section -->
+<section id="pooja-timings">
+    <div class="w3-row-padding">
+        <div class="w3-col l6 w3-padding-large">
+            <h1>Pooja Timings</h1>
+            <p>The daily pooja timings at Pandi Muneeswarar Temple are as follows:</p>
+            <ul>
+                <li><strong>Morning Pooja:</strong> 6:00 AM - The morning pooja involves offerings and prayers to Lord Muneeswarar.</li>
+                <li><strong>Mid-Morning Pooja:</strong> 10:00 AM - A special pooja for devotees who visit during the day.</li>
+                <li><strong>Evening Pooja:</strong> 6:00 PM - A grand aarti and pooja conducted in the evening.</li>
+                <li><strong>Night Pooja:</strong> 8:00 PM - The final pooja of the day before the temple is closed.</li>
+            </ul>
+            <p>On festival days, additional rituals and celebrations are held to honor the deity.</p>
+        </div>
+        <div class="w3-col l6 w3-padding-large w3-hide-small">
+            <img src="pooja_pandi_muneeswarar.jpg" class="img-responsive" alt="Pooja Timings Pandi Muneeswarar Temple">
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="w3-row-padding">
+        <div class="w3-col m6 w3-padding-large">
+            <!-- Contact Form -->
+            <h1>Contact Us</h1>
+            <p>If you have any queries or need further information, please feel free to contact us:</p>
+            <form action="/submit_query.php" method="POST" class="contact-form">
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="w3-input w3-border" placeholder="Your Name" required>
+                    </div>
+                    <div class="w3-half">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="w3-input w3-border" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="w3-input w3-border" placeholder="Your Message" style="height:200px;" required></textarea>
+                <button type="submit" class="w3-button w3-green w3-margin-top">Submit</button>
+            </form>
+        </div>
+        <div class="w3-col m6 w3-padding-large">
+            <!-- Additional Content or Placeholder -->
+            <p class="w3-text-grey"><i class="fa fa-map-marker fa-fw w3-margin-right"></i> Pandi Muneeswarar Temple, Madurai, Tamil Nadu - 625007</p>
+            <p class="w3-text-grey"><i class="fa fa-phone fa-fw w3-margin-right"></i> +91-452-2345678</p>
+            <p class="w3-text-grey"><i class="fa fa-envelope fa-fw w3-margin-right"></i> pandimuneeswarar@temple.org</p>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-info">
+            <p>Address: Department Of Tourism, Wallajah Road, Chennai-2</p>
+            <p>Email: tourism@tnstate.com</p>
+            <p>Toll Free no: 1800-456-84923</p>
+            <p>All rights reserved &copy; Tamil Nadu Tourism 2023</p>
+            <p>
+                <a href="#">Copyright</a> | <a href="#">Terms of Use</a> | <a href="#">Cookie Policy</a> | <a href="#">Contact Us</a>
+            </p>
+        
+        <div class="footer-links">
+            <a href="https://www.facebook.com/YourFacebookPage" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/YourInstagramPage" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/YourYouTubeChannel" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("myNav").classList.add('open');
+}
+function closeNav() {
+    document.getElementById("myNav").classList.remove('open');
+}
+</script>
+
 </body>
-
 </html>

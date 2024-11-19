@@ -11,7 +11,7 @@
     }
 
     header {
-      background-image: url("kumbakonamheader.avif");
+      background-image: url("kumbakonamhead.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       color: black;
@@ -71,11 +71,13 @@
     }
 
     .banner-container {
-      text-align: center;
-      max-width: 100%;
-      margin: 0 auto;
-      overflow: hidden;
-    }
+  max-width: 95%;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 20px solid wheat; /* Frame around the banner */
+  border-radius: 15px; /* Rounded corners for the frame */
+   /* Space between the banner and the frame */
+}
 
     .banner {
       width: 100%;
@@ -155,13 +157,15 @@
     }
 
     .newsletter-container {
+      border: 20px solid wheat;
       position: relative;
       background-color: #fff;
       cursor: pointer;
-      margin: 10px;
+      margin: 20px;
       overflow: hidden;
-      width: 300px;
-      height: 400px;
+      width: 400px;
+      height:400px;
+      border-radius: 10px;
     }
 
     img {
@@ -175,9 +179,9 @@
       transform: scale(1.10);
     }
 
-    .newsletter-container:hover .overlay {
+    /* .newsletter-container:hover .overlay {
       transform: translateY(-50%);
-    }
+    } */
 
     main {
       display: flex;
@@ -187,8 +191,9 @@
     }
 
     .overlay {
+      background-color: white;
       position: absolute;
-      bottom:  0;
+      bottom: 0;
       left: 0;
       right: 0;
       text-align: left;
@@ -198,7 +203,7 @@
     }
 
     h3 {
-      color: white;
+      color: black;
       border-color: gold;
       margin-bottom: 30px;
       margin-left: 10px;
@@ -231,8 +236,8 @@
     }
 
     footer {
-      background-color: black; /* Change the background color to your preference */
-      color: #fff; /* Change the text color to your preference */
+      background-color: wheat; /* Change the background color to your preference */
+      color: black; /* Change the text color to your preference */
       padding: 20px 0;
       text-align: center;
     }
@@ -245,7 +250,7 @@
     }
 
     .footer-info a {
-      color: gold;
+      color: black;
     }
 
     /* Style the footer links (copyright, terms, cookie policy, contact) */
@@ -270,19 +275,17 @@
     }
 
     .navigation {
-      background-color: transparent;
+      background-color: #f5deb3;
       color: #fff;
+      height: 25px;
       padding: 10px;
       text-align: center;
       margin-top: 10px;
       position: relative;
-      transition: background-color 0.3s; /* Add transition for smoother animation */
+      transition: background-color 0.3s; 
     }
 
-    .navigation:hover {
-      background-color: gray; /* Change background color on hover */
-      color: white; /* Change text color on hover */
-    }
+    
 
     .navigation ul {
       list-style: none;
@@ -297,7 +300,7 @@
 
     .navigation ul li a {
       color: black;
-      text-decoration: none;
+      text-decoration: underline;
     }
 
     .navigation ul li a:hover {
@@ -311,6 +314,7 @@
       left: 20px;
       font-size: 30px;
       cursor: pointer;
+      color: black;
     }
 
     /* Sliding menu styles */
@@ -393,15 +397,15 @@
 </head>
 <body>
   <header>
-  <a class="back-button" href="home.php" style="position: absolute; top: 20px; left: 20px; font-size: 48px; color:white;text-decoration: none;">&larr;</a>
+  <a class="back-button" href="home.html" style="position: absolute; top: 20px; left: 20px; font-size: 48px; color:white;text-decoration: none;">&larr;</a>
     <h1>K U M B A K O N A M</h1>
   </header>
   <div class="navigation">
     <span class="hamburger" onclick="openMenu()">&#9776;</span>
     <ul>
       <li><a href="home.php">Home</a></li>
-      <li><a href="kumbakonamarticle.php">About</a></li>
-      <li><a href="kumbakonamgallery.php">Gallery</a></li>
+      <li><a href="kumbakonamarticle.html">About</a></li>
+      <li><a href="kumbakonamgallery.html">Gallery</a></li>
       <li><a href="kumbakonamcontact.php">Contact</a></li>
     </ul>
   </div>
@@ -424,10 +428,9 @@
 
   <div id="container">
     <div class="city-description">
-      <p>Kumbakonam, located in the Thanjavur district of Tamil Nadu, India, is a historic temple town famous for its religious significance and architectural marvels. It is often referred to as the "Temple City" due to the presence of numerous ancient temples.</p>
     </div>
     <main>
-    <div class="newsletter-container" onclick="window.location.href='airavateswara.php';">
+    <div class="newsletter-container" onclick="window.location.href='airavateswara.html';">
             <div class="img">
                 <img src="airavatesvara.webp" alt="December 2022 Newsletter">
             </div>
@@ -437,7 +440,7 @@
            
         </div>
 
-        <div class="newsletter-container" onclick="window.location.href='adikumbeshwarar.php';">
+        <div class="newsletter-container" onclick="window.location.href='adikumbeshwarar.html';">
             <div class="img">
                 <img src="kumbeswara.webp" alt="February Newsletter">
             </div>
@@ -447,7 +450,7 @@
             
         </div>
 
-        <div class="newsletter-container" onclick="window.location.href='sarangapani.php';">
+        <div class="newsletter-container" onclick="window.location.href='sarangapani.html';">
             <div class="img">
                 <img src="sarangapani.jpg" alt="March 2023 Newsletter">
             </div>
@@ -456,7 +459,7 @@
             </div>
             
         </div>
-        <div class="newsletter-container" onclick="window.location.href='thirunageshwaram.php';">
+        <div class="newsletter-container" onclick="window.location.href='thirunageshwaram.html';">
             <div class="img">
                 <img src="nageshwaram.jpg" alt="March 2023 Newsletter">
             </div>
@@ -465,7 +468,7 @@
             </div>
             
         </div>
-        <div class="newsletter-container" onclick="window.location.href='sarabeshwarar.php';">
+        <div class="newsletter-container" onclick="window.location.href='sarabeshwarar.html';">
             <div class="img">
                 <img src="sarabeswarar.jpg" alt="March 2023 Newsletter">
             </div>
@@ -474,7 +477,7 @@
             </div>
             
         </div>
-        <div class="newsletter-container" onclick="window.location.href='oppiliappan.php';">
+        <div class="newsletter-container" onclick="window.location.href='oppiliappan.html';">
             <div class="img">
                 <img src="uppiliappan.jpg" alt="March 2023 Newsletter">
             </div>
@@ -483,7 +486,7 @@
             </div>
             
         </div>
-        <div class="newsletter-container" onclick="window.location.href='patteeswarar.php';">
+        <div class="newsletter-container" onclick="window.location.href='patteeswarar.html';">
             <div class="img">
                 <img src="patteeswaram.jpg" alt="March 2023 Newsletter">
             </div>
@@ -491,7 +494,7 @@
             <h3>ARULMIGU THENUPURISWARAR TEMPLE, PATTEESWARAM</h3>
             </div>
         </div>           
-        <div class="newsletter-container" onclick="window.location.href='swamimalai.php';">
+        <div class="newsletter-container" onclick="window.location.href='swamimalai.html';">
             <div class="img">
                 <img src="swamimalai.jpg" alt="March 2023 Newsletter">
             </div>
@@ -500,7 +503,7 @@
             </div>
             
             </div>
-            <div class="newsletter-container" onclick="window.location.href='chakrapani.php';">
+            <div class="newsletter-container" onclick="window.location.href='chakrapani.html';">
             <div class="img">
                 <img src="chakrapani.jpg" alt="March 2023 Newsletter">
             </div>

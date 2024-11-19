@@ -1,214 +1,236 @@
 <?php
-if (isset($_POST['submit'])) {
-  $upiId = $_POST['upi-id'];
-  $amount = $_POST['amount'];
-  $name = $_POST['name'];
-  $pin = $_POST['pin'];
-  $otp = $_POST['otp'];
+// Validate booking_id from URL
+$bookingId = isset($_GET['booking_id']) ? (int)$_GET['booking_id'] : null;
 
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $database = "temple";
-
-  $conn = new mysqli($servername, $username, $password, $database);
-
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-
-  $stmt = $conn->prepare("INSERT INTO upi_payments (upi_id, amount, name, pin, otp) VALUES (?, ?, ?, ?, ?)");
-  $stmt->bind_param("sssss", $upiId, $amount, $name, $pin, $otp);
-  
-  if ($stmt->execute()) {
-    $successMessage = "Payment details stored successfully.";
-    header("refresh:2; url=complete.php");
-  } else {
-    $errorMessage = "Error storing payment details: " . $stmt->error;
-  }
-
-  $stmt->close();
-  $conn->close();
+if (!$bookingId) {
+    die("Invalid booking ID.");
 }
+
+// Connect to the database
+$conn = new mysqli('localhost', 'root', '', 'temple');
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Retrieve temple_id based on booking_id
+$templeQuery = $conn->prepare("SELECT temple_id FROM darshan WHERE id = ?");
+$templeQuery->bind_param("i", $bookingId);
+$templeQuery->execute();
+$templeQuery->bind_result($templeId);
+$templeQuery->fetch();
+$templeQuery->close();
+
+if (!$templeId) {
+    die("Temple ID not found for this booking.");
+}
+
+// Check if form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $upiId = $_POST['upi_id'];
+    $transactionId = $_POST['transaction_id'];
+
+    // Update UPI details for the booking
+    $stmt = $conn->prepare("UPDATE darshan SET upi_id = ?, transaction_id = ? WHERE id = ?");
+    if ($stmt) {
+        $stmt->bind_param("ssi", $upiId, $transactionId, $bookingId);
+        
+        // Execute the update and check for success
+        if ($stmt->execute()) {
+            // Redirect to confirmation page with temple_id
+            header("Location: confirmation.php?temple_id=" . urlencode($templeId) . "&booking_id=" . urlencode($bookingId));
+            exit;  // Stop further script execution after redirect
+        } else {
+            echo "Error updating payment details. Please try again.";
+        }
+        $stmt->close();
+    } else {
+        echo "Database error. Please try again later.";
+    }
+}
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>UPI Payment</title>
-  <style>
-    body {
-      background-image: url('card3payment.webp');
-      background-size: cover;
-      background-position: center;
-      font-family: Arial, sans-serif;
-      color: #fff;
-    }
-   
-    .container {
-      width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-      text-align: center;
-    }
-   
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-   
-    .upi-form {
-      text-align: left;
-    }
-   
-    .form-group {
-      margin-bottom: 20px;
-    }
-   
-    .form-group label {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-   
-    .form-group input[type="text"],
-    .form-group select {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: none;
-    }
-   
-    .form-group input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: none;
-    }
-   
-    .form-group input[type="submit"] {
-      width: auto;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #ff5722;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-   
-    .qr-code {
-      margin-top: 20px;
-    }
-   
-    .qr-code img {
-      width: 200px;
-      height: 200px;
-      background-color: #fff;
-    }
-   
-    .success-message {
-      color: green;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter UPI Details</title>
+    <style>
+        /* Universal Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("images.webp");
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Form Container */
+.form-container {
+    background: #dacba2;
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.form-container h2 {
+    margin-bottom: 25px;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: black;
+}
+
+input {
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: black;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: black;
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Button Styling */
+button {
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(145deg, #e67e22, #f39c12);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* QR Code Section */
+.qr-container {
+    margin: 20px 0;
+}
+
+.qr-container img {
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.qr-container p {
+    margin-top: 10px;
+    color: black;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Error Message Styling */
+.error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>UPI Payment</h1>
-    <?php
-    if (isset($successMessage)) {
-      echo '<div class="success-message">' . $successMessage . '</div>';
-    } elseif (isset($errorMessage)) {
-      echo '<div class="error-message">' . $errorMessage . '</div>';
-    }
-    ?>
-    <form class="upi-form" action="" method="post" onsubmit="return validateForm()">
-      <div class="form-group">
-        <label for="upi-id">UPI ID</label>
-        <input type="text" id="upi-id" name="upi-id" required>
-      </div>
-      <div class="form-group">
-        <label for="amount">Amount</label>
-        <input type="text" id="amount" name="amount" required>
-      </div>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="pin">PIN</label>
-        <input type="password" id="pin" name="pin" required>
-      </div>
+    <div class="form-container">
+        <h2>Enter UPI Details</h2>
+        <div class="qr-container">
+            <img src="GooglePay_QR.png" alt="GPay QR Code">
+            <p>Scan the QR Code to Pay</p>
+        </div>
+        <form id="upiForm" method="POST">
+            <label for="upi_id">UPI ID:</label>
+            <input type="text" id="upi_id" name="upi_id" placeholder="e.g., yourname@upi" required>
+            <div id="upiError" class="error"></div>
 
+            <label for="transaction_id">Transaction ID:</label>
+            <input type="text" id="transaction_id" name="transaction_id" placeholder="e.g., TXN12345" required>
+            <div id="txnError" class="error"></div>
 
-      <div class="form-group">
-        <label for="otp">Enter OTP</label>
-        <input type="password" id="otp" name="otp" required>
-      </div>
-     
-      <div class="form-group">        
-        <input type="submit" name="submit" value="Proceed">
-      </div>
-    </form>
-    <div class="qr-code">
-      <img src="qrcode.png" alt="QR Code">
-      <p>Scan the QR Code For Your Payment</p>
+            <button type="submit">Submit</button>
+        </form>
     </div>
-  </div>
-  <script>
-    function validateForm() {
-      var upiId = document.getElementById("upi-id").value;
-      var amount = document.getElementById("amount").value;
-      var name = document.getElementById("name").value;
-      var pin = document.getElementById("pin").value;
-      var otp = document.getElementById("otp").value;
 
+    <script>
+        document.getElementById('upiForm').addEventListener('submit', function (event) {
+            let isValid = true;
 
-      var upiIdPattern = /^[a-zA-Z0-9@]+$/;
-      var amountPattern = /^[0-9]+$/;
-      var namePattern = /^[a-zA-Z\s]+$/;
-      var pinPattern = /^[0-9]{4}$/;
-      var otpPattern = /^[0-9]{4}$/;
+            // Validate UPI ID
+            const upiInput = document.getElementById('upi_id');
+            const upiError = document.getElementById('upiError');
+            if (!upiInput.value.match(/^[\w.+-]+@[a-zA-Z]+$/)) {
+                upiError.textContent = 'Enter a valid UPI ID (e.g., yourname@upi).';
+                isValid = false;
+            } else {
+                upiError.textContent = '';
+            }
 
+            // Validate Transaction ID
+            const txnInput = document.getElementById('transaction_id');
+            const txnError = document.getElementById('txnError');
+            if (txnInput.value.trim() === '') {
+                txnError.textContent = 'Transaction ID cannot be empty.';
+                isValid = false;
+            } else {
+                txnError.textContent = '';
+            }
 
-      if (!upiId.match(upiIdPattern)) {
-        alert("Please enter a correct UPI ID");
-        return false;
-      }
-
-
-      if (!amount.match(amountPattern)) {
-        alert("Amount should only contain numbers");
-        return false;
-      }
-
-
-      if (!name.match(namePattern)) {
-        alert("Name should only contain alphabets");
-        return false;
-      }
-
-
-      if (!pin.match(pinPattern)) {
-        alert("PIN should be a 4-digit number");
-        return false;
-      }
-
-
-      if (!otp.match(otpPattern)) {
-        alert("OTP should be a 4-digit number");
-        return false;
-      }
-
-
-      return true;
-    }
-  </script>
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,222 +1,392 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Eachanari Vinayagar Temple</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <style>
-        body {
-            background-image: url("background.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            font-family:Georgia, timesnewroman;
-        }
+<title>Eachanari Vinayagar Temple</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 3px;
+  color: black;
+}
+.w3-bar-item {
+  font-weight: bold;
+  color: #4CAF50;
+  text-align: center;
+  display: inline-block;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.w3-bar-item:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+.slide-panel {
+  height: 100%;
+  width: 600px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f9f9f9;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+.slide-panel.open {
+  transform: translateX(0);
+}
+.slide-panel .closebtn {
+  font-size: 36px;
+  color: black;
+  cursor: pointer;
+  float: right;
+}
 
-        .carousel-item img {
-            width: 100%;
-            height: 50%;
-        }
+.slide-panel a {
+  display: block;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
 
-        h2 {
-            text-align: center;
-            background-color: gold;
-        }
+.slide-panel a:hover {
+  background-color: #f1f1f1;
+}
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: gold;
-        }
+.openbtn {
+  border: none;
+  background: none;
+  font-weight: bold;
+  color: #4CAF50;
+  padding: 14px 16px;
+  text-align: center;
+  cursor: pointer;
+}
 
-        .container {
-            margin-top: 30px;
-        }
+.openbtn:hover {
+  background-color: #f1f1f1;
+}
 
-        .details-container {
-            background-color: ivory;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
 
+.floating-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
 
+.floating-btn.virtual-tour {
+  bottom: 90px;
+}
 
-        }
+section {
+  padding: 64px 0;
+  background-color: #fff;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  max-width: 1100px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
 
-        h1 {
-            text-align: center;
-        }
+section h1, section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-        .navigation ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+section p, section ul {
+  margin: 20px 0;
+}
 
-        .navigation ul li {
-            display: inline-block;
-            margin: 0 10px;
-        }
+section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
 
-        .navigation ul li a {
-            color: #0c0b0b;
-            text-decoration: none;
-        }
-        .navigation {
-            background-color: skyblue;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+section ul li {
+  margin-bottom: 10px;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fef6f6;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
+.img-responsive {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+.image-right {
+  float: right;
+  margin-left: 20px;
+  width: 50%;
+  height: auto;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer {
+    background-color: black; 
+    color: #fff; 
+    padding: 20px 0;
+    text-align: center;
+}
 
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+.footer-info {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+.footer-info a {
+    color: gold;
+}
 
-        .dropdown-content a:hover {
-            background-color: #bdbbbb;
-        }
-    </style>
+.footer-links {
+    flex: 1;
+    text-align: bottom;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+.footer-links a {
+    color: #fff; 
+    text-decoration: none;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.footer-links a:hover {
+    color: #f5a623; 
+}
+</style>
 </head>
-
 <body>
-    <header>
-        <h1>EACHANARI VINAYAGAR TEMPLE</h1>
-    </header>
-    ] <div class="navigation">
-        <ul>
-            <li><a href="home.php">HOME</a></li>
-            <li class="dropdown">
-                <a href="#">AUDIO GUIDE</a>
-                <div class="dropdown-content">
-                    <a href="eachanari tamil.mp3">TAMIL LANGUAGE</a>
-                    <a href="eachanari vinayagar.mp3">ENGLISH LANGUAGE</a>
-                </div>
-             <li><a href="https://www.google.com/maps/@10.9240432,76.9826711,3a,75y,243.32h,79.81t/data=!3m6!1e1!3m4!1sqnK9dMqvbu48qHSfQuZLIg!2e0!7i13312!8i6656?entry=ttu">VIRTUAL TOUR</a></li>
-            <li><a href="darshanbooking.php">BOOK TICKETS</a></li>
-            <li><a href="poojabooking.php">POOJA BOOKING</a></li>
-            <li><a href="donation.php">DONATION</a></li>
-            <li><a href="eachanaricontact.php">CONTACT</a></li>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="coimbatore.html" class="w3-bar-item w3-button">←</a>
+    <a href="#home" class="w3-bar-item w3-button">Eachanari Vinayagar Temple</a>
+    <div class="w3-right w3-hide-small">
+      <a href="#history" class="w3-bar-item w3-button">History</a>
+      <a href="#ways-to-reach" class="w3-bar-item w3-button">Ways to Reach</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
       
-                
-                    
-
-                </div>
-        </ul>
-    
-        
+      <a href="poojabooking.php?temple_id=11" class="w3-bar-item w3-button">Pooja Booking</a>
+      <a href="darshanbooking.php?temple_id=11" class="w3-bar-item w3-button">Darshan Booking</a>
+      <a href="donation.php?temple_id=11" class="w3-bar-item w3-button">Donation</a>
     </div>
-    <div class="container">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="eachanari1.webp" alt="Temple 1" style="width: 100%; height: 500px">
+  </div>
+</div>
 
-                </div>
-                <div class="carousel-item">
-                    <img src="eachanari2.jpg" alt="Temple 2" style="width: 100%; height: 500px;">
+<div id="myNav" class="slide-panel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2>Audio Guide</h2>
+  <a href="eachanari_tamil.mp3">Tamil Language</a>
+  <a href="eachanari_english.mp3">English Language</a>
+</div>
 
-                </div>
-                <div class="carousel-item">
-                    <img src="eachanari3.jpg" alt="Temple 3" style="width: 100%; height: 500px;">
+<!-- Floating Button for Audio Guide -->
+<button class="floating-btn" onclick="openNav()">🎧</button>
 
-                </div>
-                <div class="carousel-item">
-                    <img src="eachanari4.jpg" alt="Temple 4" style="width: 100%; height: 500px;">
+<!-- Floating Button for Virtual Tour -->
+<button class="floating-btn virtual-tour" onclick="window.location.href='https://www.google.com/maps/@11.0291304,76.9742289,3a,75y,90h,90t/data=!3m6!1e1!3m4!1sH9iKxwlHLaEc65nb9qkM8A!2e0!7i13312!8i6656?coh=205410&entry=ttu'">👁️</button>
 
-                </div>
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="eachanariimage.png" alt="Eachanari Vinayagar Temple" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Eachanari Vinayagar Temple</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+    <section id="about">
+        <div class="w3-row-padding">
+            <div class="w3-col m6 w3-padding-large w3-hide-small">
+                <img src="eachanari.jpg" class="img-responsive" alt="Eachanari Temple">
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <div class="w3-col m6 w3-padding-large">
+                <h1>About Eachanari Temple</h1>
+                <h5>Historical Temple</h5>
+                <p>Eachanari Temple, located in Coimbatore, is a revered temple dedicated to Lord Ganesha. This temple is famous for its beautiful architecture and is a significant pilgrimage site for devotees seeking the blessings of Lord Ganesha. Believed to have been constructed in the 19th century, Eachanari Temple is known for its intricate carvings and serene ambiance, making it a popular destination for both local and visiting devotees, especially during the festival of Vinayaka Chaturthi.</p>
+            </div>
+        </div>
+    </section>
+    
+      
+      <!-- History Section -->
+<section id="history">
+    <div class="w3-row-padding">
+        <div class="w3-col l6 w3-padding-large">
+            <h1>History</h1>
+            <p>The Eachanari Temple is believed to have been established in the early 20th century, dedicated to Lord Ganesha. It has a rich history and has undergone several renovations, with contributions from numerous devotees over the years, solidifying its place as an important pilgrimage site in Coimbatore.</p>
+            <p>The temple is known for its significance in local folklore and is a major attraction during the festival of Vinayaka Chaturthi, when thousands of devotees flock to seek the blessings of Lord Ganesha, especially for new beginnings and removing obstacles in their lives.</p>
+        </div>
+        <div class="w3-col l6 w3-padding-large w3-hide-small">
+            <img src="eachanari_history.jpg" class="img-responsive" alt="Eachanari Temple History">
         </div>
     </div>
-    <div class="container">
-        <div class="details-container">
-            <h3>HISTORY</h3>
-            <p>Eachanari Vinayagar Temple, located in Coimbatore, is a popular Hindu temple dedicated to Lord Ganesha.
-                It is one of the oldest and most revered temples in the region. The temple is known for its grand
-                architecture and exquisite stone carvings. The presiding deity, Lord Vinayagar (Ganesha), is believed
-                to be a powerful deity who blesses his devotees with wisdom, prosperity, and success.</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="details-container">
-            <h4>OPENING HOURS</h4>
-            <p>6:00 AM - 1:00 PM</p>
-            <p>4:00 PM - 9:00 PM</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="details-container">
-            <h4>POOJA TIMINGS</h4>
-            <p>Ushathkalam Pooja - 6:00 AM</p>
-            <p>Kalasanthi Pooja - 8:00 AM</p>
-            <p>Uchikalam Pooja - 12:00 PM</p>
-            <p>Sayarakshai Pooja - 6:00 PM</p>
-            <p>Arthajama Pooja - 8:00 PM</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="details-container">
-            <h4>LOCATION</h4>
-            <p>Eachanari Vinayagar Temple, Eachanari, Coimbatore, Tamil Nadu 641021</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="details-container">
-            <h4>FESTIVALS</h4>
-            <p>1. Vinayagar Chaturthi</p>
-            <p>2. Thai Poosam</p>
-            <p>3. Panguni Uthiram</p>
-            <p>4. Ganesh Jayanti</p>
-            <p>5. Navratri</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="details-container">
-            <h4>WAYS TO REACH</h4>
-            <p>By Air: The nearest airport to Coimbatore is Coimbatore International Airport.From the airport, you can hire a taxi or take a bus to reach Eachanari Temple, which is approximately 23 kilometers away.</p>
-<p>By Train: Coimbatore Junction is the main railway station in Coimbatore.From the railway station, you can hire a taxi, take an auto-rickshaw, or use public transportation to reach Eachanari Temple, which is approximately 16 kilometers away.</p>
-<p>By Road: Coimbatore is well-connected by road, and you can reach the city by bus or private vehicle.From Coimbatore, you can take the Pollachi Road (NH 209) towards Pollachi. Eachanari Temple is located on Pollachi Road, approximately 10 kilometers from the city center.</p>
-<p>By Taxi or Autorickshaw: You can hire a taxi, take an auto-rickshaw, or use public transportation to reach the temple.</p>
-        </div>
-    </div>
+</section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+      <!-- Ways to Reach Section -->
+<section id="ways-to-reach">
+    <div class="w3-row-padding">
+        <div class="w3-col l6 w3-padding-large">
+            <h1>Ways to Reach</h1>
+            <p>Eachanari Temple is conveniently accessible by various modes of transportation, ensuring a smooth journey for both local and international visitors:</p>
+            <ul>
+                <li><strong>By Air:</strong> Coimbatore International Airport is the nearest airport, located about 10 kilometers from the temple. From the airport, you can hire a taxi or use public transport to reach the temple.</li>
+                <li><strong>By Train:</strong> Coimbatore Junction Railway Station is the major railhead, situated approximately 8 kilometers from the temple. From the station, you can take a taxi, auto-rickshaw, or use local bus services to reach the temple.</li>
+                <li><strong>By Bus:</strong> Eachanari Bus Stop is nearby, with regular bus services operating from various parts of Coimbatore city to the temple area.</li>
+                <li><strong>By Auto-Rickshaw:</strong> Auto-rickshaws are widely available in Coimbatore and can be a convenient way to reach Eachanari Temple from different parts of the city.</li>
+            </ul>
+        </div>
+        <div class="w3-col l6 w3-padding-large w3-hide-small">
+            <img src="eachanari_transport.jpg" class="img-responsive" alt="Ways to Reach Eachanari Temple">
+        </div>
+    </div>
+</section>
+
+
+     <!-- Festivals Section -->
+<section id="festivals">
+    <div class="w3-row-padding">
+        <div class="w3-col l6 w3-padding-large">
+            <h1>Festivals</h1>
+            <p>Eachanari Temple is renowned for its vibrant festivals, celebrated with great fervor and devotion. Some of the major festivals include:</p>
+            <ul>
+                <li><strong>Panguni Uthiram:</strong> Celebrated in the Tamil month of Panguni (March-April), this festival features elaborate processions and rituals dedicated to Lord Ganesh.</li>
+                <li><strong>Vinayaka Chaturthi:</strong> This festival, dedicated to Lord Ganesh, involves colorful celebrations, processions, and special poojas, attracting numerous devotees.</li>
+                <li><strong>Navaratri:</strong> This nine-day festival dedicated to Goddess Durga is celebrated with various cultural programs, special poojas, and beautifully decorated temple interiors.</li>
+                <li><strong>Thai Poosam:</strong> A significant festival for devotees of Lord Murugan, celebrated with fervor, special offerings, and rituals throughout the temple.</li>
+            </ul>
+        </div>
+        <div class="w3-col l6 w3-padding-large w3-hide-small">
+            <img src="eachanari_festivals.jpg" class="img-responsive" alt="Eachanari Temple Festivals">
+        </div>
+    </div>
+</section>
+
+
+      <!-- Pooja Timings Section -->
+<section id="pooja-timings">
+    <div class="w3-row-padding">
+        <div class="w3-col l6 w3-padding-large">
+            <h1>Pooja Timings</h1>
+            <p>The daily pooja timings at Eachanari Temple are as follows:</p>
+            <ul>
+                <li><strong>Ganesh Pooja (First Pooja):</strong> 5:30 AM - The first pooja of the day, where offerings and prayers are made to Lord Ganesh.</li>
+                <li><strong>Kaala Santhi Pooja:</strong> 8:00 AM - Morning pooja with rituals and offerings dedicated to the deity.</li>
+                <li><strong>Uchikala Pooja (Noon Pooja):</strong> 12:00 PM - Midday pooja where special offerings are made to Lord Ganesh.</li>
+                <li><strong>Sayaraksha Pooja (Evening Pooja):</strong> 5:00 PM - Evening pooja with aarti and prayers as the day comes to an end.</li>
+                <li><strong>Ardhajama Pooja (Night Pooja):</strong> 9:00 PM - The final pooja of the day before the deity is put to rest.</li>
+            </ul>
+            <p>Special poojas and rituals are performed on auspicious days and during festivals, attracting large numbers of devotees.</p>
+        </div>
+        <div class="w3-col l6 w3-padding-large w3-hide-small">
+            <img src="eachanari_pooja.jpg" class="img-responsive" alt="Eachanari Temple Pooja Timings">
+        </div>
+    </div>
+</section>
+
+
+   <!-- Contact Section -->
+<section id="contact">
+    <div class="w3-row-padding">
+        <div class="w3-col m6 w3-padding-large">
+            <!-- Contact Form -->
+            <h1>Contact Us</h1>
+            <p>If you have any queries or need further information, please feel free to contact us:</p>
+            <form action="/submit_query.php" method="POST" class="contact-form">
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="w3-input w3-border" placeholder="Your Name" required>
+                    </div>
+                    <div class="w3-half">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="w3-input w3-border" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="w3-input w3-border" placeholder="Your Message" style="height:200px;" required></textarea>
+                <button type="submit" class="w3-button w3-green w3-margin-top">Submit</button>
+            </form>
+        </div>
+        <div class="w3-col m6 w3-padding-large">
+            <!-- Additional Content or Placeholder -->
+            <p class="w3-text-grey"><i class="fa fa-map-marker fa-fw w3-margin-right"></i>  Eachanari, Coimbatore, Tamil Nadu - 641021</p>
+            <p class="w3-text-grey"><i class="fa fa-phone fa-fw w3-margin-right"></i> +91-422-242 8765</p>
+            <p class="w3-text-grey"><i class="fa fa-envelope fa-fw w3-margin-right"></i> eachanari@temple.org</p>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-info">
+            <p>Address: Department Of Tourism, Wallajah Road, Chennai-2</p>
+            <p>Email: tourism@tnstate.com</p>
+            <p>Toll Free no: 1800-456-84923</p>
+            <p>All rights reserved &copy; Tamil Nadu Tourism 2023</p>
+            <p>
+                <a href="#">Copyright</a> | <a href="#">Terms of Use</a> | <a href="#">Cookie Policy</a> | <a href="#">Contact Us</a>
+            </p>
+        
+        <div class="footer-links">
+            <a href="https://www.facebook.com/YourFacebookPage" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/YourInstagramPage" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/YourYouTubeChannel" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+  </footer>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").classList.add("open");
+}
+
+function closeNav() {
+  document.getElementById("myNav").classList.remove("open");
+}
+</script>
 
 </body>
-
 </html>

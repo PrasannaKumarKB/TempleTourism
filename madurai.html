@@ -11,12 +11,14 @@
     }
 
     header {
-      background-image: url("maduraiheader.jpg");
+      background-image: url("maduraibackground.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       color: black;
       padding: 20px;
       text-align: center;
+      height: 150px;
+
     }
 
     .header h1 {
@@ -71,11 +73,13 @@
     }
 
     .banner-container {
-      text-align: center;
-      max-width: 100%;
-      margin: 0 auto;
-      overflow: hidden;
-    }
+  max-width: 95%;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 20px solid wheat; /* Frame around the banner */
+  border-radius: 15px; /* Rounded corners for the frame */
+   /* Space between the banner and the frame */
+}
 
     .banner {
       width: 100%;
@@ -116,7 +120,7 @@
     }
 
     .navigation {
-      background-color: silver;
+      background-color: wheat;
       color: #fff;
       padding: 10px;
       text-align: center;
@@ -151,13 +155,15 @@
     }
 
     .newsletter-container {
+      border: 20px solid wheat;
       position: relative;
       background-color: #fff;
       cursor: pointer;
-      margin: 10px;
+      margin: 20px;
       overflow: hidden;
-      width: 300px;
-      height: 400px;
+      width: 400px;
+      height:400px;
+      border-radius: 10px;
     }
 
     img {
@@ -171,9 +177,9 @@
       transform: scale(1.10);
     }
 
-    .newsletter-container:hover .overlay {
+    /* .newsletter-container:hover .overlay {
       transform: translateY(-50%);
-    }
+    } */
 
     main {
       display: flex;
@@ -183,8 +189,9 @@
     }
 
     .overlay {
+      background-color: white;
       position: absolute;
-      bottom:  0;
+      bottom: 0;
       left: 0;
       right: 0;
       text-align: left;
@@ -194,7 +201,7 @@
     }
 
     h3 {
-      color: white;
+      color: black;
       border-color: gold;
       margin-bottom: 30px;
       margin-left: 10px;
@@ -227,8 +234,8 @@
     }
 
     footer {
-      background-color: black;
-      color: #fff; 
+      background-color: wheat;
+      color: black; 
       padding: 20px 0;
       text-align: center;
     }
@@ -241,7 +248,7 @@
     }
 
     .footer-info a {
-      color: gold;
+      color: black;
     }
 
     
@@ -266,8 +273,9 @@
     }
 
     .navigation {
-      background-color: transparent;
+      background-color: #f5deb3;
       color: #fff;
+      height: 25px;
       padding: 10px;
       text-align: center;
       margin-top: 10px;
@@ -275,10 +283,7 @@
       transition: background-color 0.3s; 
     }
 
-    .navigation:hover {
-      background-color: gray; 
-      color: white; 
-    }
+    
 
     .navigation ul {
       list-style: none;
@@ -293,7 +298,7 @@
 
     .navigation ul li a {
       color: black;
-      text-decoration: none;
+      text-decoration: underline;
     }
 
     .navigation ul li a:hover {
@@ -307,6 +312,7 @@
       left: 20px;
       font-size: 30px;
       cursor: pointer;
+      color: black;
     }
 
     
@@ -389,16 +395,16 @@
 </head>
 <body>
   <header>
-  <a class="back-button" href="home.php" style="position: absolute; top: 20px; left: 20px; font-size: 48px; color:white;text-decoration: none;">&larr;</a>
+  <a class="back-button" href="home.html" style="position: absolute; top: 20px; left: 20px; font-size: 48px; color:white;text-decoration: none;">&larr;</a>
     <h1>M A D U R A I</h1>
   </header>
   <div class="navigation">
     <span class="hamburger" onclick="openMenu()">&#9776;</span>
     <ul>
-      <li><a href="home.php">Home</a></li>
-      <li><a href="maduraiarticle.php">About</a></li>
-      <li><a href="maduraigallery.php">Gallery</a></li>
-      <li><a href="maduraicontact.php">Contact</a></li>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="maduraiarticle.html">About</a></li>
+      <li><a href="maduraigallery.html">Gallery</a></li>
+      <li><a href="maduraicontact.html">Contact</a></li>
     </ul>
   </div>
   <div class="sliding-menu">
@@ -420,10 +426,9 @@
 
   <div id="container">
     <div class="city-description">
-      <p>Madurai is an energetic, ancient city on the Vaigai River in the South Indian state of Tamil Nadu. Its skyline is dominated by the 14 colorful gopurams (gateway towers) of Meenakshi Amman Temple. Covered in bright carvings of Hindu gods, the Dravidian-style temple is a major pilgrimage site.</p>
     </div>
     <main>
-    <div class="newsletter-container" onclick="window.location.href='meenakshiamman.php';">
+    <div class="newsletter-container" onclick="window.location.href='meenakshiamman.html';">
             <div class="img">
                 <img src="meenakshiamman2.jpg" alt="December 2022 Newsletter">
             </div>
@@ -433,7 +438,7 @@
            
         </div>
 
-        <div class="newsletter-container" onclick="window.location.href='vandiyur.php';">
+        <div class="newsletter-container" onclick="window.location.href='vandiyur.html';">
             <div class="img">
                 <img src="vandiyur2.jpg" alt="February Newsletter">
             </div>
@@ -443,7 +448,7 @@
             
         </div>
 
-        <div class="newsletter-container" onclick="window.location.href='alagarkovil.php';">
+        <div class="newsletter-container" onclick="window.location.href='alagarkovil.html';">
             <div class="img">
                 <img src="alagarkovil1.webp" alt="March 2023 Newsletter">
             </div>
@@ -452,7 +457,7 @@
             </div>
             <a href="vadapalani.php" class="readmore">Read More -></a>
         </div>
-        <div class="newsletter-container" onclick="window.location.href='tallakulam.php';">
+        <div class="newsletter-container" onclick="window.location.href='tallakulam.html';">
             <div class="img">
                 <img src="tallakulam.webp" alt="March 2023 Newsletter">
             </div>
@@ -461,16 +466,16 @@
             </div>
             
         </div>
-        <div class="newsletter-container" onclick="window.location.href='yanamalai.php';">
+        <div class="newsletter-container" onclick="window.location.href='yanamalai.html';">
             <div class="img">
-                <img src="yanaimalai.jpg" alt="March 2023 Newsletter">
+                <img src="yanaimalai3.jpg" alt="March 2023 Newsletter">
             </div>
             <div class="overlay">
             <h3>ARULMIGU YOGA NARASHIMA PERUMAL TEMPLE, YANAIMALAI</h3>
             </div>
             
         </div>
-        <div class="newsletter-container" onclick="window.location.href='thiruparankundram.php';">
+        <div class="newsletter-container" onclick="window.location.href='thiruparankundram.html';">
             <div class="img">
                 <img src="thiruparankundram2.jpg" alt="March 2023 Newsletter">
             </div>
@@ -479,7 +484,7 @@
             </div>
             
         </div>
-        <div class="newsletter-container" onclick="window.location.href='koodalalagar.php';">
+        <div class="newsletter-container" onclick="window.location.href='koodalalagar.html';">
             <div class="img">
                 <img src="koodalalagar.jpg" alt="March 2023 Newsletter">
             </div>
@@ -487,7 +492,7 @@
             <h3>ARULMIGU SHRI KOODAL AZHAGAR TEMPLE</h3>
             </div>
         </div>           
-        <div class="newsletter-container" onclick="window.location.href='pazhamudhircholai.php';">
+        <div class="newsletter-container" onclick="window.location.href='pazhamudhircholai.html';">
             <div class="img">
                 <img src="pazhamudhircholai.jpg" alt="March 2023 Newsletter">
             </div>
@@ -496,7 +501,7 @@
             </div>
             
             </div>
-            <div class="newsletter-container" onclick="window.location.href='pandikovil.php';">
+            <div class="newsletter-container" onclick="window.location.href='pandikovil.html';">
             <div class="img">
                 <img src="pandi.jpg" alt="March 2023 Newsletter">
             </div>

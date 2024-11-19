@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Pilgrimage Planner</title>
+    <link rel="stylesheet" href="planner.css">
+</head>  
+<body>
+    <header>
+        <h1>Personalized Pilgrimage Planner</h1>
+    </header>
+    
+    <section class="planner-form">
+        <h2>Plan Your Custom Itinerary</h2>
+        <form id="itineraryForm">
+            <label for="place">Place you want to visit in Tamil Nadu:</label>
+            <input type="text" id="place" name="place" required placeholder="Enter a place (e.g., Madurai)">
+
+            <label for="duration">Duration of Stay (in days):</label>
+            <input type="number" id="duration" name="duration" min="1" required>
+
+            <label for="budget">Budget (in USD):</label>
+            <input type="number" id="budget" name="budget" min="100" required>
+
+            <label for="types">Type of Places (temples, historical, nature):</label>
+            <input type="text" id="types" name="types" required placeholder="e.g., temples, historical">
+
+            <button type="submit">Get Personalized Itinerary</button>
+        </form>
+    </section>
+
+    <section class="itinerary-result" id="itineraryResult" style="display: none;">
+        <h2>Your Personalized Itinerary</h2>
+        <div id="output"></div>
+    </section>
+
+    <script>
+        const sampleItineraries = {
+            "Madurai": {
+                temples: [
+                    { name: "Meenakshi Temple", options: ["Morning puja", "Explore temple architecture"], dining: ["Breakfast at Hotel Heritage"] },
+                    { name: "Thiruparankundram Murugan Temple", options: ["Visit the rock-cut temple", "Enjoy panoramic views"], dining: ["Lunch at Aasai Restaurant"] },
+                    { name: "Koodal Azhagar Temple", options: ["Visit the sanctum", "Temple tour"], dining: ["Lunch at local restaurant"] }
+                ],
+                historical: [
+                    { name: "Thirumalai Nayakkar Mahal", options: ["Explore the palace architecture", "Photography"], dining: ["Breakfast at local cafe"] },
+                    { name: "Gandhi Museum", options: ["Learn about Gandhi's life", "Visit exhibits"], dining: ["Lunch at nearby restaurant"] }
+                ],
+                nature: [
+                    { name: "Alagar Hills", options: ["Trekking", "Nature photography"], dining: ["Pack lunch for the hill"] },
+                    { name: "Vaigai Riverfront", options: ["Relax by the river", "Picnic area"], dining: ["Lunch at riverside stalls"] }
+                ],
+                leisure: [
+                    { name: "Shopping at local markets", options: ["Explore local handicrafts", "Buy souvenirs"], dining: ["Dinner at local restaurant"] },
+                    { name: "Evening stroll in city parks", options: ["Relax and enjoy nature", "Photographing sunset"], dining: ["Light snacks at park cafe"] }
+                ],
+                fallback: {
+                    name: "General City Exploration",
+                    options: ["Leisure walk around town", "Visit a local cafe", "Explore local shops"],
+                    dining: ["Street food stalls", "Cafe"]
+                }
+            },
+            "Chennai": {
+                temples: [
+                    { name: "Kapaleeshwarar Temple", options: ["Morning rituals", "Explore temple architecture"], dining: ["Breakfast at local restaurant"] },
+                    { name: "Parthasarathy Temple", options: ["Visit the temple", "Participate in puja"], dining: ["Lunch at nearby restaurant"] }
+                ],
+                historical: [
+                    { name: "San Thome Basilica", options: ["Visit the basilica", "Learn about history"], dining: ["Breakfast at nearby cafe"] },
+                    { name: "Fort St. George", options: ["Explore the fort museum", "Cultural exhibitions"], dining: ["Lunch at Fort Cafe"] }
+                ],
+                nature: [
+                    { name: "Elliot's Beach", options: ["Beach walk", "Relax"], dining: ["Breakfast at beachside cafe"] },
+                    { name: "Guindy National Park", options: ["Nature trails", "Wildlife spotting"], dining: ["Lunch at nearby restaurant"] }
+                ],
+                leisure: [
+                    { name: "Shopping at T Nagar", options: ["Explore local boutiques", "Buy traditional wear"], dining: ["Dinner at local restaurant"] },
+                    { name: "Visit Marina Beach", options: ["Enjoy beach sunset", "Walk along the shore"], dining: ["Light snacks from beach vendors"] }
+                ],
+                fallback: {
+                    name: "General City Exploration",
+                    options: ["Relax at a local park", "Visit a nearby cafe", "Enjoy city views"],
+                    dining: ["Local street food", "Cafe"]
+                }
+            }
+        };
+
+        function createFlexibleItinerary(city, numDays) {
+            const itinerary = [];
+            const locations = JSON.parse(JSON.stringify(sampleItineraries[city])); // Deep clone to avoid mutation
+
+            for (let i = 0; i < numDays; i++) { // Loop for the number of days
+                itinerary.push([]);
+
+                // Morning Plan (This or That)
+                const morningPlan = {
+                    time: "Morning",
+                    thisOption: locations.temples.shift() || locations.historical.shift() || locations.nature.shift() || locations.fallback,
+                    thatOption: locations.temples.shift() || locations.historical.shift() || locations.nature.shift() || locations.fallback
+                };
+                itinerary[i].push(morningPlan);
+
+                // Afternoon Plan (This or That)
+                const afternoonPlan = {
+                    time: "Afternoon",
+                    thisOption: locations.historical.shift() || locations.nature.shift() || locations.temples.shift() || locations.fallback,
+                    thatOption: locations.historical.shift() || locations.nature.shift() || locations.temples.shift() || locations.fallback
+                };
+                itinerary[i].push(afternoonPlan);
+
+                // Evening Plan (This or That)
+                const eveningPlan = {
+                    time: "Evening",
+                    thisOption: locations.leisure.shift() || locations.fallback,
+                    thatOption: locations.leisure.shift() || locations.fallback
+                };
+                itinerary[i].push(eveningPlan);
+            }
+
+            return itinerary;
+        }
+
+        document.getElementById('itineraryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const place = document.getElementById('place').value;
+            const duration = parseInt(document.getElementById('duration').value); // Get number of days from user
+            const itineraryResult = document.getElementById('itineraryResult');
+            itineraryResult.style.display = 'block';
+
+            const userItinerary = createFlexibleItinerary(place, duration); // Pass duration to createFlexibleItinerary
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+
+            userItinerary.forEach((day, index) => {
+                const dayDiv = document.createElement('div');
+                dayDiv.innerHTML = `<h3>Day ${index + 1}</h3>`;
+                day.forEach(plan => {
+                    dayDiv.innerHTML += `
+                        <div>
+                            <h4>${plan.time} Options:</h4>
+                            <p><strong>This:</strong> ${plan.thisOption.name}</p>
+                            <p><strong>Activities:</strong> ${plan.thisOption.options.join(', ')}</p>
+                            <p><strong>Dining:</strong> ${plan.thisOption.dining.join(', ')}</p>
+                            <p><strong>Or That:</strong> ${plan.thatOption.name}</p>
+                            <p><strong>Activities:</strong> ${plan.thatOption.options.join(', ')}</p>
+                            <p><strong>Dining:</strong> ${plan.thatOption.dining.join(', ')}</p>
+                        </div>
+                    `;
+                });
+                outputDiv.appendChild(dayDiv);
+            });
+        });
+    </script>
+</body>
+</html>

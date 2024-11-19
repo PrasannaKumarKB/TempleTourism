@@ -4,267 +4,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Page</title>
+    <title>Photo Gallery</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: cursive;
-        }
-
-        .banner {
-            background-image: url("gallerybanner.webp");
-            background-size: cover;
-            height: 700px;
-            display: flex;
-            text-align: left;
-        }
-
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: left;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .gallery:hover .overlay {
-        transform: translateY(-50%);
+    /* Global Styling */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #fff;
+        color: #333;
+        line-height: 1.6;
+    }
 
-        h1 {
-            text-align: left;
-            color: white;
-            font-size: xxx-large;
-            margin-left: 60px;
-        }
-
-        h3 {
+    /* Header Banner */
+    .header-banner {
+        background-image: url('gallerybanner.webp');
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         color: white;
-        margin-bottom: 30px;
-        margin-left: 10px;
-        transform: translateY(0); /* Initial position */
-        transition: transform 0.3s ease-in-out;
+        position: relative;
     }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
+    .header-banner::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
 
-        .gallery-item {
-            position: relative;
-            width: 100%;
-            padding-bottom: 75%; /* Maintain a 4:3 aspect ratio for the images */
-            overflow: hidden;
-            border-radius: 5px;
-            margin: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
+    .header-banner h1 {
+        position: relative;
+        z-index: 2;
+        font-size: 3rem;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    }
 
-        .gallery-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease-in-out;
-        }
+    /* Gallery Section */
+    .gallery-container {
+        width: 1600px;
+        margin: 30px auto;
+        padding: 20px;
+    }
 
-        .gallery-item:hover img {
-            transform: scale(1.10);
-        }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 40px;
+    }
 
-        .arrow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: white;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            cursor: pointer;
-        }
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        width: 480px;
+        height: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .arrow-left,
-        .arrow-right {
-            position: absolute;
-            top: 50%;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
+    .gallery-item:hover {
+        transform: translateY(5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
-        .arrow-left {
-            left: 20px;
-        }
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 1s ease;
+    }
 
-        .arrow-right {
-            right: 20px;
-        }
+    .gallery-item:hover img {
+        transform: scale(1.2);
+    }
 
-        .expanded:hover .arrow-left,
-        .expanded:hover .arrow-right {
-            opacity: 1;
-        }
+    .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 25px;
+        font-weight: bold;
+        transition: opacity 0.3s ease;
+    }
 
-        .gallery-item:hover .arrow {
-            opacity: 1;
-        }
+    .gallery-item:hover .gallery-caption {
+        opacity: 1;
+    }
 
-        .expanded {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            z-index: 1000;
-        }
+    /* Footer */
+    .footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 30px;
+        font-size: 0.9rem;
+    }
 
-        .expanded img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 5px;
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .header-banner h1 {
+            font-size: 2rem;
         }
+    }
 
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .slideshow-container {
-            max-width: 800px;
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .fade {
-            animation: fade 3s infinite;
-        }
-
-        @keyframes fade {
-            from {
-                opacity: .4
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-        
     </style>
 </head>
 
 <body>
-    <div class="banner">
-        <div class="overlay">
-            <h1>Gallery</h1>
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <h1>Photo Gallery</h1>
+    </div>
+
+    <!-- Hill Stations Section -->
+    <div class="gallery-container">
+        <h2>Hill Stations</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="ooty.webp" alt="Ooty">
+                <div class="gallery-caption">Ooty</div>
+            </div>
+            <div class="gallery-item">
+                <img src="kodaikanalgallery3.avif" alt="Kodaikanal">
+                <div class="gallery-caption">Kodaikanal</div>
+            </div>
+            <div class="gallery-item">
+                <img src="yercaudgallery3.webp" alt="Yercaud">
+                <div class="gallery-caption">Yercaud</div>
+            </div>
+            <div class="gallery-item">
+                <img src="valparaigallery.jpg" alt="Valparai">
+                <div class="gallery-caption">Valparai</div>
+            </div>
+            <div class="gallery-item">
+                <img src="megamalai1.webp" alt="Megamalai">
+                <div class="gallery-caption">Megamalai</div>
+            </div>
+            <div class="gallery-item">
+                <img src="kolli.jpg" alt="Kolli Hills">
+                <div class="gallery-caption">Kolli Hills</div>
+            </div>
+            <div class="gallery-item">
+                <img src="yelagiri.jpg" alt="Yelagiri">
+                <div class="gallery-caption">Yelagiri</div>
+            </div>
         </div>
     </div>
 
-    <h1 style="color: black; font-size: xx-large; margin-top: 10%;">HILLS</h1>
-    <div class="gallery">
-        <div class="gallery-item" onclick="expandImage('ooty', 0)">
-            <img src="ootygallery.jpg" alt="Image 1">
-            <div class="overlay">
-                <h3>OOTACAMUND</h3>
+    <!-- Beaches Section -->
+    <div class="gallery-container">
+        <h2>Beaches</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="marina.avif" alt="Marina Beach">
+                <div class="gallery-caption">Marina Beach</div>
             </div>
-            <div class="arrow">&#9658;</div>
-        </div>
-        <div class="gallery-item" onclick="expandImage('kodaikanal', 0)">
-            <img src="kodaikanalgallery.avif" alt="Image 2">
-            <div class="overlay">
-                <h3>KODAIKANAL</h3>
+            <div class="gallery-item">
+                <img src="aboutbackground.webp" alt="Mahabalipuram Beach">
+                <div class="gallery-caption">Mahabalipuram Beach</div>
             </div>
-            <div class="arrow">&#9658;</div>
-        </div>
-        <div class="gallery-item" onclick="expandImage('yercaud', 0)">
-            <img src="yercaudgallery.webp" alt="Image 3">
-            <div class="overlay">
-                <h3>YERCAUD</h3>
+            <div class="gallery-item">
+                <img src="kovalam.jpg" alt="Kovalam Beach">
+                <div class="gallery-caption">Kovalam Beach</div>
             </div>
-            <div class="arrow">&#9658;</div>
+            <div class="gallery-item">
+                <img src="rameswaram.jpg" alt="Rameswaram Beach">
+                <div class="gallery-caption">Rameswaram Beach</div>
+            </div>
+            <div class="gallery-item">
+                <img src="thiruvanmiyur.jpg" alt="Thiruvanmiyur Beach">
+                <div class="gallery-caption">Thiruvanmiyur Beach</div>
+            </div>
         </div>
     </div>
 
-    <div class="expanded" id="expandedContainer" onclick="closeExpandedImage()">
-        <div class="arrow arrow-left" onclick="navigateImages('prev', 'ooty')">&#9664;</div>
-        <span class="close-btn">&#10006;</span>
-        <div class="arrow arrow-right" onclick="navigateImages('next', 'ooty')">&#9654;</div>
-        <div class="slideshow-container" id="slideshowContainer"></div>
+    <!-- Footer -->
+    <div class="footer">
+        © 2024 Tamil Nadu Tourism. All rights reserved.
     </div>
-
-    <script>
-        var currentImageIndex;
-
-        function expandImage(destination, initialIndex) {
-            currentImageIndex = initialIndex;
-            showImage(destination);
-            document.getElementById('expandedContainer').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function showImage(destination) {
-            var images = getImagesForDestination(destination);
-            var slideshowContainer = document.getElementById('slideshowContainer');
-            slideshowContainer.innerHTML = '';
-
-            var img = document.createElement('img');
-            img.src = images[currentImageIndex];
-            img.className = 'fade';
-            slideshowContainer.appendChild(img);
-        }
-
-        function navigateImages(direction, destination) {
-            var images = getImagesForDestination(destination);
-            if (direction === 'next') {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-            } else if (direction === 'prev') {
-                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            }
-            showImage(destination);
-        }
-
-        function getImagesForDestination(destination) {
-            switch (destination) {
-                case 'ooty':
-                    return ['ootygallery.jpg', 'railwaybanner.webp', 'ootygallery3.jpg', 'ootygallery4.jpg'];
-                case 'kodaikanal':
-                    return ['kodaikanalgallery.avif', 'kodaikanalgallery2.avif', 'kodaikanalgallery3.avif', 'kodaikanalgallery4.avif'];
-                case 'yercaud':
-                    return ['yercaudgallery.webp', 'yercaudgallery2.webp', 'yercaudgallery3.webp', 'yercaudgallery4.webp'];
-                default:
-                    return [];
-            }
-        }
-
-        function closeExpandedImage() {
-            document.getElementById('expandedContainer').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Enable scrolling after closing
-        }
-    </script>
-    
-    
 </body>
 
 </html>

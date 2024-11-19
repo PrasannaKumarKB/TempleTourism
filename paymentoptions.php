@@ -75,26 +75,46 @@
   </style>
 </head>
 <body>
+  <?php
+    // Retrieve the number of tickets and rate from query parameters
+    $numTickets = isset($_GET['tickets']) ? (int)$_GET['tickets'] : 0;
+    $rate = isset($_GET['rate']) ? (int)$_GET['rate'] : 0;
+    $totalAmount = $numTickets * $rate;
+
+    // paymentoptions.php
+// Assuming you already have $numTickets, $totalRate, and $rate defined
+$queryParams = http_build_query([
+    'num_tickets' => $numTickets,
+    'total_rate' => $totalRate,
+    'rate' => $rate
+]);
+header("Location: upi.php?$queryParams");
+exit();
+
+  ?>
   <div class="container">
     <h1>Select a Payment Option</h1>
+    <p>Number of Tickets: <?php echo $numTickets; ?></p>
+    <p>Rate per Ticket: <?php echo $rate; ?> Rupees</p>
+    <p>Total Amount: <?php echo $totalAmount; ?> Rupees</p>
     <div class="payment-options">
       <div class="payment-card">
         <img src="creditcard.png" alt="Credit Card">
         <h3>Card</h3>
         <p>Pay securely with your Credit Card/Debit Card.</p>
-        <a class="cta-button" href="card.php">Pay Now!</a>
+        <a class="cta-button" href="card.php?amount=<?php echo $totalAmount; ?>">Pay Now!</a>
       </div>
       <div class="payment-card">
-        <img src="net.png" alt="PayPal">
+        <img src="net.png" alt="Net Banking">
         <h3>Net Banking</h3>
         <p>Make Your payment using Net Banking.</p>
-        <a class="cta-button" href="netbanking.php">Pay Now!</a>
+        <a class="cta-button" href="netbanking.php?amount=<?php echo $totalAmount; ?>">Pay Now!</a>
       </div>
       <div class="payment-card">
-        <img src="upi.png" alt="Apple Pay">
+        <img src="upi.png" alt="UPI Payment">
         <h3>UPI Payment</h3>
         <p>Make the payment using UPI transaction.</p>
-        <a class="cta-button" href="upi.php">Pay Now!</a>
+        <a class="cta-button" href="upi.php?amount=<?php echo $totalAmount; ?>">Pay Now!</a>
       </div>
     </div>
   </div>

@@ -94,30 +94,24 @@
       $message = $_POST['message'];
 
       // Save the data to the database
-      // Replace the database connection details with your own
       $servername = 'localhost';
       $username = 'root';
       $password = '';
       $dbname = 'temple';
 
-      // Create a new connection
       $conn = new mysqli($servername, $username, $password, $dbname);
 
-      // Check the connection
       if ($conn->connect_error) {
         die('Connection failed: ' . $conn->connect_error);
       }
 
-      // Prepare and execute the SQL query to insert the data
       $stmt = $conn->prepare("INSERT INTO kapaleeshwarar_contacts (name, email, phone, message) VALUES (?, ?, ?, ?)");
       $stmt->bind_param('ssss', $name, $email, $phone, $message);
       $stmt->execute();
 
-      // Close the statement and connection
       $stmt->close();
       $conn->close();
 
-      // Display a notification message
       echo '<div class="notification">Your query has been successfully received. Thank you for contacting us, ' . $name . '!</div>';
     }
     ?>
