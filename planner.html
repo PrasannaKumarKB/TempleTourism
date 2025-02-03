@@ -4,13 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personalized Pilgrimage Planner</title>
-    <link rel="stylesheet" href="planner.css">
-</head>  
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+
+        /* Banner Image */
+        .header-banner {
+            background-image: url('logo.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 800px;
+            display: flex;
+            color: white;
+            position: relative;
+        }
+
+        .header-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .header-banner h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 3rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            margin-top: 600px;
+            margin-left: 10px;
+        }
+
+        /* Form Styles */
+        .planner-form {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 700px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .planner-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .planner-form h2 {
+            margin-bottom: 20px;
+            color: #34495e;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 5px;
+            font-size: 1.1em;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #1abc9c;
+            box-shadow: 0 0 8px rgba(26, 188, 156, 0.5);
+            outline: none;
+        }
+
+        button[type="submit"] {
+            background-color: #1abc9c;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #16a085;
+            transform: translateY(-2px);
+        }
+
+        /* Itinerary Result */
+        .itinerary-result {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .itinerary-result:hover {
+            transform: translateY(-5px);
+        }
+
+        .itinerary-result h2 {
+            color: #34495e;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .activity {
+            background-color: #ecf9f5;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .activity:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1abc9c;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .planner-form, .itinerary-result {
+                padding: 25px;
+                margin: 15px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
 <body>
-    <header>
+    <div class="header-banner">
         <h1>Personalized Pilgrimage Planner</h1>
-    </header>
-    
+    </div>
+
     <section class="planner-form">
         <h2>Plan Your Custom Itinerary</h2>
         <form id="itineraryForm">
@@ -23,8 +186,8 @@
             <label for="budget">Budget (in USD):</label>
             <input type="number" id="budget" name="budget" min="100" required>
 
-            <label for="types">Type of Places (temples, historical, nature):</label>
-            <input type="text" id="types" name="types" required placeholder="e.g., temples, historical">
+            <label for="types">Type of Places (temples, historical, nature, shopping):</label>
+            <input type="text" id="types" name="types" required placeholder="e.g., temples, historical, shopping">
 
             <button type="submit">Get Personalized Itinerary</button>
         </form>
@@ -36,122 +199,103 @@
     </section>
 
     <script>
-        const sampleItineraries = {
-            "Madurai": {
-                temples: [
-                    { name: "Meenakshi Temple", options: ["Morning puja", "Explore temple architecture"], dining: ["Breakfast at Hotel Heritage"] },
-                    { name: "Thiruparankundram Murugan Temple", options: ["Visit the rock-cut temple", "Enjoy panoramic views"], dining: ["Lunch at Aasai Restaurant"] },
-                    { name: "Koodal Azhagar Temple", options: ["Visit the sanctum", "Temple tour"], dining: ["Lunch at local restaurant"] }
-                ],
-                historical: [
-                    { name: "Thirumalai Nayakkar Mahal", options: ["Explore the palace architecture", "Photography"], dining: ["Breakfast at local cafe"] },
-                    { name: "Gandhi Museum", options: ["Learn about Gandhi's life", "Visit exhibits"], dining: ["Lunch at nearby restaurant"] }
-                ],
-                nature: [
-                    { name: "Alagar Hills", options: ["Trekking", "Nature photography"], dining: ["Pack lunch for the hill"] },
-                    { name: "Vaigai Riverfront", options: ["Relax by the river", "Picnic area"], dining: ["Lunch at riverside stalls"] }
-                ],
-                leisure: [
-                    { name: "Shopping at local markets", options: ["Explore local handicrafts", "Buy souvenirs"], dining: ["Dinner at local restaurant"] },
-                    { name: "Evening stroll in city parks", options: ["Relax and enjoy nature", "Photographing sunset"], dining: ["Light snacks at park cafe"] }
-                ],
-                fallback: {
-                    name: "General City Exploration",
-                    options: ["Leisure walk around town", "Visit a local cafe", "Explore local shops"],
-                    dining: ["Street food stalls", "Cafe"]
-                }
-            },
-            "Chennai": {
-                temples: [
-                    { name: "Kapaleeshwarar Temple", options: ["Morning rituals", "Explore temple architecture"], dining: ["Breakfast at local restaurant"] },
-                    { name: "Parthasarathy Temple", options: ["Visit the temple", "Participate in puja"], dining: ["Lunch at nearby restaurant"] }
-                ],
-                historical: [
-                    { name: "San Thome Basilica", options: ["Visit the basilica", "Learn about history"], dining: ["Breakfast at nearby cafe"] },
-                    { name: "Fort St. George", options: ["Explore the fort museum", "Cultural exhibitions"], dining: ["Lunch at Fort Cafe"] }
-                ],
-                nature: [
-                    { name: "Elliot's Beach", options: ["Beach walk", "Relax"], dining: ["Breakfast at beachside cafe"] },
-                    { name: "Guindy National Park", options: ["Nature trails", "Wildlife spotting"], dining: ["Lunch at nearby restaurant"] }
-                ],
-                leisure: [
-                    { name: "Shopping at T Nagar", options: ["Explore local boutiques", "Buy traditional wear"], dining: ["Dinner at local restaurant"] },
-                    { name: "Visit Marina Beach", options: ["Enjoy beach sunset", "Walk along the shore"], dining: ["Light snacks from beach vendors"] }
-                ],
-                fallback: {
-                    name: "General City Exploration",
-                    options: ["Relax at a local park", "Visit a nearby cafe", "Enjoy city views"],
-                    dining: ["Local street food", "Cafe"]
-                }
-            }
-        };
+    const sampleItineraries = {
+        "Madurai": {
+            temples: [
+                { name: "Meenakshi Temple", options: ["Morning puja", "Explore temple architecture"], dining: ["Breakfast at Hotel Heritage"] },
+                { name: "Thiruparankundram Murugan Temple", options: ["Visit the rock-cut temple", "Enjoy panoramic views"], dining: ["Lunch at Aasai Restaurant"] },
+                { name: "Koodal Azhagar Temple", options: ["Visit the sanctum", "Temple tour"], dining: ["Lunch at local restaurant"] }
+            ],
+            historical: [
+                { name: "Thirumalai Nayakkar Mahal", options: ["Explore the palace architecture", "Photography"], dining: ["Breakfast at local cafe"] },
+                { name: "Gandhi Museum", options: ["Learn about Gandhi's life", "Visit exhibits"], dining: ["Lunch at nearby restaurant"] }
+            ],
+            nature: [
+                { name: "Alagar Hills", options: ["Trekking", "Nature photography"], dining: ["Pack lunch for the hill"] },
+                { name: "Vaigai Riverfront", options: ["Relax by the river", "Picnic area"], dining: ["Lunch at riverside stalls"] }
+            ],
+            shopping: [
+                { name: "Madurai Market", options: ["Explore local handicrafts", "Buy souvenirs"], dining: ["Lunch at local restaurant"] },
+                { name: "Meenakshi Puthu Mandapam", options: ["Shop for traditional jewelry", "Buy local textiles"], dining: ["Dinner at local restaurant"] }
+            ],
+            hotels: [
+                { name: "Hotel Heritage", description: "Luxury hotel with traditional South Indian decor.", dining: ["Indian cuisine", "Buffet breakfast"] },
+                { name: "GRT Regency", description: "Comfortable and modern hotel with spacious rooms.", dining: ["North Indian cuisine", "All-day dining"] }
+            ]
+        },
+        "Chennai": {
+            temples: [
+                { name: "Kapaleeshwarar Temple", options: ["Morning rituals", "Explore temple architecture"], dining: ["Breakfast at local restaurant"] },
+                { name: "Parthasarathy Temple", options: ["Puja and temple walk", "Cultural tour"], dining: ["Lunch at local restaurant"] }
+            ],
+            historical: [
+                { name: "Fort St. George", options: ["Explore colonial history", "Visit the museum"], dining: ["Lunch at nearby restaurant"] },
+                { name: "Government Museum", options: ["Explore galleries", "Learn about Tamil culture"], dining: ["Lunch at museum cafe"] }
+            ],
+            nature: [
+                { name: "Marina Beach", options: ["Relax by the sea", "Enjoy a beach walk"], dining: ["Snacks at beach stalls"] },
+                { name: "Guindy National Park", options: ["Nature walk", "Spot animals"], dining: ["Picnic lunch at park"] }
+            ],
+            shopping: [
+                { name: "T Nagar", options: ["Shop for traditional textiles", "Buy gold jewelry"], dining: ["Lunch at restaurant"] },
+                { name: "Express Avenue Mall", options: ["Shop for branded goods", "Explore local art"], dining: ["Dinner at mall"] }
+            ],
+            hotels: [
+                { name: "The Leela Palace", description: "5-star hotel with luxurious amenities and sea views.", dining: ["Multi-cuisine", "Continental breakfast"] },
+                { name: "Radisson Blu", description: "Modern hotel with a large pool and spa.", dining: ["Buffet breakfast", "Indian cuisine"] }
+            ]
+        }
+    };
 
-        function createFlexibleItinerary(city, numDays) {
-            const itinerary = [];
-            const locations = JSON.parse(JSON.stringify(sampleItineraries[city])); // Deep clone to avoid mutation
+    function generateItinerary() {
+        const place = document.getElementById("place").value;
+        const duration = parseInt(document.getElementById("duration").value);
+        const budget = parseInt(document.getElementById("budget").value);
+        const types = document.getElementById("types").value.toLowerCase().split(",").map(item => item.trim());
 
-            for (let i = 0; i < numDays; i++) { // Loop for the number of days
-                itinerary.push([]);
+        const itinerary = sampleItineraries[place];
 
-                // Morning Plan (This or That)
-                const morningPlan = {
-                    time: "Morning",
-                    thisOption: locations.temples.shift() || locations.historical.shift() || locations.nature.shift() || locations.fallback,
-                    thatOption: locations.temples.shift() || locations.historical.shift() || locations.nature.shift() || locations.fallback
-                };
-                itinerary[i].push(morningPlan);
-
-                // Afternoon Plan (This or That)
-                const afternoonPlan = {
-                    time: "Afternoon",
-                    thisOption: locations.historical.shift() || locations.nature.shift() || locations.temples.shift() || locations.fallback,
-                    thatOption: locations.historical.shift() || locations.nature.shift() || locations.temples.shift() || locations.fallback
-                };
-                itinerary[i].push(afternoonPlan);
-
-                // Evening Plan (This or That)
-                const eveningPlan = {
-                    time: "Evening",
-                    thisOption: locations.leisure.shift() || locations.fallback,
-                    thatOption: locations.leisure.shift() || locations.fallback
-                };
-                itinerary[i].push(eveningPlan);
-            }
-
-            return itinerary;
+        if (!itinerary) {
+            alert("Sorry, no itinerary available for this place.");
+            return;
         }
 
-        document.getElementById('itineraryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const place = document.getElementById('place').value;
-            const duration = parseInt(document.getElementById('duration').value); // Get number of days from user
-            const itineraryResult = document.getElementById('itineraryResult');
-            itineraryResult.style.display = 'block';
-
-            const userItinerary = createFlexibleItinerary(place, duration); // Pass duration to createFlexibleItinerary
-            const outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = '';
-
-            userItinerary.forEach((day, index) => {
-                const dayDiv = document.createElement('div');
-                dayDiv.innerHTML = `<h3>Day ${index + 1}</h3>`;
-                day.forEach(plan => {
-                    dayDiv.innerHTML += `
-                        <div>
-                            <h4>${plan.time} Options:</h4>
-                            <p><strong>This:</strong> ${plan.thisOption.name}</p>
-                            <p><strong>Activities:</strong> ${plan.thisOption.options.join(', ')}</p>
-                            <p><strong>Dining:</strong> ${plan.thisOption.dining.join(', ')}</p>
-                            <p><strong>Or That:</strong> ${plan.thatOption.name}</p>
-                            <p><strong>Activities:</strong> ${plan.thatOption.options.join(', ')}</p>
-                            <p><strong>Dining:</strong> ${plan.thatOption.dining.join(', ')}</p>
+        let output = "<h3>Suggested Activities:</h3>";
+        types.forEach(type => {
+            if (itinerary[type]) {
+                output += `<h4>${type.charAt(0).toUpperCase() + type.slice(1)}:</h4>`;
+                itinerary[type].forEach(activity => {
+                    output += `
+                        <div class="activity">
+                            <strong>${activity.name}</strong><br>
+                            Options: ${activity.options.join(", ")}<br>
+                            Dining: ${activity.dining.join(", ")}
                         </div>
                     `;
                 });
-                outputDiv.appendChild(dayDiv);
-            });
+            }
         });
+
+        // Adding hotel recommendations
+        output += "<h3>Hotel Recommendations:</h3>";
+        itinerary.hotels.forEach(hotel => {
+            output += `
+                <div class="activity">
+                    <strong>${hotel.name}</strong><br>
+                    Description: ${hotel.description}<br>
+                    Dining options: ${hotel.dining.join(", ")}
+                </div>
+            `;
+        });
+
+        document.getElementById("output").innerHTML = output;
+        document.getElementById("itineraryResult").style.display = "block";
+    }
+
+    document.getElementById("itineraryForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        generateItinerary();
+    });
     </script>
 </body>
 </html>

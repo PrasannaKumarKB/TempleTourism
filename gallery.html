@@ -14,7 +14,7 @@
     }
 
     body {
-        font-family: 'Arial', sans-serif;
+        font-family: poppins;
         background-color: #fff;
         color: #333;
         line-height: 1.6;
@@ -25,11 +25,8 @@
         background-image: url('gallerybanner.webp');
         background-size: cover;
         background-position: center;
-        height: 400px;
+        height: 800px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
         color: white;
         position: relative;
     }
@@ -41,7 +38,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
 
@@ -50,6 +46,8 @@
         z-index: 2;
         font-size: 3rem;
         text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        margin-top: 500px;
+        margin-left: 10px;
     }
 
     /* Gallery Section */
@@ -70,6 +68,7 @@
         overflow: hidden;
         width: 480px;
         height: 400px;
+        border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -108,6 +107,76 @@
     .gallery-item:hover .gallery-caption {
         opacity: 1;
     }
+    .gallery-container h2{
+        font-size: 40px;
+    }
+    /* New properties (Modal and Slideshow styling) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.slideshow {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slideshow img {
+    width: 100%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 
     /* Footer */
     .footer {
@@ -131,41 +200,61 @@
 
 <body>
     <!-- Header Banner -->
+    <a class="back-button" href="home.html" style="position: absolute; top: 20px; left: 20px; font-size: 48px; color:white;text-decoration: none;">&larr;</a>
+
     <div class="header-banner">
+        
         <h1>Photo Gallery</h1>
+        
     </div>
 
     <!-- Hill Stations Section -->
     <div class="gallery-container">
         <h2>Hill Stations</h2>
         <div class="gallery-grid">
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="ootygallery.jpg,ootygallery2.jpg,ootygallery3.jpg">
                 <img src="ooty.webp" alt="Ooty">
                 <div class="gallery-caption">Ooty</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="kodaikanalgallery.avif,kodaikanalgallery2.avif,kodaikanalgallery4.avif">
+
                 <img src="kodaikanalgallery3.avif" alt="Kodaikanal">
                 <div class="gallery-caption">Kodaikanal</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="yercaudgallery.webp,yercaudgallery2.webp,yercaudgallery4.webp">
+
                 <img src="yercaudgallery3.webp" alt="Yercaud">
                 <div class="gallery-caption">Yercaud</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="valparai2.jpg,valparai3.jpg,valparai4.jpg">
+
                 <img src="valparaigallery.jpg" alt="Valparai">
                 <div class="gallery-caption">Valparai</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="megamalai2.jpg,megamalai3.jpg,megamalai4.jpg">
+
                 <img src="megamalai1.webp" alt="Megamalai">
                 <div class="gallery-caption">Megamalai</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="kolli2.jpg,kolli3.jpg,kolli4.jpg">
+
                 <img src="kolli.jpg" alt="Kolli Hills">
                 <div class="gallery-caption">Kolli Hills</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="yelagiri2.jpg,yelagiri3.jpg,yelagiri4.jpg">
+
                 <img src="yelagiri.jpg" alt="Yelagiri">
                 <div class="gallery-caption">Yelagiri</div>
+            </div>
+            <div class="gallery-item" data-images="kolukkumalai2.jpg,kolukkumalai3.jpg_large,kolukkumalai4.jpg">
+
+                <img src="kolukkumalai.jpg" alt="Yelagiri">
+                <div class="gallery-caption">Kolukkumalai</div>
+            </div>
+            <div class="gallery-item" data-images="anaimalai2.jpg,anaimalai3.jpg,anaimalai4.webp">
+
+                <img src="anaimalai.jpg" alt="Yelagiri">
+                <div class="gallery-caption">Anaimalai</div>
             </div>
         </div>
     </div>
@@ -174,33 +263,167 @@
     <div class="gallery-container">
         <h2>Beaches</h2>
         <div class="gallery-grid">
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="marina2.webp,marina3.jpg,marina4.jpg">
+
                 <img src="marina.avif" alt="Marina Beach">
                 <div class="gallery-caption">Marina Beach</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="mahabali2.jpg,mahabali3.webp,mahabali4.webp">
+
                 <img src="aboutbackground.webp" alt="Mahabalipuram Beach">
                 <div class="gallery-caption">Mahabalipuram Beach</div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-images="kovalam2.jpg,kovalam3.jpg,kovalam4.jpg">
+
                 <img src="kovalam.jpg" alt="Kovalam Beach">
                 <div class="gallery-caption">Kovalam Beach</div>
             </div>
-            <div class="gallery-item">
-                <img src="rameswaram.jpg" alt="Rameswaram Beach">
-                <div class="gallery-caption">Rameswaram Beach</div>
+            <div class="gallery-item" data-images="dhanushkodi2.webp,dhanushkodi3.webp,dhanushkodi.webp">
+
+                <img src="dhanushkodi.jpg" alt="Rameswaram Beach">
+                <div class="gallery-caption">Dhanushkodi Beach</div>
             </div>
-            <div class="gallery-item">
-                <img src="thiruvanmiyur.jpg" alt="Thiruvanmiyur Beach">
-                <div class="gallery-caption">Thiruvanmiyur Beach</div>
+            <div class="gallery-item" data-images="kanniyakumari2.jpg,kanniyakumari3.webp,kanniyakumari4.jpeg">
+
+                <img src="kanyakumaribeach.jpg" alt="Thiruvanmiyur Beach">
+                <div class="gallery-caption">Kanniyakumari Beach</div>
+            </div>
+            <div class="gallery-item" data-images="poompuhar2.jpg,poompuhar3.jpg,poompuhar4.jpg">
+
+                <img src="poompuhar.jpg" alt="Thiruvanmiyur Beach">
+                <div class="gallery-caption">Poompuhar Beach</div>
             </div>
         </div>
     </div>
+    <div class="gallery-container">
+        <h2>Waterfalls</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-images="courtallam2.avif,courtallam3.avif,courtallam4.jpg">
+
+                <img src="courtrallam.jpg" alt="Marina Beach">
+                <div class="gallery-caption">Coutrallam Waterfalls</div>
+            </div>
+            <div class="gallery-item" data-images="thirparapu2.jpg,thirparapu3.jpg,thirparapu4.jpg">
+
+                <img src="thirparapu.webp" alt="Mahabalipuram Beach">
+                <div class="gallery-caption">Thirparappu Waterfalls</div>
+            </div>
+            <div class="gallery-item" data-images="hogenakkal2.jpg,hogenakkal3.webp,hogenakkal4.jpg">
+
+                <img src="hogenakkal.jpg" alt="Kovalam Beach">
+                <div class="gallery-caption">Hogenakkal Waterfalls</div>
+            </div>
+            <div class="gallery-item" data-images="suruli2.jpg,suruli3.jpg,suruli4.jpg">
+
+                <img src="suruli.jpg" alt="Rameswaram Beach">
+                <div class="gallery-caption">Suruli Waterfalls</div>
+            </div>
+            <div class="gallery-item" data-images="kovaikutrallam2.jpg,kovaikutrallam3.jpeg,kovaikutrallam4.jpg">
+
+                <img src="kovaikutrallam.jpg" alt="Thiruvanmiyur Beach">
+                <div class="gallery-caption">Kovai Coutrallam Waterfalls</div>
+            </div>
+            <div class="gallery-item" data-images="agasthiyar2.jpg,agasthiyar3.jpg,agasthiyar4.avif">
+
+                <img src="agasthiyar.jpg" alt="Thiruvanmiyur Beach">
+                <div class="gallery-caption">Agasthiyar Waterfalls</div>
+            </div>
+        </div>
+    </div>
+    <div class="gallery-container">
+        <h2>Reservoirs</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-images="mettur2.jpg,mettur3.jpg,mettur4.webp">
+
+                <img src="mettur.jpg" alt="Marina Beach">
+                <div class="gallery-caption">Mettur Dam</div>
+            </div>
+            <div class="gallery-item" data-images="bhavanisagar2.jpg,bhavanisagar3.jpg,bhavanisagar4.jpg">
+
+                <img src="bhavanisagar.webp" alt="Mahabalipuram Beach">
+                <div class="gallery-caption">Bhavanisagar Dam</div>
+            </div>
+            <div class="gallery-item" data-images="vaigai2.png,vaigai3.jpg,vaigai4.jpg">
+
+                <img src="vaigaidam.jpg" alt="Kovalam Beach">
+                <div class="gallery-caption">Vaigai Dam</div>
+            </div>
+            <div class="gallery-item" data-images="aliyar2.jpg,aliyar3.jpg,aliyar4.jpg">
+
+                <img src="aliyar.jpg" alt="Rameswaram Beach">
+                <div class="gallery-caption">Aliyar Dam</div>
+            </div>
+            <div class="gallery-item" data-images="amaravathi2.webp,amaravathi3.jpg,amaravathi4.jpeg">
+
+                <img src="amaravathi.jpg" alt="Thiruvanmiyur Beach">
+                <div class="gallery-caption">Amaravathi Dam</div>
+            </div>
+            <div class="gallery-item" data-images="sholayar2.jpg,sholayar3.jpg,sholayar4.jpg">
+
+                <img src="sholayar.jpg" alt="Thiruvanmiyur Beach">
+                <div class="gallery-caption">Sholayar Dam</div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Slideshow -->
+<div class="modal" id="modal">
+    <div class="slideshow">
+        <button class="close" id="closeModal">&times;</button>
+        <button class="prev" id="prevSlide">&#10094;</button>
+        <img id="slideshowImage" src="" alt="Slideshow">
+        <button class="next" id="nextSlide">&#10095;</button>
+    </div>
+</div>
+
 
     <!-- Footer -->
     <div class="footer">
         © 2024 Tamil Nadu Tourism. All rights reserved.
     </div>
+    <script>
+    // New JavaScript for Slideshow Functionality
+const modal = document.getElementById('modal');
+const slideshowImage = document.getElementById('slideshowImage');
+const closeModal = document.getElementById('closeModal');
+const prevSlide = document.getElementById('prevSlide');
+const nextSlide = document.getElementById('nextSlide');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+let currentSlide = 0;
+let images = [];
+
+// Open modal and load images
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        images = item.dataset.images.split(',');
+        currentSlide = 0;
+        updateSlideshow();
+        modal.classList.add('active');
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+// Previous slide
+prevSlide.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + images.length) % images.length;
+    updateSlideshow();
+});
+
+// Next slide
+nextSlide.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % images.length;
+    updateSlideshow();
+});
+
+// Update slideshow image
+function updateSlideshow() {
+    slideshowImage.src = images[currentSlide];
+}
+</script>
 </body>
 
 </html>

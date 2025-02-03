@@ -2,104 +2,178 @@
 <html lang="en">
 <head>
   <title>About Tamil Nadu Temple Tourism</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: cursive;
-      background-image: url("picture.webp");
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      perspective: 1px;
-      overflow-x: hidden;
-      overflow-y: auto;
-      color: #fff;
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: beige;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
+    color: black;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    border: 6px double #00457c; /* Adds a double border with accent color */
+    position: relative; /* For decorative edges */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    overflow: hidden; /* For additional design containment */
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+  }
+
+  .container::before,
+  .container::after {
+    content: '';
+    position: absolute;
+    border: 6px solid transparent;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(135deg, transparent 0%, #ff6600 50%, transparent 100%);
+  }
+
+  .container::before {
+    top: -30px;
+    left: -30px;
+    transform: rotate(45deg);
+  }
+
+  .container::after {
+    bottom: -30px;
+    right: -30px;
+    transform: rotate(135deg);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #00457c;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #ff6600;
+    margin-bottom: 15px;
+  }
+
+  p {
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 20px;
+  font-family: 'Noto Sans Tamil', Arial, sans-serif;
+}
+
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .highlight {
+    color: #ff6600;
+    font-weight: bold;
+  }
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(90deg, #00457c, #007BFF);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .scroll-to-top:hover {
+    background: linear-gradient(90deg, #007BFF, #00457c);
+    transform: translateY(-5px);
+  }
+
+  .scroll-to-top span {
+    font-size: 20px;
+    animation: bounce 1s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
     }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
 
-    
+  a.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 1rem;
+    color: #00457c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
 
+  a.back-button:hover {
+    color: #ff6600;
+  }
+
+  /* Animation for containers */
+  [data-aos="fade-up"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
     .container {
-      max-width: 900px;
-      margin: 0 auto;
       padding: 20px;
-      text-align: center;
-      background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95));
-      margin-bottom: 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     h1 {
-      font-size: 36px;
-      color: #333333;
-      margin-bottom: 20px;
+      font-size: 2rem;
     }
 
     h2 {
-      font-size: 30px;
-      color: #ff6600;
-      margin-bottom: 15px;
+      font-size: 1.5rem;
     }
 
     p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #333;
-      margin-bottom: 20px;
+      font-size: 0.9rem;
     }
+  }
+</style>
 
-    img {
-      max-width: 100%;
-      max-height: 300px; 
-      height: auto;
-      border-radius: 8px;
-      transition: 2s ease-in-out ;
-    }
-
-    .highlight {
-      color: #ff6600;
-      font-weight: bold;
-    }
-
-    .scroll-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #007BFF;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      display: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .scroll-to-top:hover {
-      background-color: #0056b3;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-20px);
-      }
-      60% {
-        transform: translateY(-10px);
-      }
-    }
-
-    .scroll-to-top span {
-      display: block;
-      animation: bounce 1s infinite;
-    }
-
-    
-  </style>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
@@ -131,7 +205,7 @@
     <img id="image4" src="" alt="Image 4">
     <p>At Tamil Nadu Temple Tourism, we strive to provide visitors with an immersive experience that highlights the spiritual and historical significance of these temples. From the towering gopurams (ornate temple towers) to the intricate stone carvings depicting mythological stories, each temple is a testament to the devotion and craftsmanship of ancient Tamil artisans.</p>
     <p>Whether you're a history enthusiast, a devotee, or simply a curious traveler, our website offers a wealth of information about the temples, festivals, and cultural practices of Tamil Nadu. Join us on this divine journey as we explore the sacred wonders that Tamil Nadu has to offer.</p>
-    <p class="highlight">வணக்கம்! (Welcome!)</p>
+    <p>Welcome..!</p>
   </div>
 
   <div class="scroll-to-top" onclick="scrollToTop()">
